@@ -502,3 +502,64 @@ Completed in 30ms (View: 15, DB: 0) | 200 OK [http://localhost/pezez/new]
 Processing PezezController#new (for 127.0.0.1 at 2010-08-23 17:48:28) [GET]
 Rendering pezez/new
 Completed in 30ms (View: 15, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-08-23 17:54:37) [GET]
+Rendering pezez/new
+Completed in 32ms (View: 16, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#create (for 127.0.0.1 at 2010-08-23 17:55:06) [POST]
+  Parameters: {"commit"=>"add me to the dispenser, please!", "authenticity_token"=>"3iQLlAqry4rdejVMJxFDAJ9arLRf8Fjz4deEqGZg+UE=", "pez"=>{"identity"=>"zig", "colour"=>"zag"}}
+
+ActionController::UnknownAction (No action responded to create. Actions: index and new):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PezezController#create (for 127.0.0.1 at 2010-08-23 17:59:34) [POST]
+  Parameters: {"commit"=>"add me to the dispenser, please!", "authenticity_token"=>"3iQLlAqry4rdejVMJxFDAJ9arLRf8Fjz4deEqGZg+UE=", "pez"=>{"identity"=>"zig", "colour"=>"zag"}}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.save):
+  app/controllers/pezez_controller.rb:15:in `create'
+  app/controllers/pezez_controller.rb:14:in `create'
+
+Rendered rescues/_trace (67.2ms)
+Rendered rescues/_request_and_response (2.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PezezController#create (for 127.0.0.1 at 2010-08-23 17:59:56) [POST]
+  Parameters: {"commit"=>"add me to the dispenser, please!", "authenticity_token"=>"3iQLlAqry4rdejVMJxFDAJ9arLRf8Fjz4deEqGZg+UE=", "pez"=>{"identity"=>"zig", "colour"=>"zag"}}
+  [4;36;1mPez Create (0.6ms)[0m   [0;1mINSERT INTO "pezez" ("identity", "colour") VALUES('zig', 'zag')[0m
+Redirected to http://localhost:3000/pezez/1
+Completed in 26ms (DB: 1) | 302 Found [http://localhost/pezez]
+
+
+Processing PezezController#show (for 127.0.0.1 at 2010-08-23 17:59:56) [GET]
+  Parameters: {"id"=>"1"}
+
+ActionController::UnknownAction (No action responded to show. Actions: create, index, and new):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PezezController#show (for 127.0.0.1 at 2010-08-23 18:03:39) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPez Load (0.4ms)[0m   [0mSELECT * FROM "pezez" WHERE ("pezez"."id" = 1) [0m
+
+ActionView::MissingTemplate (Missing template pezez/show.erb in view path app/views):
+  app/controllers/pezez_controller.rb:27:in `show'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PezezController#show (for 127.0.0.1 at 2010-08-23 18:04:18) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPez Load (0.4ms)[0m   [0;1mSELECT * FROM "pezez" WHERE ("pezez"."id" = 1) [0m
+Rendering pezez/show
+Completed in 27ms (View: 10, DB: 0) | 200 OK [http://localhost/pezez/1]
