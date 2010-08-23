@@ -1,12 +1,16 @@
 
 <h1>hello</h1>
 
-<!-- make a rails form -->
-<div>identity:</div>
-<input type-'text'>
+<% form_for @pez do |f| %>
 
-<div>colour:</div>
-<input type-'color'>
+<%= f.label :identity, "identity:" %>
+<%= f.text_field :identity %>
 
 <div></div>
-<input type='button' value='add me to the dispenser, please!' />
+<%= f.label :colour, "colour:" %>
+<%= f.text_field :colour %>
+
+<div></div>
+<%= submit_tag 'add me to the dispenser, please!' %>
+
+<% end %>

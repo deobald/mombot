@@ -1,8 +1,5 @@
 
 class Pez < ActiveRecord::Base
-  
-  def initialize
+  set_table_name 'pezez'
     
-  end
-  
 end

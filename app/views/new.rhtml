@@ -1,0 +1,16 @@
+
+<h1>hello</h1>
+
+<% form_for :pez, @pez, :url => {:controller => 'pezez', :action => 'create'}, :method => 'post' do |f| %>
+
+<%= f.text_field :identity %>
+
+<%= f.label :identity, "identity:" %>
+
+<%= f.label :color, "color:" %>
+<%= f.text_field :color %>
+
+<div></div>
+<%= submit_tag 'add me to the dispenser, please!' %>
+
+<% end %>
