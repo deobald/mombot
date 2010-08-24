@@ -563,3 +563,13 @@ Processing PezezController#show (for 127.0.0.1 at 2010-08-23 18:04:18) [GET]
   [4;36;1mPez Load (0.4ms)[0m   [0;1mSELECT * FROM "pezez" WHERE ("pezez"."id" = 1) [0m
 Rendering pezez/show
 Completed in 27ms (View: 10, DB: 0) | 200 OK [http://localhost/pezez/1]
+
+
+Processing PezezController#index (for 127.0.0.1 at 2010-08-23 19:40:13) [GET]
+Rendering pezez/index
+Completed in 16ms (View: 9, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-08-23 19:40:33) [GET]
+Rendering pezez/new
+Completed in 31ms (View: 16, DB: 0) | 200 OK [http://localhost/pezez/new]
