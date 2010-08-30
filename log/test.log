@@ -1,0 +1,267 @@
+Unable to load dispenser_slot, underlying cause no such file to load -- dispenser_slot 
+
+ /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:158:in `require'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:865:in `each'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+./test/unit/slot_test.rb:1:in `require'
+./test/unit/slot_test.rb:1
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5:in `load'
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5:in `each'
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5
+Unable to load dispenser_slot, underlying cause no such file to load -- dispenser_slot 
+
+ /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:158:in `require'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:865:in `each'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+./test/unit/slot_test.rb:1:in `require'
+./test/unit/slot_test.rb:1
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5:in `load'
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5:in `each'
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5
+Unable to load dispenser_slot, underlying cause no such file to load -- dispenser_slot 
+
+ /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:158:in `require'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:865:in `each'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+./test/unit/pez_test.rb:2:in `require'
+./test/unit/pez_test.rb:2
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5:in `load'
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5:in `each'
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5
+Unable to load dispenser_slot, underlying cause no such file to load -- dispenser_slot 
+
+ /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:158:in `require'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:865:in `each'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+./test/unit/pez_test.rb:2:in `require'
+./test/unit/pez_test.rb:2
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5:in `load'
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5:in `each'
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5
+Unable to load dispenser_slot, underlying cause no such file to load -- dispenser_slot 
+
+ /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:158:in `require'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:865:in `each'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+./test/unit/pez_test.rb:2:in `require'
+./test/unit/pez_test.rb:2
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5:in `load'
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5:in `each'
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5
+Unable to load dispenser_slot, underlying cause no such file to load -- dispenser_slot 
+
+ /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:158:in `require'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:865:in `each'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+./test/unit/pez_test.rb:2:in `require'
+./test/unit/pez_test.rb:2
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5:in `load'
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5:in `each'
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5
+Unable to load dispenser_slot, underlying cause no such file to load -- dispenser_slot 
+
+ /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:158:in `require'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:865:in `each'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+./test/unit/pez_test.rb:2:in `require'
+./test/unit/pez_test.rb:2
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5:in `load'
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5:in `each'
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5
+Unable to load dispenser_slot, underlying cause no such file to load -- dispenser_slot 
+
+ /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:158:in `require'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:865:in `each'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+./test/unit/pez_test.rb:2:in `require'
+./test/unit/pez_test.rb:2
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5:in `load'
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5:in `each'
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5
+Unable to load dispenser_slot, underlying cause no such file to load -- dispenser_slot 
+
+ /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:158:in `require'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:865:in `each'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+./test/unit/pez_test.rb:2:in `require'
+./test/unit/pez_test.rb:2
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5:in `load'
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5:in `each'
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5
+Unable to load dispenser_slot, underlying cause no such file to load -- dispenser_slot 
+
+ /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:158:in `require'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:865:in `each'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+./test/unit/pez_test.rb:2:in `require'
+./test/unit/pez_test.rb:2
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5:in `load'
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5:in `each'
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5
+Unable to load dispenser_slot, underlying cause no such file to load -- dispenser_slot 
+
+ /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:158:in `require'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:865:in `each'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+./test/unit/pez_test.rb:2:in `require'
+./test/unit/pez_test.rb:2
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5:in `load'
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5:in `each'
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5
+Unable to load dispenser_slot, underlying cause no such file to load -- dispenser_slot 
+
+ /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:158:in `require'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/sdeobald/src/mombot/vendor/rails/activesupport/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:865:in `each'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/sdeobald/src/mombot/vendor/rails/activerecord/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+./test/unit/pez_test.rb:2:in `require'
+./test/unit/pez_test.rb:2
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5:in `load'
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5:in `each'
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5
+  [4;36;1mPez Create (0.0ms)[0m   [0;1mSQLite3::SQLException: pezez.identity may not be NULL: INSERT INTO "pezez" ("identity", "created_at", "updated_at", "colour") VALUES(NULL, '2010-08-29 23:11:39', '2010-08-29 23:11:39', NULL)[0m
+  [4;36;1mPez Create (0.0ms)[0m   [0;1mSQLite3::SQLException: pezez.colour may not be NULL: INSERT INTO "pezez" ("identity", "created_at", "updated_at", "colour") VALUES('steven', '2010-08-29 23:12:51', '2010-08-29 23:12:51', NULL)[0m
+  [4;36;1mPez Create (0.6ms)[0m   [0;1mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "colour") VALUES('steven', '2010-08-29 23:13:42', '2010-08-29 23:13:42', 'red')[0m
+  [4;35;1mPez Create (0.2ms)[0m   [0mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "colour") VALUES('conrad', '2010-08-29 23:13:42', '2010-08-29 23:13:42', 'blue')[0m
+  [4;36;1mPez Create (0.6ms)[0m   [0;1mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "colour") VALUES('steven', '2010-08-29 23:14:43', '2010-08-29 23:14:43', 'red')[0m
+  [4;35;1mPez Create (0.2ms)[0m   [0mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "colour") VALUES('conrad', '2010-08-29 23:14:43', '2010-08-29 23:14:43', 'blue')[0m
+  [4;36;1mPez Create (0.5ms)[0m   [0;1mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "colour") VALUES('steven', '2010-08-29 23:15:16', '2010-08-29 23:15:16', 'red')[0m
+  [4;35;1mPez Create (0.2ms)[0m   [0mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "colour") VALUES('conrad', '2010-08-29 23:15:16', '2010-08-29 23:15:16', 'blue')[0m
+  [4;36;1mPez Create (0.5ms)[0m   [0;1mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "priority", "colour") VALUES('steven', '2010-08-29 23:16:47', '2010-08-29 23:16:47', NULL, 'red')[0m
+  [4;35;1mPez Create (0.2ms)[0m   [0mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "priority", "colour") VALUES('conrad', '2010-08-29 23:16:47', '2010-08-29 23:16:47', NULL, 'blue')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT max("pezez".priority) AS max_priority FROM "pezez" [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT max("pezez".priority) AS max_priority FROM "pezez" [0m
+  [4;35;1mPez Create (0.5ms)[0m   [0mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "priority", "colour") VALUES('steven', '2010-08-29 23:19:52', '2010-08-29 23:19:52', NULL, 'red')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT max("pezez".priority) AS max_priority FROM "pezez" [0m
+  [4;35;1mPez Create (0.2ms)[0m   [0mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "priority", "colour") VALUES('conrad', '2010-08-29 23:19:52', '2010-08-29 23:19:52', NULL, 'blue')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT max("pezez".priority) AS max_priority FROM "pezez" [0m
+  [4;35;1mPez Create (0.5ms)[0m   [0mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "priority", "colour") VALUES('steven', '2010-08-29 23:20:33', '2010-08-29 23:20:33', NULL, 'red')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT max("pezez".priority) AS max_priority FROM "pezez" [0m
+  [4;35;1mPez Create (0.1ms)[0m   [0mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "priority", "colour") VALUES('conrad', '2010-08-29 23:20:33', '2010-08-29 23:20:33', NULL, 'blue')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT max("pezez".priority) AS max_priority FROM "pezez" [0m
+  [4;35;1mPez Create (0.5ms)[0m   [0mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "priority", "colour") VALUES('steven', '2010-08-30 01:01:15', '2010-08-30 01:01:15', NULL, 'red')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT max("pezez".priority) AS max_priority FROM "pezez" [0m
+  [4;35;1mPez Create (0.1ms)[0m   [0mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "priority", "colour") VALUES('conrad', '2010-08-30 01:01:15', '2010-08-30 01:01:15', NULL, 'blue')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT max("pezez".priority) AS max_priority FROM "pezez" [0m
+  [4;35;1mPez Create (0.5ms)[0m   [0mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "priority", "colour") VALUES('steven', '2010-08-30 16:40:06', '2010-08-30 16:40:06', 2, 'red')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT max("pezez".priority) AS max_priority FROM "pezez" [0m
+  [4;35;1mPez Create (0.1ms)[0m   [0mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "priority", "colour") VALUES('conrad', '2010-08-30 16:40:06', '2010-08-30 16:40:06', 3, 'blue')[0m

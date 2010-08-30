@@ -12,8 +12,11 @@
 ActiveRecord::Schema.define(:version => 20100823220454) do
 
   create_table "pezez", :force => true do |t|
-    t.string "identity", :null => false
-    t.string "colour",   :null => false
+    t.string   "identity",   :null => false
+    t.string   "colour",     :null => false
+    t.integer  "priority"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
