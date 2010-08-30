@@ -8,3 +8,5 @@ require 'rake/testtask'
 require 'rake/rdoctask'
 
 require 'tasks/rails'
+
+task 'db:bounce' => ['db:drop', 'db:migrate', 'db:test:clone']

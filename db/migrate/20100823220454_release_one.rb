@@ -6,9 +6,19 @@ class ReleaseOne < ActiveRecord::Migration
       t.integer :priority
       t.timestamps
     end
+    
+    create_table :users do |t|
+      t.string :identity, :null => false
+      t.string :name
+      t.string :hashed_password
+      t.string :email
+      t.string :salt
+      t.datetime :created_at
+    end
   end
 
   def self.down
     drop_table :pezez
+    drop_table :users
   end
 end
