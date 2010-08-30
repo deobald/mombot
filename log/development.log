@@ -1488,3 +1488,116 @@ Migrating to ReleaseOne (20100823220454)
 [0m
   [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
   [4;35;1mSQL (2.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100823220454')[0m
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-08-30 11:50:33) [GET]
+Rendering pezez/new
+Completed in 33ms (View: 17, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PezezController#index (for 127.0.0.1 at 2010-08-30 11:51:14) [GET]
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `order' for #<Class:0x2473d10>):
+  app/controllers/pezez_controller.rb:5:in `index'
+
+Rendered rescues/_trace (54.8ms)
+Rendered rescues/_request_and_response (2.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PezezController#index (for 127.0.0.1 at 2010-08-30 11:52:38) [GET]
+  [4;35;1mPez Load (0.4ms)[0m   [0mSELECT * FROM "pezez" ORDER BY priority ASC[0m
+Rendering pezez/index
+Completed in 24ms (View: 10, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-08-30 11:52:43) [GET]
+Rendering pezez/new
+Completed in 23ms (View: 8, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#create (for 127.0.0.1 at 2010-08-30 11:52:48) [POST]
+  Parameters: {"commit"=>"add me to the dispenser, please!", "authenticity_token"=>"I1gpsVCU1ELnZbfGbTt+/wwr7ZLZmtVfjuTBUmP90rQ=", "pez"=>{"identity"=>"geoff", "colour"=>"brown"}}
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT max("pezez".priority) AS max_priority FROM "pezez" [0m
+  [4;35;1mPez Create (0.5ms)[0m   [0mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "priority", "colour") VALUES('geoff', '2010-08-30 16:52:48', '2010-08-30 16:52:48', 2, 'brown')[0m
+Redirected to http://localhost:3000/pezez/1
+Completed in 30ms (DB: 1) | 302 Found [http://localhost/pezez]
+
+
+Processing PezezController#show (for 127.0.0.1 at 2010-08-30 11:52:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPez Load (0.5ms)[0m   [0;1mSELECT * FROM "pezez" WHERE ("pezez"."id" = 1) [0m
+Rendering pezez/show
+Completed in 29ms (View: 11, DB: 1) | 200 OK [http://localhost/pezez/1]
+
+
+Processing PezezController#index (for 127.0.0.1 at 2010-08-30 11:52:52) [GET]
+  [4;35;1mPez Load (0.8ms)[0m   [0mSELECT * FROM "pezez" ORDER BY priority ASC[0m
+Rendering pezez/index
+Completed in 20ms (View: 6, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-08-30 11:52:54) [GET]
+Rendering pezez/new
+Completed in 86ms (View: 70, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#create (for 127.0.0.1 at 2010-08-30 11:53:02) [POST]
+  Parameters: {"commit"=>"add me to the dispenser, please!", "authenticity_token"=>"I1gpsVCU1ELnZbfGbTt+/wwr7ZLZmtVfjuTBUmP90rQ=", "pez"=>{"identity"=>"smooz", "colour"=>"red"}}
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT max("pezez".priority) AS max_priority FROM "pezez" [0m
+  [4;35;1mPez Create (0.3ms)[0m   [0mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "priority", "colour") VALUES('smooz', '2010-08-30 16:53:02', '2010-08-30 16:53:02', 3, 'red')[0m
+Redirected to http://localhost:3000/pezez/2
+Completed in 28ms (DB: 1) | 302 Found [http://localhost/pezez]
+
+
+Processing PezezController#show (for 127.0.0.1 at 2010-08-30 11:53:03) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPez Load (0.5ms)[0m   [0;1mSELECT * FROM "pezez" WHERE ("pezez"."id" = 2) [0m
+Rendering pezez/show
+Completed in 21ms (View: 3, DB: 1) | 200 OK [http://localhost/pezez/2]
+
+
+Processing PezezController#index (for 127.0.0.1 at 2010-08-30 11:53:06) [GET]
+  [4;35;1mPez Load (1.1ms)[0m   [0mSELECT * FROM "pezez" ORDER BY priority ASC[0m
+Rendering pezez/index
+Completed in 21ms (View: 6, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PezezController#index (for 127.0.0.1 at 2010-08-30 11:53:30) [GET]
+  [4;36;1mPez Load (1.0ms)[0m   [0;1mSELECT * FROM "pezez" ORDER BY priority ASC[0m
+Rendering pezez/index
+Completed in 28ms (View: 14, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PezezController#index (for 127.0.0.1 at 2010-08-30 11:53:42) [GET]
+  [4;35;1mPez Load (1.0ms)[0m   [0mSELECT * FROM "pezez" ORDER BY priority ASC[0m
+Rendering pezez/index
+Completed in 29ms (View: 14, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PezezController#index (for 127.0.0.1 at 2010-08-30 11:54:07) [GET]
+  [4;36;1mPez Load (1.0ms)[0m   [0;1mSELECT * FROM "pezez" [0m
+Rendering pezez/index
+Completed in 29ms (View: 14, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PezezController#index (for 127.0.0.1 at 2010-08-30 11:54:16) [GET]
+  [4;35;1mPez Load (1.0ms)[0m   [0mSELECT * FROM "pezez" [0m
+Rendering pezez/index
+Completed in 22ms (View: 3, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PezezController#index (for 127.0.0.1 at 2010-08-30 11:54:29) [GET]
+  [4;36;1mPez Load (1.0ms)[0m   [0;1mSELECT * FROM "pezez" [0m
+Rendering pezez/index
+Completed in 22ms (View: 4, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PezezController#index (for 127.0.0.1 at 2010-08-30 11:55:11) [GET]
+  [4;35;1mPez Load (1.0ms)[0m   [0mSELECT * FROM "pezez" ORDER BY priority ASC[0m
+Rendering pezez/index
+Completed in 28ms (View: 13, DB: 1) | 200 OK [http://localhost/]

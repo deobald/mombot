@@ -2,7 +2,7 @@
 class PezezController < ApplicationController
   
   def index
-    
+    @seated = Pez.all :order => 'priority ASC'
   end
   
   def new
