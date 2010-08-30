@@ -1,9 +1,9 @@
-<%= start_form_tag :action=> "signup" %>
+<% form_tag :action=> "signup", :method => 'post' do %>
 
 <%= error_messages_for 'user' %><br/>
 
-<label for="user_login">Username</label><br/>
-<%= text_field "user", "login", :size => 20 %><br/>
+<label for="user_identity">Identity</label><br/>
+<%= text_field "user", "identity", :size => 20 %><br/>
 
 <label for="user_password">Password</label><br/>
 <%= password_field "user", "password", :size => 20 %><br/>
@@ -16,4 +16,4 @@
 
 <%= submit_tag "Signup" %>
 
-<%= end_form_tag %>
+<% end %>

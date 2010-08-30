@@ -18,6 +18,7 @@ class UsersController < ApplicationController
   def login
     if request.post?
       if session[:user] = User.authenticate(params[:user][:identity], params[:user][:password])
+        flash.clear
         flash[:message]  = "Login successful"
         redirect_to_stored
       else

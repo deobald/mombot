@@ -32,87 +32,80 @@ class UsersControllerTest < ActionController::TestCase
     assert_redirected_to :controller => 'users', :action => 'welcome'
   end
   
-  # def test_bad_signup
-  #   #check we can't signup without all required fields
-  #   post :signup, :user => { :identity => "newbob", :password => "newpassword", :password_confirmation => "wrong" , :email => "newbob@mcbob.com"}
-  #   assert_response :success
-  #   assert_invalid_column_on_record "user", "password"
-  #   assert_template "user/signup"
-  #   assert_nil session[:user]
-  # 
-  #   post :signup, :user => { :identity => "yo", :password => "newpassword", :password_confirmation => "newpassword" , :email => "newbob@mcbob.com"}
-  #   assert_response :success
-  #   assert_invalid_column_on_record "user", "login"
-  #   assert_template "user/signup"
-  #   assert_nil session[:user]
-  # 
-  #   post :signup, :user => { :identity => "yo", :password => "newpassword", :password_confirmation => "wrong" , :email => "newbob@mcbob.com"}
-  #   assert_response :success
-  #   assert_invalid_column_on_record "user", ["login", "password"]
-  #   assert_template "user/signup"
-  #   assert_nil session[:user]
-  # end
-  # 
-  # def test_invalid_login
-  #   #can't login with incorrect password
-  #   post :login, :user=> { :identity => "bob", :password => "not_correct" }
-  #   assert_response :success
-  #   assert_session_has_no :user
-  #   assert flash[:warning]
-  #   assert_template "user/login"
-  # end
-  # 
-  # def test_login_logoff
-  #   #login
-  #   post :login, :user=>{ :identity => "bob", :password => "test"}
-  #   assert_response :redirect
-  #   assert_session_has :user
-  #   #then logoff
-  #   get :logout
-  #   assert_response :redirect
-  #   assert_session_has_no :user
-  #   assert_redirected_to :action=>'login'
-  # end
-  # 
-  # def test_forgot_password
-  #   #we can login
-  #   post :login, :user=>{ :identity => "bob", :password => "test"}
-  #   assert_response :redirect
-  #   assert_session_has :user
-  #   #logout
-  #   get :logout
-  #   assert_response :redirect
-  #   assert_session_has_no :user
-  #   #enter an email that doesn't exist
-  #   post :forgot_password, :user => {:email=>"notauser@doesntexist.com"}
-  #   assert_response :success
-  #   assert_session_has_no :user
-  #   assert_template "user/forgot_password"
-  #   assert flash[:warning]
-  #   #enter bobs email
-  #   post :forgot_password, :user => {:email=>"exbob@mcbob.com"}   
-  #   assert_response :redirect
-  #   assert flash[:message]
-  #   assert_redirected_to :action=>'login'
-  # end
-  # 
-  # def test_login_required
-  #   #can't access welcome if not logged in
-  #   get :welcome
-  #   assert flash[:warning]
-  #   assert_response :redirect
-  #   assert_redirected_to :action=>'login'
-  #   #login
-  #   post :login, :user=>{ :identity => "bob", :password => "test"}
-  #   assert_response :redirect
-  #   assert_session_has :user
-  #   #can access it now
-  #   get :welcome
-  #   assert_response :success
-  #   assert flash.empty?
-  #   assert_template "user/welcome"
-  # end
-  # 
+  test "should fail a bad signup" do
+    post :signup, :user => { :identity => "newbob", :password => "newpassword", :password_confirmation => "wrong" , :email => "newbob@mcbob.com"}
+    assert_response :success
+    assert_template "users/signup.erb"
+    assert_nil session[:user]
+  
+    post :signup, :user => { :identity => "yo", :password => "newpassword", :password_confirmation => "newpassword" , :email => "newbob@mcbob.com"}
+    assert_response :success
+    assert_template "users/signup.erb"
+    assert_nil session[:user]
+  
+    post :signup, :user => { :identity => "yo", :password => "newpassword", :password_confirmation => "wrong" , :email => "newbob@mcbob.com"}
+    assert_response :success
+    assert_template "users/signup.erb"
+    assert_nil session[:user]
+  end
+  
+  test "should fail login with bad password" do
+    post :login, :user=> { :identity => "bob", :password => "not_correct" }
+    assert_response :success
+    assert_nil session[:user]
+    assert flash[:warning]
+    assert_template "users/login.erb"
+  end
+  
+  test "should logoff" do
+    post :login, :user=>{ :identity => "bob", :password => "test"}
+    assert_response :redirect
+    assert session[:user]
+    get :logout
+    assert_response :redirect
+    assert_nil session[:user]
+    assert_redirected_to :action => 'login'
+  end
+  
+  test "should email forgotten passwords" do
+    #we can login
+    post :login, :user => { :identity => "bob", :password => "test"}
+    assert_response :redirect
+    assert session[:user]
+    #logout
+    get :logout
+    assert_response :redirect
+    assert_nil session[:user]
+    #enter an email that doesn't exist
+    post :forgot_password, :user => {:email=>"notauser@doesntexist.com"}
+    assert_response :success
+    assert_nil session[:user]
+    assert_template "users/forgot_password.erb"
+    assert flash[:warning]
+    #enter bobs email
+    post :forgot_password, :user => {:email=>"exbob@mcbob.com"}   
+    assert_response :redirect
+    assert flash[:message]
+    assert_redirected_to :action => 'login'
+  end
+  
+  test "should require login to see protected pages" do
+    #can't access welcome if not logged in
+    get :welcome
+    assert flash[:warning]
+    assert_response :redirect
+    assert_redirected_to :controller => 'users', :action => 'login'
+    #login
+    post :login, :user => { :identity => "bob", :password => "test"}
+    assert_response :redirect
+    assert session[:user]
+    #can access it now
+    get :welcome
+    assert_response :success
+    assert_nil flash[:warning]
+    assert_template "users/welcome.erb"
+  end
+  
   # def test_change_password
   #   #can login
   #   post :login, :user=>{ :identity => "bob", :password => "test"}
