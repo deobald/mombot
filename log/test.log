@@ -3748,3 +3748,2558 @@ Completed in 2ms (DB: 1) | 302 Found [http://localhost/users/welcome]
 Processing UsersController#welcome (for 0.0.0.0 at 2010-08-30 14:47:17) [GET]
 Rendering users/welcome
 Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/users/welcome]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:50:42) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 13ms (DB: 3) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:50:42) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 2ms (DB: 2) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#change_password (for 0.0.0.0 at 2010-08-30 14:50:42) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"newpassdoesntmatch", "password"=>"newpass"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+Rendering users/change_password
+Completed in 25ms (View: 15, DB: 1) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#change_password (for 0.0.0.0 at 2010-08-30 14:50:42) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"", "password"=>""}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+Rendering users/change_password
+Completed in 28ms (View: 19, DB: 1) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:50:42) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 3ms (DB: 2) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#logout (for 0.0.0.0 at 2010-08-30 14:50:42) [GET]
+Redirected to http://localhost/users/login
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#forgot_password (for 0.0.0.0 at 2010-08-30 14:50:42) [POST]
+  Parameters: {"user"=>{"email"=>"notauser@doesntexist.com"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'notauser@doesntexist.com') LIMIT 1[0m
+Rendering users/forgot_password
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#forgot_password (for 0.0.0.0 at 2010-08-30 14:50:42) [POST]
+  Parameters: {"user"=>{"email"=>"exbob@mcbob.com"}}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'exbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'existingbob' AND "users".id <> 1000002) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'exbob@mcbob.com' AND "users".id <> 1000002) LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "hashed_password" = '92fb97e3e9227ad81416dff1a0651da87e576278' WHERE "id" = 1000002[0m
+Sent mail to exbob@mcbob.com
+
+Date: Mon, 30 Aug 2010 14:50:42 -0500
+From: support@mygtfo.com
+To: exbob@mcbob.com
+Subject: Your password is ...
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+
+_____________
+Your identity is existingbob. Your new password is OcRwOPW30m.
+
+Please login and change it to something more memorable.
+
+-------------
+Redirected to http://localhost/users/login
+Completed in 16ms (View: 4, DB: 1) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 14:50:42) [POST]
+  Parameters: {"user"=>{"identity"=>"newbob", "password_confirmation"=>"wrong", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'newbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+Rendering users/signup
+Completed in 66ms (View: 12, DB: 2) | 200 OK [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=wrong]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 14:50:42) [POST]
+  Parameters: {"user"=>{"identity"=>"yo", "password_confirmation"=>"newpassword", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'yo') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+Rendering users/signup
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=wrong]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 14:50:42) [POST]
+  Parameters: {"user"=>{"identity"=>"yo", "password_confirmation"=>"wrong", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'yo') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+Rendering users/signup
+Completed in 21ms (View: 15, DB: 0) | 200 OK [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=wrong]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:50:42) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"not_correct"}}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Rendering users/login
+Completed in 8ms (View: 6, DB: 2) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=not_correct]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 14:50:42) [POST]
+  Parameters: {"user"=>{"identity"=>"newbob", "password_confirmation"=>"newpassword", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'newbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Create (114.1ms)[0m   [0mINSERT INTO "users" ("name", "salt", "identity", "created_at", "hashed_password", "email") VALUES(NULL, 'MEAhNqphzp', 'newbob', '2010-08-30 19:50:42', '36460c513bfd0a9806bfcccd1c3565b4c1bb740b', 'newbob@mcbob.com')[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'newbob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 124ms (DB: 117) | 302 Found [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=newpassword]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:50:43) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 2ms (DB: 2) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#logout (for 0.0.0.0 at 2010-08-30 14:50:43) [GET]
+Redirected to http://localhost/users/login
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#welcome (for 0.0.0.0 at 2010-08-30 14:50:43) [GET]
+Redirected to http://localhost/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 2) | 302 Found [http://localhost/users/welcome]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:50:43) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 2ms (DB: 1) | 302 Found [http://localhost/users/welcome]
+
+
+Processing UsersController#welcome (for 0.0.0.0 at 2010-08-30 14:50:43) [GET]
+Rendering users/welcome
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/users/welcome]
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:52:15) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 13ms (DB: 4) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:52:15) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 2ms (DB: 2) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#change_password (for 0.0.0.0 at 2010-08-30 14:52:15) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"newpassdoesntmatch", "password"=>"newpass"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+Rendering users/change_password
+Completed in 25ms (View: 16, DB: 1) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#change_password (for 0.0.0.0 at 2010-08-30 14:52:15) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"", "password"=>""}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+Rendering users/change_password
+Completed in 28ms (View: 19, DB: 1) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:52:15) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 49ms (DB: 3) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#logout (for 0.0.0.0 at 2010-08-30 14:52:15) [GET]
+Redirected to http://localhost/users/login
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#forgot_password (for 0.0.0.0 at 2010-08-30 14:52:15) [POST]
+  Parameters: {"user"=>{"email"=>"notauser@doesntexist.com"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'notauser@doesntexist.com') LIMIT 1[0m
+Rendering users/forgot_password
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#forgot_password (for 0.0.0.0 at 2010-08-30 14:52:15) [POST]
+  Parameters: {"user"=>{"email"=>"exbob@mcbob.com"}}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'exbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'existingbob' AND "users".id <> 1000002) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'exbob@mcbob.com' AND "users".id <> 1000002) LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "hashed_password" = '991b07e106856dcd6f0432c6204e90e66a4b62be' WHERE "id" = 1000002[0m
+Sent mail to exbob@mcbob.com
+
+Date: Mon, 30 Aug 2010 14:52:15 -0500
+From: support@mygtfo.com
+To: exbob@mcbob.com
+Subject: Your password is ...
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+
+_____________
+Your identity is existingbob. Your new password is MGuQiy6YLM.
+
+Please login and change it to something more memorable.
+
+-------------
+Redirected to http://localhost/users/login
+Completed in 16ms (View: 4, DB: 2) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 14:52:15) [POST]
+  Parameters: {"user"=>{"identity"=>"newbob", "password_confirmation"=>"wrong", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'newbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+Rendering users/signup
+Completed in 18ms (View: 12, DB: 2) | 200 OK [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=wrong]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 14:52:15) [POST]
+  Parameters: {"user"=>{"identity"=>"yo", "password_confirmation"=>"newpassword", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'yo') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+Rendering users/signup
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=wrong]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 14:52:15) [POST]
+  Parameters: {"user"=>{"identity"=>"yo", "password_confirmation"=>"wrong", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'yo') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+Rendering users/signup
+Completed in 21ms (View: 15, DB: 0) | 200 OK [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=wrong]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:52:15) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"not_correct"}}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Rendering users/login
+Completed in 8ms (View: 5, DB: 2) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=not_correct]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 14:52:15) [POST]
+  Parameters: {"user"=>{"identity"=>"newbob", "password_confirmation"=>"newpassword", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'newbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("name", "salt", "identity", "created_at", "hashed_password", "email") VALUES(NULL, 'yjiJduDWOw', 'newbob', '2010-08-30 19:52:15', '037a457c02fba0af270412d27c7a14a6f220c11b', 'newbob@mcbob.com')[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'newbob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 10ms (DB: 3) | 302 Found [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=newpassword]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:52:15) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 2ms (DB: 2) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#logout (for 0.0.0.0 at 2010-08-30 14:52:15) [GET]
+Redirected to http://localhost/users/login
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#welcome (for 0.0.0.0 at 2010-08-30 14:52:15) [GET]
+Redirected to http://localhost/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 2) | 302 Found [http://localhost/users/welcome]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:52:15) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 2ms (DB: 1) | 302 Found [http://localhost/users/welcome]
+
+
+Processing UsersController#welcome (for 0.0.0.0 at 2010-08-30 14:52:15) [GET]
+Rendering users/welcome
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/users/welcome]
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:52:38) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 13ms (DB: 4) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:52:39) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 2ms (DB: 2) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#change_password (for 0.0.0.0 at 2010-08-30 14:52:39) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"newpassdoesntmatch", "password"=>"newpass"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+Rendering users/change_password
+Completed in 25ms (View: 16, DB: 1) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#change_password (for 0.0.0.0 at 2010-08-30 14:52:39) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"", "password"=>""}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+Rendering users/change_password
+Completed in 29ms (View: 19, DB: 1) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:52:39) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 3ms (DB: 2) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#logout (for 0.0.0.0 at 2010-08-30 14:52:39) [GET]
+Redirected to http://localhost/users/login
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#forgot_password (for 0.0.0.0 at 2010-08-30 14:52:39) [POST]
+  Parameters: {"user"=>{"email"=>"notauser@doesntexist.com"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'notauser@doesntexist.com') LIMIT 1[0m
+Rendering users/forgot_password
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#forgot_password (for 0.0.0.0 at 2010-08-30 14:52:39) [POST]
+  Parameters: {"user"=>{"email"=>"exbob@mcbob.com"}}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'exbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'existingbob' AND "users".id <> 1000002) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'exbob@mcbob.com' AND "users".id <> 1000002) LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "hashed_password" = '6048bc1b0679e48d3fe26868028f1ff93a0c7cc6' WHERE "id" = 1000002[0m
+Sent mail to exbob@mcbob.com
+
+Date: Mon, 30 Aug 2010 14:52:39 -0500
+From: support@mygtfo.com
+To: exbob@mcbob.com
+Subject: Your password is ...
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+
+_____________
+Your identity is existingbob. Your new password is X2CTd7J13x.
+
+Please login and change it to something more memorable.
+
+-------------
+Redirected to http://localhost/users/login
+Completed in 16ms (View: 4, DB: 2) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 14:52:39) [POST]
+  Parameters: {"user"=>{"identity"=>"newbob", "password_confirmation"=>"wrong", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'newbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+Rendering users/signup
+Completed in 18ms (View: 12, DB: 2) | 200 OK [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=wrong]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 14:52:39) [POST]
+  Parameters: {"user"=>{"identity"=>"yo", "password_confirmation"=>"newpassword", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'yo') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+Rendering users/signup
+Completed in 17ms (View: 11, DB: 0) | 200 OK [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=wrong]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 14:52:39) [POST]
+  Parameters: {"user"=>{"identity"=>"yo", "password_confirmation"=>"wrong", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'yo') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+Rendering users/signup
+Completed in 21ms (View: 15, DB: 0) | 200 OK [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=wrong]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:52:39) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"not_correct"}}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Rendering users/login
+Completed in 8ms (View: 6, DB: 2) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=not_correct]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 14:52:39) [POST]
+  Parameters: {"user"=>{"identity"=>"newbob", "password_confirmation"=>"newpassword", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'newbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("name", "salt", "identity", "created_at", "hashed_password", "email") VALUES(NULL, 'MD6c2iVcUP', 'newbob', '2010-08-30 19:52:39', '52197a6f77d2cf1713affe701daf96ed7ece705b', 'newbob@mcbob.com')[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'newbob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 10ms (DB: 3) | 302 Found [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=newpassword]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:52:39) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 2ms (DB: 2) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#logout (for 0.0.0.0 at 2010-08-30 14:52:39) [GET]
+Redirected to http://localhost/users/login
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#welcome (for 0.0.0.0 at 2010-08-30 14:52:39) [GET]
+Redirected to http://localhost/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 2) | 302 Found [http://localhost/users/welcome]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:52:39) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 2ms (DB: 1) | 302 Found [http://localhost/users/welcome]
+
+
+Processing UsersController#welcome (for 0.0.0.0 at 2010-08-30 14:52:39) [GET]
+Rendering users/welcome
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/users/welcome]
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:53:47) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 13ms (DB: 3) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:53:47) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 2ms (DB: 2) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#change_password (for 0.0.0.0 at 2010-08-30 14:53:47) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"newpassdoesntmatch", "password"=>"newpass"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+Rendering users/change_password
+Completed in 24ms (View: 15, DB: 1) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#change_password (for 0.0.0.0 at 2010-08-30 14:53:47) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"", "password"=>""}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+Rendering users/change_password
+Completed in 27ms (View: 18, DB: 1) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:53:47) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 2ms (DB: 2) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#logout (for 0.0.0.0 at 2010-08-30 14:53:47) [GET]
+Redirected to http://localhost/users/login
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#forgot_password (for 0.0.0.0 at 2010-08-30 14:53:47) [POST]
+  Parameters: {"user"=>{"email"=>"notauser@doesntexist.com"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'notauser@doesntexist.com') LIMIT 1[0m
+Rendering users/forgot_password
+Completed in 11ms (View: 3, DB: 0) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#forgot_password (for 0.0.0.0 at 2010-08-30 14:53:47) [POST]
+  Parameters: {"user"=>{"email"=>"exbob@mcbob.com"}}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'exbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'existingbob' AND "users".id <> 1000002) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'exbob@mcbob.com' AND "users".id <> 1000002) LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "hashed_password" = '3ea51e68f6aff23b3cade802a6c5c2b86e38b8b0' WHERE "id" = 1000002[0m
+Sent mail to exbob@mcbob.com
+
+Date: Mon, 30 Aug 2010 14:53:47 -0500
+From: support@mygtfo.com
+To: exbob@mcbob.com
+Subject: Your password is ...
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+
+_____________
+Your identity is existingbob. Your new password is funnhs8ZhT.
+
+Please login and change it to something more memorable.
+
+-------------
+Redirected to http://localhost/users/login
+Completed in 16ms (View: 3, DB: 2) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 14:53:47) [POST]
+  Parameters: {"user"=>{"identity"=>"newbob", "password_confirmation"=>"wrong", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'newbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+Rendering users/signup
+Completed in 17ms (View: 12, DB: 2) | 200 OK [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=wrong]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 14:53:47) [POST]
+  Parameters: {"user"=>{"identity"=>"yo", "password_confirmation"=>"newpassword", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'yo') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+Rendering users/signup
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=wrong]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 14:53:47) [POST]
+  Parameters: {"user"=>{"identity"=>"yo", "password_confirmation"=>"wrong", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'yo') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+Rendering users/signup
+Completed in 70ms (View: 64, DB: 0) | 200 OK [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=wrong]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:53:47) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"not_correct"}}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Rendering users/login
+Completed in 8ms (View: 6, DB: 2) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=not_correct]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 14:53:47) [POST]
+  Parameters: {"user"=>{"identity"=>"newbob", "password_confirmation"=>"newpassword", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'newbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("name", "salt", "identity", "created_at", "hashed_password", "email") VALUES(NULL, '6ij3Sf0uFm', 'newbob', '2010-08-30 19:53:47', 'a5eaaf44e75fa1d3ad1b928b001b6624a297ef59', 'newbob@mcbob.com')[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'newbob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 10ms (DB: 3) | 302 Found [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=newpassword]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:53:47) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 2ms (DB: 2) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#logout (for 0.0.0.0 at 2010-08-30 14:53:47) [GET]
+Redirected to http://localhost/users/login
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#welcome (for 0.0.0.0 at 2010-08-30 14:53:47) [GET]
+Redirected to http://localhost/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 2) | 302 Found [http://localhost/users/welcome]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:53:47) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 2ms (DB: 1) | 302 Found [http://localhost/users/welcome]
+
+
+Processing UsersController#welcome (for 0.0.0.0 at 2010-08-30 14:53:47) [GET]
+Rendering users/welcome
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/users/welcome]
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:54:25) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 13ms (DB: 3) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:54:25) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 2ms (DB: 2) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#change_password (for 0.0.0.0 at 2010-08-30 14:54:25) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"newpassdoesntmatch", "password"=>"newpass"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+Rendering users/change_password
+Completed in 25ms (View: 15, DB: 1) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#change_password (for 0.0.0.0 at 2010-08-30 14:54:25) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"", "password"=>""}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+Rendering users/change_password
+Completed in 28ms (View: 19, DB: 1) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#change_password (for 0.0.0.0 at 2010-08-30 14:54:25) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"newpass", "password"=>"newpass"}}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "hashed_password" = 'd2a03cc50e66818e761af6c15d45199d9b6861c9' WHERE "id" = 1000001[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+Rendering users/change_password
+Completed in 15ms (View: 3, DB: 1) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#logout (for 0.0.0.0 at 2010-08-30 14:54:25) [GET]
+Redirected to http://localhost/users/login
+Completed in 1ms (View: 3, DB: 1) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:54:26) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 3ms (DB: 2) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#logout (for 0.0.0.0 at 2010-08-30 14:54:26) [GET]
+Redirected to http://localhost/users/login
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#forgot_password (for 0.0.0.0 at 2010-08-30 14:54:26) [POST]
+  Parameters: {"user"=>{"email"=>"notauser@doesntexist.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'notauser@doesntexist.com') LIMIT 1[0m
+Rendering users/forgot_password
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#forgot_password (for 0.0.0.0 at 2010-08-30 14:54:26) [POST]
+  Parameters: {"user"=>{"email"=>"exbob@mcbob.com"}}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'exbob@mcbob.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'existingbob' AND "users".id <> 1000002) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'exbob@mcbob.com' AND "users".id <> 1000002) LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "hashed_password" = 'b1563248a03b4d150a527caba2dd9a2467039fe3' WHERE "id" = 1000002[0m
+Sent mail to exbob@mcbob.com
+
+Date: Mon, 30 Aug 2010 14:54:26 -0500
+From: support@mygtfo.com
+To: exbob@mcbob.com
+Subject: Your password is ...
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+
+_____________
+Your identity is existingbob. Your new password is a7Y8zYmE3i.
+
+Please login and change it to something more memorable.
+
+-------------
+Redirected to http://localhost/users/login
+Completed in 65ms (View: 4, DB: 1) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 14:54:26) [POST]
+  Parameters: {"user"=>{"identity"=>"newbob", "password_confirmation"=>"wrong", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'newbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+Rendering users/signup
+Completed in 18ms (View: 12, DB: 2) | 200 OK [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=wrong]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 14:54:26) [POST]
+  Parameters: {"user"=>{"identity"=>"yo", "password_confirmation"=>"newpassword", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'yo') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+Rendering users/signup
+Completed in 17ms (View: 11, DB: 0) | 200 OK [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=wrong]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 14:54:26) [POST]
+  Parameters: {"user"=>{"identity"=>"yo", "password_confirmation"=>"wrong", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'yo') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+Rendering users/signup
+Completed in 21ms (View: 15, DB: 0) | 200 OK [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=wrong]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:54:26) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"not_correct"}}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Rendering users/login
+Completed in 8ms (View: 6, DB: 2) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=not_correct]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 14:54:26) [POST]
+  Parameters: {"user"=>{"identity"=>"newbob", "password_confirmation"=>"newpassword", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'newbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "identity", "created_at", "hashed_password", "email") VALUES(NULL, '564ysNkZZ4', 'newbob', '2010-08-30 19:54:26', 'bd28c22a1c7ec51f497900e358e4d3b082534f1a', 'newbob@mcbob.com')[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'newbob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 10ms (DB: 3) | 302 Found [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=newpassword]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:54:26) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 2ms (DB: 2) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#logout (for 0.0.0.0 at 2010-08-30 14:54:26) [GET]
+Redirected to http://localhost/users/login
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#welcome (for 0.0.0.0 at 2010-08-30 14:54:26) [GET]
+Redirected to http://localhost/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 2) | 302 Found [http://localhost/users/welcome]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:54:26) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 2ms (DB: 1) | 302 Found [http://localhost/users/welcome]
+
+
+Processing UsersController#welcome (for 0.0.0.0 at 2010-08-30 14:54:26) [GET]
+Rendering users/welcome
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://localhost/users/welcome]
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:55:16) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 13ms (DB: 4) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:55:16) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 2ms (DB: 2) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#change_password (for 0.0.0.0 at 2010-08-30 14:55:16) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"newpassdoesntmatch", "password"=>"newpass"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+Rendering users/change_password
+Completed in 24ms (View: 15, DB: 1) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#change_password (for 0.0.0.0 at 2010-08-30 14:55:16) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"", "password"=>""}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+Rendering users/change_password
+Completed in 28ms (View: 18, DB: 1) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#change_password (for 0.0.0.0 at 2010-08-30 14:55:16) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"newpass", "password"=>"newpass"}}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "hashed_password" = 'd2a03cc50e66818e761af6c15d45199d9b6861c9' WHERE "id" = 1000001[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+Rendering users/change_password
+Completed in 15ms (View: 3, DB: 1) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#logout (for 0.0.0.0 at 2010-08-30 14:55:16) [GET]
+Redirected to http://localhost/users/login
+Completed in 1ms (View: 3, DB: 1) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:55:16) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Rendering users/login
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:55:16) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 3ms (DB: 2) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#logout (for 0.0.0.0 at 2010-08-30 14:55:16) [GET]
+Redirected to http://localhost/users/login
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#forgot_password (for 0.0.0.0 at 2010-08-30 14:55:16) [POST]
+  Parameters: {"user"=>{"email"=>"notauser@doesntexist.com"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'notauser@doesntexist.com') LIMIT 1[0m
+Rendering users/forgot_password
+Completed in 11ms (View: 3, DB: 0) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#forgot_password (for 0.0.0.0 at 2010-08-30 14:55:16) [POST]
+  Parameters: {"user"=>{"email"=>"exbob@mcbob.com"}}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'exbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'existingbob' AND "users".id <> 1000002) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'exbob@mcbob.com' AND "users".id <> 1000002) LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "hashed_password" = 'f4bddbea910c53845d14e46aab09f2ee69d31692' WHERE "id" = 1000002[0m
+Sent mail to exbob@mcbob.com
+
+Date: Mon, 30 Aug 2010 14:55:16 -0500
+From: support@mygtfo.com
+To: exbob@mcbob.com
+Subject: Your password is ...
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+
+_____________
+Your identity is existingbob. Your new password is 8DuANhI5s2.
+
+Please login and change it to something more memorable.
+
+-------------
+Redirected to http://localhost/users/login
+Completed in 16ms (View: 3, DB: 2) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 14:55:16) [POST]
+  Parameters: {"user"=>{"identity"=>"newbob", "password_confirmation"=>"wrong", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'newbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+Rendering users/signup
+Completed in 67ms (View: 12, DB: 2) | 200 OK [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=wrong]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 14:55:16) [POST]
+  Parameters: {"user"=>{"identity"=>"yo", "password_confirmation"=>"newpassword", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'yo') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+Rendering users/signup
+Completed in 16ms (View: 10, DB: 0) | 200 OK [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=wrong]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 14:55:16) [POST]
+  Parameters: {"user"=>{"identity"=>"yo", "password_confirmation"=>"wrong", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'yo') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+Rendering users/signup
+Completed in 20ms (View: 15, DB: 0) | 200 OK [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=wrong]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:55:16) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"not_correct"}}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Rendering users/login
+Completed in 6ms (View: 4, DB: 2) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=not_correct]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 14:55:16) [POST]
+  Parameters: {"user"=>{"identity"=>"newbob", "password_confirmation"=>"newpassword", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'newbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("name", "salt", "identity", "created_at", "hashed_password", "email") VALUES(NULL, 'QeRs3WkZyu', 'newbob', '2010-08-30 19:55:16', 'c218beea5960dc44d4205e2d82421f1bacb86a94', 'newbob@mcbob.com')[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'newbob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 10ms (DB: 3) | 302 Found [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=newpassword]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:55:16) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 2ms (DB: 2) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#logout (for 0.0.0.0 at 2010-08-30 14:55:16) [GET]
+Redirected to http://localhost/users/login
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#welcome (for 0.0.0.0 at 2010-08-30 14:55:16) [GET]
+Redirected to http://localhost/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 2) | 302 Found [http://localhost/users/welcome]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:55:16) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 2ms (DB: 1) | 302 Found [http://localhost/users/welcome]
+
+
+Processing UsersController#welcome (for 0.0.0.0 at 2010-08-30 14:55:16) [GET]
+Rendering users/welcome
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://localhost/users/welcome]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:56:07) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 13ms (DB: 3) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:56:07) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 2ms (DB: 2) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#change_password (for 0.0.0.0 at 2010-08-30 14:56:07) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"newpassdoesntmatch", "password"=>"newpass"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+Rendering users/change_password
+Completed in 25ms (View: 15, DB: 1) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#change_password (for 0.0.0.0 at 2010-08-30 14:56:07) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"", "password"=>""}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+Rendering users/change_password
+Completed in 28ms (View: 18, DB: 1) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#change_password (for 0.0.0.0 at 2010-08-30 14:56:07) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"newpass", "password"=>"newpass"}}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "hashed_password" = 'd2a03cc50e66818e761af6c15d45199d9b6861c9' WHERE "id" = 1000001[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+Rendering users/change_password
+Completed in 15ms (View: 3, DB: 1) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#logout (for 0.0.0.0 at 2010-08-30 14:56:07) [GET]
+Redirected to http://localhost/users/login
+Completed in 1ms (View: 3, DB: 1) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:56:07) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Rendering users/login
+Completed in 8ms (View: 6, DB: 1) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:56:07) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 3ms (DB: 2) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#logout (for 0.0.0.0 at 2010-08-30 14:56:07) [GET]
+Redirected to http://localhost/users/login
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#forgot_password (for 0.0.0.0 at 2010-08-30 14:56:07) [POST]
+  Parameters: {"user"=>{"email"=>"notauser@doesntexist.com"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'notauser@doesntexist.com') LIMIT 1[0m
+Rendering users/forgot_password
+Completed in 11ms (View: 3, DB: 0) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#forgot_password (for 0.0.0.0 at 2010-08-30 14:56:07) [POST]
+  Parameters: {"user"=>{"email"=>"exbob@mcbob.com"}}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'exbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'existingbob' AND "users".id <> 1000002) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'exbob@mcbob.com' AND "users".id <> 1000002) LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "hashed_password" = 'd1269355b0f8eee4de3a5762614052859daa9938' WHERE "id" = 1000002[0m
+Sent mail to exbob@mcbob.com
+
+Date: Mon, 30 Aug 2010 14:56:07 -0500
+From: support@mygtfo.com
+To: exbob@mcbob.com
+Subject: Your password is ...
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+
+_____________
+Your identity is existingbob. Your new password is Dz3gg2VeMw.
+
+Please login and change it to something more memorable.
+
+-------------
+Redirected to http://localhost/users/login
+Completed in 16ms (View: 3, DB: 1) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 14:56:07) [POST]
+  Parameters: {"user"=>{"identity"=>"newbob", "password_confirmation"=>"wrong", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'newbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+Rendering users/signup
+Completed in 18ms (View: 12, DB: 2) | 200 OK [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=wrong]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 14:56:07) [POST]
+  Parameters: {"user"=>{"identity"=>"yo", "password_confirmation"=>"newpassword", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'yo') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+Rendering users/signup
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=wrong]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 14:56:07) [POST]
+  Parameters: {"user"=>{"identity"=>"yo", "password_confirmation"=>"wrong", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'yo') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+Rendering users/signup
+Completed in 21ms (View: 15, DB: 0) | 200 OK [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=wrong]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:56:07) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"not_correct"}}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Rendering users/login
+Completed in 6ms (View: 4, DB: 2) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=not_correct]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 14:56:07) [POST]
+  Parameters: {"user"=>{"identity"=>"newbob", "password_confirmation"=>"newpassword", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'newbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("name", "salt", "identity", "created_at", "hashed_password", "email") VALUES(NULL, 'pMVDxJdD2e', 'newbob', '2010-08-30 19:56:07', '7b7fc55a60dece753968a9b9b9947c02b21f4af0', 'newbob@mcbob.com')[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'newbob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 10ms (DB: 3) | 302 Found [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=newpassword]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:56:07) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 2ms (DB: 2) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#logout (for 0.0.0.0 at 2010-08-30 14:56:07) [GET]
+Redirected to http://localhost/users/login
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#welcome (for 0.0.0.0 at 2010-08-30 14:56:07) [GET]
+Redirected to http://localhost/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 2) | 302 Found [http://localhost/users/welcome]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:56:07) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 2ms (DB: 1) | 302 Found [http://localhost/users/welcome]
+
+
+Processing UsersController#welcome (for 0.0.0.0 at 2010-08-30 14:56:07) [GET]
+Rendering users/welcome
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/users/welcome]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:56:30) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 13ms (DB: 3) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:56:30) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 2ms (DB: 2) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#change_password (for 0.0.0.0 at 2010-08-30 14:56:30) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"newpassdoesntmatch", "password"=>"newpass"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+Rendering users/change_password
+Completed in 25ms (View: 15, DB: 1) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#change_password (for 0.0.0.0 at 2010-08-30 14:56:30) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"", "password"=>""}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+Rendering users/change_password
+Completed in 28ms (View: 18, DB: 1) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#change_password (for 0.0.0.0 at 2010-08-30 14:56:30) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"newpass", "password"=>"newpass"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "hashed_password" = 'd2a03cc50e66818e761af6c15d45199d9b6861c9' WHERE "id" = 1000001[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+Rendering users/change_password
+Completed in 15ms (View: 3, DB: 1) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#logout (for 0.0.0.0 at 2010-08-30 14:56:30) [GET]
+Redirected to http://localhost/users/login
+Completed in 1ms (View: 3, DB: 1) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:56:30) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Rendering users/login
+Completed in 8ms (View: 6, DB: 1) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:56:30) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"newpass"}}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 2ms (View: 6, DB: 1) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:56:30) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 3ms (DB: 2) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#logout (for 0.0.0.0 at 2010-08-30 14:56:30) [GET]
+Redirected to http://localhost/users/login
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#forgot_password (for 0.0.0.0 at 2010-08-30 14:56:30) [POST]
+  Parameters: {"user"=>{"email"=>"notauser@doesntexist.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'notauser@doesntexist.com') LIMIT 1[0m
+Rendering users/forgot_password
+Completed in 11ms (View: 3, DB: 0) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#forgot_password (for 0.0.0.0 at 2010-08-30 14:56:30) [POST]
+  Parameters: {"user"=>{"email"=>"exbob@mcbob.com"}}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'exbob@mcbob.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'existingbob' AND "users".id <> 1000002) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'exbob@mcbob.com' AND "users".id <> 1000002) LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "hashed_password" = '81dc5f4cf4581c341f7eca219ddbcf5152a9d57e' WHERE "id" = 1000002[0m
+Sent mail to exbob@mcbob.com
+
+Date: Mon, 30 Aug 2010 14:56:30 -0500
+From: support@mygtfo.com
+To: exbob@mcbob.com
+Subject: Your password is ...
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+
+_____________
+Your identity is existingbob. Your new password is s0a7ptfEsP.
+
+Please login and change it to something more memorable.
+
+-------------
+Redirected to http://localhost/users/login
+Completed in 16ms (View: 3, DB: 1) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 14:56:30) [POST]
+  Parameters: {"user"=>{"identity"=>"newbob", "password_confirmation"=>"wrong", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'newbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+Rendering users/signup
+Completed in 17ms (View: 12, DB: 2) | 200 OK [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=wrong]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 14:56:30) [POST]
+  Parameters: {"user"=>{"identity"=>"yo", "password_confirmation"=>"newpassword", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'yo') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+Rendering users/signup
+Completed in 66ms (View: 60, DB: 0) | 200 OK [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=wrong]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 14:56:30) [POST]
+  Parameters: {"user"=>{"identity"=>"yo", "password_confirmation"=>"wrong", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'yo') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+Rendering users/signup
+Completed in 21ms (View: 15, DB: 0) | 200 OK [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=wrong]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:56:30) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"not_correct"}}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Rendering users/login
+Completed in 6ms (View: 4, DB: 2) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=not_correct]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 14:56:30) [POST]
+  Parameters: {"user"=>{"identity"=>"newbob", "password_confirmation"=>"newpassword", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'newbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "identity", "created_at", "hashed_password", "email") VALUES(NULL, 'IhvLcRCdD1', 'newbob', '2010-08-30 19:56:30', 'a28fe6b4a40e3735669f5d349974a80492700531', 'newbob@mcbob.com')[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'newbob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 10ms (DB: 3) | 302 Found [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=newpassword]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:56:30) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 2ms (DB: 2) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#logout (for 0.0.0.0 at 2010-08-30 14:56:30) [GET]
+Redirected to http://localhost/users/login
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#welcome (for 0.0.0.0 at 2010-08-30 14:56:30) [GET]
+Redirected to http://localhost/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 2) | 302 Found [http://localhost/users/welcome]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:56:30) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 2ms (DB: 1) | 302 Found [http://localhost/users/welcome]
+
+
+Processing UsersController#welcome (for 0.0.0.0 at 2010-08-30 14:56:30) [GET]
+Rendering users/welcome
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/users/welcome]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:58:13) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 13ms (DB: 3) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:58:13) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 2ms (DB: 2) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#change_password (for 0.0.0.0 at 2010-08-30 14:58:13) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"newpassdoesntmatch", "password"=>"newpass"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+Rendering users/change_password
+Completed in 25ms (View: 15, DB: 1) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#change_password (for 0.0.0.0 at 2010-08-30 14:58:13) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"", "password"=>""}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+Rendering users/change_password
+Completed in 28ms (View: 18, DB: 1) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#change_password (for 0.0.0.0 at 2010-08-30 14:58:13) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"newpass", "password"=>"newpass"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "hashed_password" = 'd2a03cc50e66818e761af6c15d45199d9b6861c9' WHERE "id" = 1000001[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+Rendering users/change_password
+Completed in 16ms (View: 3, DB: 1) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#logout (for 0.0.0.0 at 2010-08-30 14:58:13) [GET]
+Redirected to http://localhost/users/login
+Completed in 1ms (View: 3, DB: 1) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:58:13) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Rendering users/login
+Completed in 8ms (View: 6, DB: 1) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:58:13) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"newpass"}}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 2ms (View: 6, DB: 1) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:58:14) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 3ms (DB: 2) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#logout (for 0.0.0.0 at 2010-08-30 14:58:14) [GET]
+Redirected to http://localhost/users/login
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#forgot_password (for 0.0.0.0 at 2010-08-30 14:58:14) [POST]
+  Parameters: {"user"=>{"email"=>"notauser@doesntexist.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'notauser@doesntexist.com') LIMIT 1[0m
+Rendering users/forgot_password
+Completed in 59ms (View: 4, DB: 0) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#forgot_password (for 0.0.0.0 at 2010-08-30 14:58:14) [POST]
+  Parameters: {"user"=>{"email"=>"exbob@mcbob.com"}}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'exbob@mcbob.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'existingbob' AND "users".id <> 1000002) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'exbob@mcbob.com' AND "users".id <> 1000002) LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "hashed_password" = 'd6bbd9f91d0ffb0a48e681af88d74300586a4757' WHERE "id" = 1000002[0m
+Sent mail to exbob@mcbob.com
+
+Date: Mon, 30 Aug 2010 14:58:14 -0500
+From: support@mygtfo.com
+To: exbob@mcbob.com
+Subject: Your password is ...
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+
+_____________
+Your identity is existingbob. Your new password is J51MFHbjpg.
+
+Please login and change it to something more memorable.
+
+-------------
+Redirected to http://localhost/users/login
+Completed in 16ms (View: 4, DB: 2) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 14:58:14) [POST]
+  Parameters: {"user"=>{"identity"=>"newbob", "password_confirmation"=>"wrong", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'newbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+Rendering users/signup
+Completed in 18ms (View: 12, DB: 2) | 200 OK [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=wrong]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 14:58:14) [POST]
+  Parameters: {"user"=>{"identity"=>"yo", "password_confirmation"=>"newpassword", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'yo') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+Rendering users/signup
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=wrong]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 14:58:14) [POST]
+  Parameters: {"user"=>{"identity"=>"yo", "password_confirmation"=>"wrong", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'yo') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+Rendering users/signup
+Completed in 21ms (View: 15, DB: 0) | 200 OK [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=wrong]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:58:14) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"not_correct"}}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Rendering users/login
+Completed in 6ms (View: 4, DB: 2) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=not_correct]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 14:58:14) [POST]
+  Parameters: {"user"=>{"identity"=>"newbob", "password_confirmation"=>"newpassword", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'newbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "identity", "created_at", "hashed_password", "email") VALUES(NULL, '3lyBJZVnB5', 'newbob', '2010-08-30 19:58:14', '4a887a5c70af01cae7b548adad8691eb413354ea', 'newbob@mcbob.com')[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'newbob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 10ms (DB: 3) | 302 Found [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=newpassword]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:58:14) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 2ms (DB: 2) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#logout (for 0.0.0.0 at 2010-08-30 14:58:14) [GET]
+Redirected to http://localhost/users/login
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#welcome (for 0.0.0.0 at 2010-08-30 14:58:14) [GET]
+Redirected to http://localhost/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 2) | 302 Found [http://localhost/users/welcome]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:58:14) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 2ms (DB: 1) | 302 Found [http://localhost/users/welcome]
+
+
+Processing UsersController#welcome (for 0.0.0.0 at 2010-08-30 14:58:14) [GET]
+Rendering users/welcome
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/users/welcome]
+
+
+Processing UsersController#hidden (for 0.0.0.0 at 2010-08-30 14:58:14) [GET]
+Redirected to http://localhost/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 2) | 302 Found [http://localhost/users/hidden]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:58:14) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/hidden
+Completed in 2ms (DB: 1) | 302 Found [http://localhost/users/hidden]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:58:52) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 13ms (DB: 3) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:58:52) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 2ms (DB: 2) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#change_password (for 0.0.0.0 at 2010-08-30 14:58:52) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"newpassdoesntmatch", "password"=>"newpass"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+Rendering users/change_password
+Completed in 24ms (View: 15, DB: 1) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#change_password (for 0.0.0.0 at 2010-08-30 14:58:52) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"", "password"=>""}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+Rendering users/change_password
+Completed in 28ms (View: 18, DB: 1) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#change_password (for 0.0.0.0 at 2010-08-30 14:58:52) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"newpass", "password"=>"newpass"}}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "hashed_password" = 'd2a03cc50e66818e761af6c15d45199d9b6861c9' WHERE "id" = 1000001[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+Rendering users/change_password
+Completed in 15ms (View: 3, DB: 1) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#logout (for 0.0.0.0 at 2010-08-30 14:58:52) [GET]
+Redirected to http://localhost/users/login
+Completed in 1ms (View: 3, DB: 1) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:58:52) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Rendering users/login
+Completed in 8ms (View: 6, DB: 1) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:58:52) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"newpass"}}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 3ms (View: 6, DB: 1) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:58:52) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 3ms (DB: 2) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#logout (for 0.0.0.0 at 2010-08-30 14:58:52) [GET]
+Redirected to http://localhost/users/login
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#forgot_password (for 0.0.0.0 at 2010-08-30 14:58:52) [POST]
+  Parameters: {"user"=>{"email"=>"notauser@doesntexist.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'notauser@doesntexist.com') LIMIT 1[0m
+Rendering users/forgot_password
+Completed in 59ms (View: 4, DB: 0) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#forgot_password (for 0.0.0.0 at 2010-08-30 14:58:52) [POST]
+  Parameters: {"user"=>{"email"=>"exbob@mcbob.com"}}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'exbob@mcbob.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'existingbob' AND "users".id <> 1000002) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'exbob@mcbob.com' AND "users".id <> 1000002) LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "hashed_password" = '89aca4e8d9e1bc0f2787646f96594d5c883c0573' WHERE "id" = 1000002[0m
+Sent mail to exbob@mcbob.com
+
+Date: Mon, 30 Aug 2010 14:58:52 -0500
+From: support@mygtfo.com
+To: exbob@mcbob.com
+Subject: Your password is ...
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+
+_____________
+Your identity is existingbob. Your new password is FGUoeJQIYY.
+
+Please login and change it to something more memorable.
+
+-------------
+Redirected to http://localhost/users/login
+Completed in 16ms (View: 4, DB: 2) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 14:58:52) [POST]
+  Parameters: {"user"=>{"identity"=>"newbob", "password_confirmation"=>"wrong", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'newbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+Rendering users/signup
+Completed in 18ms (View: 12, DB: 2) | 200 OK [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=wrong]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 14:58:52) [POST]
+  Parameters: {"user"=>{"identity"=>"yo", "password_confirmation"=>"newpassword", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'yo') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+Rendering users/signup
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=wrong]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 14:58:52) [POST]
+  Parameters: {"user"=>{"identity"=>"yo", "password_confirmation"=>"wrong", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'yo') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+Rendering users/signup
+Completed in 21ms (View: 15, DB: 0) | 200 OK [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=wrong]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:58:52) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"not_correct"}}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Rendering users/login
+Completed in 6ms (View: 4, DB: 2) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=not_correct]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 14:58:52) [POST]
+  Parameters: {"user"=>{"identity"=>"newbob", "password_confirmation"=>"newpassword", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'newbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "identity", "created_at", "hashed_password", "email") VALUES(NULL, '65U6QO7KQN', 'newbob', '2010-08-30 19:58:52', '6692ef9a064f15d33ac7a7ed1e32e666df266cdd', 'newbob@mcbob.com')[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'newbob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 10ms (DB: 3) | 302 Found [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=newpassword]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:58:52) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 2ms (DB: 2) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#logout (for 0.0.0.0 at 2010-08-30 14:58:52) [GET]
+Redirected to http://localhost/users/login
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#welcome (for 0.0.0.0 at 2010-08-30 14:58:52) [GET]
+Redirected to http://localhost/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 2) | 302 Found [http://localhost/users/welcome]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:58:52) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 2ms (DB: 1) | 302 Found [http://localhost/users/welcome]
+
+
+Processing UsersController#welcome (for 0.0.0.0 at 2010-08-30 14:58:52) [GET]
+Rendering users/welcome
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/users/welcome]
+
+
+Processing UsersController#hidden (for 0.0.0.0 at 2010-08-30 14:58:52) [GET]
+Redirected to http://localhost/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 2) | 302 Found [http://localhost/users/hidden]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:58:52) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/hidden
+Completed in 2ms (DB: 1) | 302 Found [http://localhost/users/hidden]
+
+
+Processing UsersController#logout (for 0.0.0.0 at 2010-08-30 14:58:52) [GET]
+Redirected to http://localhost/users/login
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/users/hidden]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 14:58:52) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 2ms (DB: 1) | 302 Found [http://localhost/users/hidden]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 15:00:16) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 13ms (DB: 4) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 15:00:16) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 2ms (DB: 2) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#change_password (for 0.0.0.0 at 2010-08-30 15:00:16) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"newpassdoesntmatch", "password"=>"newpass"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+Rendering users/change_password
+Completed in 25ms (View: 15, DB: 1) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#change_password (for 0.0.0.0 at 2010-08-30 15:00:16) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"", "password"=>""}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+Rendering users/change_password
+Completed in 28ms (View: 19, DB: 1) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#change_password (for 0.0.0.0 at 2010-08-30 15:00:16) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"newpass", "password"=>"newpass"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "hashed_password" = 'd2a03cc50e66818e761af6c15d45199d9b6861c9' WHERE "id" = 1000001[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+Rendering users/change_password
+Completed in 16ms (View: 3, DB: 1) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#logout (for 0.0.0.0 at 2010-08-30 15:00:16) [GET]
+Redirected to http://localhost/users/login
+Completed in 1ms (View: 3, DB: 1) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 15:00:16) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Rendering users/login
+Completed in 8ms (View: 6, DB: 1) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 15:00:16) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"newpass"}}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 3ms (View: 6, DB: 1) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 15:00:16) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 3ms (DB: 2) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#logout (for 0.0.0.0 at 2010-08-30 15:00:16) [GET]
+Redirected to http://localhost/users/login
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#forgot_password (for 0.0.0.0 at 2010-08-30 15:00:16) [POST]
+  Parameters: {"user"=>{"email"=>"notauser@doesntexist.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'notauser@doesntexist.com') LIMIT 1[0m
+Rendering users/forgot_password
+Completed in 60ms (View: 4, DB: 0) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#forgot_password (for 0.0.0.0 at 2010-08-30 15:00:16) [POST]
+  Parameters: {"user"=>{"email"=>"exbob@mcbob.com"}}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'exbob@mcbob.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'existingbob' AND "users".id <> 1000002) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'exbob@mcbob.com' AND "users".id <> 1000002) LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "hashed_password" = '3959c66948a1dff414ad2cdf643a5153e8b6bf2f' WHERE "id" = 1000002[0m
+Sent mail to exbob@mcbob.com
+
+Date: Mon, 30 Aug 2010 15:00:16 -0500
+From: support@mygtfo.com
+To: exbob@mcbob.com
+Subject: Your password is ...
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+
+_____________
+Your identity is existingbob. Your new password is mQCLqzSlso.
+
+Please login and change it to something more memorable.
+
+-------------
+Redirected to http://localhost/users/login
+Completed in 16ms (View: 4, DB: 2) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 15:00:16) [POST]
+  Parameters: {"user"=>{"identity"=>"newbob", "password_confirmation"=>"wrong", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'newbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+Rendering users/signup
+Completed in 18ms (View: 12, DB: 2) | 200 OK [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=wrong]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 15:00:16) [POST]
+  Parameters: {"user"=>{"identity"=>"yo", "password_confirmation"=>"newpassword", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'yo') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+Rendering users/signup
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=wrong]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 15:00:16) [POST]
+  Parameters: {"user"=>{"identity"=>"yo", "password_confirmation"=>"wrong", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'yo') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+Rendering users/signup
+Completed in 21ms (View: 15, DB: 0) | 200 OK [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=wrong]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 15:00:16) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"not_correct"}}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Rendering users/login
+Completed in 6ms (View: 4, DB: 2) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=not_correct]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 15:00:16) [POST]
+  Parameters: {"user"=>{"identity"=>"newbob", "password_confirmation"=>"newpassword", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'newbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "identity", "created_at", "hashed_password", "email") VALUES(NULL, 'OwBmAf1TR3', 'newbob', '2010-08-30 20:00:16', '922ca5037373cd12a58f6c45d901b9c9b9624bfd', 'newbob@mcbob.com')[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'newbob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 10ms (DB: 3) | 302 Found [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=newpassword]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 15:00:16) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 2ms (DB: 2) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#logout (for 0.0.0.0 at 2010-08-30 15:00:16) [GET]
+Redirected to http://localhost/users/login
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#welcome (for 0.0.0.0 at 2010-08-30 15:00:16) [GET]
+Redirected to http://localhost/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 2) | 302 Found [http://localhost/users/welcome]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 15:00:16) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 2ms (DB: 1) | 302 Found [http://localhost/users/welcome]
+
+
+Processing UsersController#welcome (for 0.0.0.0 at 2010-08-30 15:00:16) [GET]
+Rendering users/welcome
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://localhost/users/welcome]
+
+
+Processing UsersController#hidden (for 0.0.0.0 at 2010-08-30 15:00:16) [GET]
+Redirected to http://localhost/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 2) | 302 Found [http://localhost/users/hidden]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 15:00:16) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/hidden
+Completed in 2ms (DB: 1) | 302 Found [http://localhost/users/hidden]
+
+
+Processing UsersController#logout (for 0.0.0.0 at 2010-08-30 15:00:16) [GET]
+Redirected to http://localhost/users/login
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/users/hidden]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 15:00:16) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 2ms (DB: 1) | 302 Found [http://localhost/users/hidden]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 15:00:50) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 13ms (DB: 3) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 15:00:50) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 2ms (DB: 2) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#change_password (for 0.0.0.0 at 2010-08-30 15:00:50) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"newpassdoesntmatch", "password"=>"newpass"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+Rendering users/change_password
+Completed in 25ms (View: 15, DB: 1) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#change_password (for 0.0.0.0 at 2010-08-30 15:00:50) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"", "password"=>""}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+Rendering users/change_password
+Completed in 28ms (View: 19, DB: 1) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#change_password (for 0.0.0.0 at 2010-08-30 15:00:50) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"newpass", "password"=>"newpass"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "hashed_password" = 'd2a03cc50e66818e761af6c15d45199d9b6861c9' WHERE "id" = 1000001[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+Rendering users/change_password
+Completed in 15ms (View: 3, DB: 1) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#logout (for 0.0.0.0 at 2010-08-30 15:00:50) [GET]
+Redirected to http://localhost/users/login
+Completed in 1ms (View: 3, DB: 1) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 15:00:50) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Rendering users/login
+Completed in 8ms (View: 6, DB: 1) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 15:00:50) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"newpass"}}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 2ms (View: 6, DB: 1) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 15:00:50) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 2ms (DB: 2) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#logout (for 0.0.0.0 at 2010-08-30 15:00:50) [GET]
+Redirected to http://localhost/users/login
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#forgot_password (for 0.0.0.0 at 2010-08-30 15:00:50) [POST]
+  Parameters: {"user"=>{"email"=>"notauser@doesntexist.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'notauser@doesntexist.com') LIMIT 1[0m
+Rendering users/forgot_password
+Completed in 11ms (View: 3, DB: 0) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#forgot_password (for 0.0.0.0 at 2010-08-30 15:00:50) [POST]
+  Parameters: {"user"=>{"email"=>"exbob@mcbob.com"}}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'exbob@mcbob.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'existingbob' AND "users".id <> 1000002) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'exbob@mcbob.com' AND "users".id <> 1000002) LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "hashed_password" = '890115266cdd9049ba3bd08ad7f7f393b28ced6d' WHERE "id" = 1000002[0m
+Sent mail to exbob@mcbob.com
+
+Date: Mon, 30 Aug 2010 15:00:50 -0500
+From: support@mygtfo.com
+To: exbob@mcbob.com
+Subject: Your password is ...
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+
+_____________
+Your identity is existingbob. Your new password is hiXXaBJgXO.
+
+Please login and change it to something more memorable.
+
+-------------
+Redirected to http://localhost/users/login
+Completed in 16ms (View: 3, DB: 1) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 15:00:50) [POST]
+  Parameters: {"user"=>{"identity"=>"newbob", "password_confirmation"=>"wrong", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'newbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+Rendering users/signup
+Completed in 17ms (View: 12, DB: 2) | 200 OK [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=wrong]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 15:00:50) [POST]
+  Parameters: {"user"=>{"identity"=>"yo", "password_confirmation"=>"newpassword", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'yo') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+Rendering users/signup
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=wrong]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 15:00:50) [POST]
+  Parameters: {"user"=>{"identity"=>"yo", "password_confirmation"=>"wrong", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'yo') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+Rendering users/signup
+Completed in 21ms (View: 15, DB: 0) | 200 OK [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=wrong]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 15:00:50) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"not_correct"}}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Rendering users/login
+Completed in 6ms (View: 4, DB: 2) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=not_correct]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 15:00:50) [POST]
+  Parameters: {"user"=>{"identity"=>"newbob", "password_confirmation"=>"newpassword", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'newbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "identity", "created_at", "hashed_password", "email") VALUES(NULL, 'XDhDQqRhET', 'newbob', '2010-08-30 20:00:50', '1adb0aaa91bff004fae2d76da9c37a8f295d9bac', 'newbob@mcbob.com')[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'newbob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 10ms (DB: 3) | 302 Found [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=newpassword]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 15:00:50) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 2ms (DB: 2) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#logout (for 0.0.0.0 at 2010-08-30 15:00:50) [GET]
+Redirected to http://localhost/users/login
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#welcome (for 0.0.0.0 at 2010-08-30 15:00:50) [GET]
+Redirected to http://localhost/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 2) | 302 Found [http://localhost/users/welcome]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 15:00:50) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 2ms (DB: 1) | 302 Found [http://localhost/users/welcome]
+
+
+Processing UsersController#welcome (for 0.0.0.0 at 2010-08-30 15:00:50) [GET]
+Rendering users/welcome
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/users/welcome]
+
+
+Processing UsersController#hidden (for 0.0.0.0 at 2010-08-30 15:00:50) [GET]
+Redirected to http://localhost/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 2) | 302 Found [http://localhost/users/hidden]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 15:00:50) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/hidden
+Completed in 2ms (DB: 1) | 302 Found [http://localhost/users/hidden]
+
+
+Processing UsersController#logout (for 0.0.0.0 at 2010-08-30 15:00:50) [GET]
+Redirected to http://localhost/users/login
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/users/hidden]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 15:00:50) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 2ms (DB: 1) | 302 Found [http://localhost/users/hidden]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT max("pezez".priority) AS max_priority FROM "pezez" [0m
+  [4;35;1mPez Create (0.3ms)[0m   [0mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "priority", "colour") VALUES('steven', '2010-08-30 20:01:04', '2010-08-30 20:01:04', 2, 'red')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT max("pezez".priority) AS max_priority FROM "pezez" [0m
+  [4;35;1mPez Create (0.1ms)[0m   [0mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "priority", "colour") VALUES('conrad', '2010-08-30 20:01:04', '2010-08-30 20:01:04', 3, 'blue')[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."identity" = 'bob') LIMIT 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."identity" = 'longbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."identity" = 'bob') LIMIT 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."identity" = 'longbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'x') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'okbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'hugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhug') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'okbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'okbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'okbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'okbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("name", "salt", "identity", "created_at", "hashed_password", "email") VALUES(NULL, 'WXn2ZO0Ecq', 'okbob', '2010-08-30 20:01:04', 'fc5cdb63bee3700812500074263396aef6f5d069', 'okbob@mcbob.com')[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'okbob' AND "users".id <> 1000004) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" IS NULL AND "users".id <> 1000004) LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'okbob' AND "users".id <> 1000004) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'notavalidemail' AND "users".id <> 1000004) LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'okbob' AND "users".id <> 1000004) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'validbob@mcbob.com' AND "users".id <> 1000004) LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "email" = 'validbob@mcbob.com' WHERE "id" = 1000004[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."identity" = 'bob') LIMIT 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."identity" = 'longbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'existingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" IS NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."identity" = 'bob') LIMIT 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."identity" = 'longbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'nonexistingbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("name", "salt", "identity", "created_at", "hashed_password", "email") VALUES(NULL, 'os0CONC8Hr', 'nonexistingbob', '2010-08-30 20:01:04', '54a354ee4aeee68c897edc3960ce26fa24f67930', 'nonexistingbob@mcbob.com')[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'newbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("name", "salt", "identity", "created_at", "hashed_password", "email") VALUES(NULL, 'b2VRHEezrg', 'newbob', '2010-08-30 20:01:04', 'e81e5ee2839bdc6a53c2d032a2d00f21aa33b3e0', 'newbob@mcbob.com')[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'newbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Delete all (1.8ms)[0m   [0;1mDELETE FROM "users" WHERE ("id" IN (1000005)) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."identity" = 'bob') LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."identity" = 'longbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'nonbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'nonbob@mcbob.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'nonbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'nonbob@mcbob.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'nonbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'nonbob@mcbob.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'nonbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'nonbob@mcbob.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "identity", "created_at", "hashed_password", "email") VALUES(NULL, 'inN0JpkWK0', 'nonbob', '2010-08-30 20:01:04', 'e1295bcace008b7bf5756244483140f2473e111c', 'nonbob@mcbob.com')[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."identity" = 'bob') LIMIT 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."identity" = 'longbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'longbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'longbob' AND "users".id <> 1000003) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'lbob@mcbob.com' AND "users".id <> 1000003) LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "hashed_password" = '078cf6ae2de80ed6c004c8c8576a5572e077a52c' WHERE "id" = 1000003[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'longbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'longbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'longbob' AND "users".id <> 1000003) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'lbob@mcbob.com' AND "users".id <> 1000003) LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "hashed_password" = '00728d3362c26746ec25963f71be022b152237a9' WHERE "id" = 1000003[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'longbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'longbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."identity" = 'bob') LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."identity" = 'longbob') LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: salt, id
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'badbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'badbob@mcbob.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "identity", "created_at", "hashed_password", "email") VALUES(NULL, 'kdjc5Od0fF', 'badbob', '2010-08-30 20:01:04', 'a1dc236e75bf80b88784e3419826077d1c03d270', 'badbob@mcbob.com')[0m
+WARNING: Can't mass-assign these protected attributes: salt, id
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'verybadbob' AND "users".id <> 1000008) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'badbob@mcbob.com' AND "users".id <> 1000008) LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "identity" = 'verybadbob' WHERE "id" = 1000008[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'verybadbob' AND "users".id <> 1000008) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'badbob@mcbob.com' AND "users".id <> 1000008) LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."identity" = 'bob') LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."identity" = 'longbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."identity" = 'bob') LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."identity" = 'longbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "hashed_password" = '148c01b3dbe2a37810b91da7c43afc9c5ec79e50' WHERE "id" = 1000001[0m
+Sent mail to bob@mcbob.com
+
+Date: Mon, 30 Aug 2010 15:01:04 -0500
+From: support@mygtfo.com
+To: bob@mcbob.com
+Subject: Your password is ...
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+
+_____________
+Your identity is bob. Your new password is pLG7Jw6kke.
+
+Please login and change it to something more memorable.
+
+-------------
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."identity" = 'bob') LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."identity" = 'longbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'nonexistingbob@mcbob.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "identity", "created_at", "hashed_password", "email") VALUES(NULL, '1000', 'nonexistingbob', '2010-08-30 20:01:04', 'b1d27036d59f9499d403f90e0bcf43281adaa844', 'nonexistingbob@mcbob.com')[0m
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Delete all (1.9ms)[0m   [0;1mDELETE FROM "users" WHERE ("id" IN (1000009)) [0m
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 15:01:07) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 13ms (DB: 3) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 15:01:07) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 2ms (DB: 2) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#change_password (for 0.0.0.0 at 2010-08-30 15:01:07) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"newpassdoesntmatch", "password"=>"newpass"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+Rendering users/change_password
+Completed in 25ms (View: 15, DB: 1) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#change_password (for 0.0.0.0 at 2010-08-30 15:01:07) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"", "password"=>""}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+Rendering users/change_password
+Completed in 28ms (View: 18, DB: 1) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#change_password (for 0.0.0.0 at 2010-08-30 15:01:07) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"newpass", "password"=>"newpass"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "hashed_password" = 'd2a03cc50e66818e761af6c15d45199d9b6861c9' WHERE "id" = 1000001[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1000001) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1000001) LIMIT 1[0m
+Rendering users/change_password
+Completed in 15ms (View: 3, DB: 1) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#logout (for 0.0.0.0 at 2010-08-30 15:01:07) [GET]
+Redirected to http://localhost/users/login
+Completed in 1ms (View: 3, DB: 1) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 15:01:07) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Rendering users/login
+Completed in 8ms (View: 6, DB: 1) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 15:01:07) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"newpass"}}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 3ms (View: 6, DB: 1) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 15:01:07) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 2ms (DB: 2) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#logout (for 0.0.0.0 at 2010-08-30 15:01:07) [GET]
+Redirected to http://localhost/users/login
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#forgot_password (for 0.0.0.0 at 2010-08-30 15:01:07) [POST]
+  Parameters: {"user"=>{"email"=>"notauser@doesntexist.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'notauser@doesntexist.com') LIMIT 1[0m
+Rendering users/forgot_password
+Completed in 11ms (View: 3, DB: 0) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#forgot_password (for 0.0.0.0 at 2010-08-30 15:01:07) [POST]
+  Parameters: {"user"=>{"email"=>"exbob@mcbob.com"}}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'exbob@mcbob.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'existingbob' AND "users".id <> 1000002) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'exbob@mcbob.com' AND "users".id <> 1000002) LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "hashed_password" = 'e0d492ed60667908a375fc2bef788b49f00d2c63' WHERE "id" = 1000002[0m
+Sent mail to exbob@mcbob.com
+
+Date: Mon, 30 Aug 2010 15:01:07 -0500
+From: support@mygtfo.com
+To: exbob@mcbob.com
+Subject: Your password is ...
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+
+_____________
+Your identity is existingbob. Your new password is SpEx2xpcfR.
+
+Please login and change it to something more memorable.
+
+-------------
+Redirected to http://localhost/users/login
+Completed in 16ms (View: 3, DB: 1) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 15:01:07) [POST]
+  Parameters: {"user"=>{"identity"=>"newbob", "password_confirmation"=>"wrong", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'newbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+Rendering users/signup
+Completed in 17ms (View: 12, DB: 2) | 200 OK [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=wrong]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 15:01:07) [POST]
+  Parameters: {"user"=>{"identity"=>"yo", "password_confirmation"=>"newpassword", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'yo') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+Rendering users/signup
+Completed in 16ms (View: 10, DB: 0) | 200 OK [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=wrong]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 15:01:07) [POST]
+  Parameters: {"user"=>{"identity"=>"yo", "password_confirmation"=>"wrong", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'yo') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+Rendering users/signup
+Completed in 21ms (View: 15, DB: 0) | 200 OK [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=wrong]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 15:01:08) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"not_correct"}}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Rendering users/login
+Completed in 6ms (View: 4, DB: 2) | 200 OK [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=not_correct]
+
+
+Processing UsersController#signup (for 0.0.0.0 at 2010-08-30 15:01:08) [POST]
+  Parameters: {"user"=>{"identity"=>"newbob", "password_confirmation"=>"newpassword", "password"=>"newpassword", "email"=>"newbob@mcbob.com"}}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'newbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "identity", "created_at", "hashed_password", "email") VALUES(NULL, 'dkvUYDf6od', 'newbob', '2010-08-30 20:01:08', 'd20b7c6a8bca31f228caf730298443f360123e39', 'newbob@mcbob.com')[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'newbob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 10ms (DB: 3) | 302 Found [http://localhost/users/signup?user%5Bemail%5D=newbob%40mcbob.com&user%5Bidentity%5D=newbob&user%5Bpassword%5D=newpassword&user%5Bpassword_confirmation%5D=newpassword]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 15:01:08) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 3ms (DB: 2) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#logout (for 0.0.0.0 at 2010-08-30 15:01:08) [GET]
+Redirected to http://localhost/users/login
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/users/login?user%5Bidentity%5D=bob&user%5Bpassword%5D=test]
+
+
+Processing UsersController#welcome (for 0.0.0.0 at 2010-08-30 15:01:08) [GET]
+Redirected to http://localhost/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 2) | 302 Found [http://localhost/users/welcome]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 15:01:08) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 2ms (DB: 1) | 302 Found [http://localhost/users/welcome]
+
+
+Processing UsersController#welcome (for 0.0.0.0 at 2010-08-30 15:01:08) [GET]
+Rendering users/welcome
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/users/welcome]
+
+
+Processing UsersController#hidden (for 0.0.0.0 at 2010-08-30 15:01:08) [GET]
+Redirected to http://localhost/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 2) | 302 Found [http://localhost/users/hidden]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 15:01:08) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/hidden
+Completed in 2ms (DB: 1) | 302 Found [http://localhost/users/hidden]
+
+
+Processing UsersController#logout (for 0.0.0.0 at 2010-08-30 15:01:08) [GET]
+Redirected to http://localhost/users/login
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/users/hidden]
+
+
+Processing UsersController#login (for 0.0.0.0 at 2010-08-30 15:01:08) [POST]
+  Parameters: {"user"=>{"identity"=>"bob", "password"=>"test"}}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+Redirected to http://localhost/users/welcome
+Completed in 3ms (DB: 1) | 302 Found [http://localhost/users/hidden]

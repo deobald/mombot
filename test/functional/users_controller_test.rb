@@ -106,62 +106,62 @@ class UsersControllerTest < ActionController::TestCase
     assert_template "users/welcome.erb"
   end
   
-  # def test_change_password
-  #   #can login
-  #   post :login, :user=>{ :identity => "bob", :password => "test"}
-  #   assert_response :redirect
-  #   assert_session_has :user
-  #   #try to change password
-  #   #passwords dont match
-  #   post :change_password, :user=>{ :password => "newpass", :password_confirmation => "newpassdoesntmatch"}
-  #   assert_response :success
-  #   assert_invalid_column_on_record "user", "password"
-  #   #empty password
-  #   post :change_password, :user=>{ :password => "", :password_confirmation => ""}
-  #   assert_response :success
-  #   assert_invalid_column_on_record "user", "password"
-  #   #success - password changed
-  #   post :change_password, :user=>{ :password => "newpass", :password_confirmation => "newpass"}
-  #   assert_response :success
-  #   assert flash[:message]
-  #   assert_template "user/change_password"
-  #   #logout
-  #   get :logout
-  #   assert_response :redirect
-  #   assert_session_has_no :user
-  #   #old password no longer works
-  #   post :login, :user=> { :identity => "bob", :password => "test" }
-  #   assert_response :success
-  #   assert_session_has_no :user
-  #   assert flash[:warning]
-  #   assert_template "user/login"
-  #   #new password works
-  #   post :login, :user=>{ :identity => "bob", :password => "newpass"}
-  #   assert_response :redirect
-  #   assert_session_has :user
-  # end
-  # 
-  # def test_return_to
-  #   #cant access hidden without being logged in
-  #   get :hidden
-  #   assert flash[:warning]
-  #   assert_response :redirect
-  #   assert_redirected_to :action=>'login'
-  #   assert_session_has :return_to
-  #   #login
-  #   post :login, :user=>{ :identity => "bob", :password => "test"}
-  #   assert_response :redirect
-  #   #redirected to hidden instead of default welcome
-  #   assert_redirected_to 'user/hidden'
-  #   assert_session_has_no :return_to
-  #   assert_session_has :user
-  #   assert flash[:message]
-  #   #logout and login again
-  #   get :logout
-  #   assert_session_has_no :user
-  #   post :login, :user=>{ :identity => "bob", :password => "test"}
-  #   assert_response :redirect
-  #   #this time we were redirected to welcome
-  #   assert_redirected_to :action=>'welcome'
-  # end
+  test "should disable old password when password changes" do
+    #can login
+    post :login, :user=>{ :identity => "bob", :password => "test"}
+    assert_response :redirect
+    assert session[:user]
+    #try to change password
+    #passwords dont match
+    post :change_password, :user=>{ :password => "newpass", :password_confirmation => "newpassdoesntmatch"}
+    assert_response :success
+    assert session[:user].errors['password']
+    #empty password
+    post :change_password, :user=>{ :password => "", :password_confirmation => ""}
+    assert_response :success
+    assert session[:user].errors['password']
+    #success - password changed
+    post :change_password, :user=>{ :password => "newpass", :password_confirmation => "newpass"}
+    assert_response :success
+    assert flash[:message]
+    assert_template "users/change_password.erb"
+    #logout
+    get :logout
+    assert_response :redirect
+    assert_nil session[:user]
+    #old password no longer works
+    post :login, :user=> { :identity => "bob", :password => "test" }
+    assert_response :success
+    assert_nil session[:user]
+    assert flash[:warning]
+    assert_template "users/login.erb"
+    #new password works
+    post :login, :user=>{ :identity => "bob", :password => "newpass"}
+    assert_response :redirect
+    assert session[:user]
+  end
+  
+  test "should return to login-required page" do
+    #cant access hidden without being logged in
+    get :hidden
+    assert flash[:warning]
+    assert_response :redirect
+    assert_redirected_to :controller => 'users', :action => 'login'
+    assert session[:return_to]
+    #login
+    post :login, :user=>{ :identity => "bob", :password => "test"}
+    assert_response :redirect
+    #redirected to hidden instead of default welcome
+    assert_redirected_to :controller => 'users', :action => 'hidden'
+    assert_nil session[:return_to]
+    assert session[:user]
+    assert flash[:message]
+    #logout and login again
+    get :logout
+    assert_nil session[:user]
+    post :login, :user=>{ :identity => "bob", :password => "test"}
+    assert_response :redirect
+    #this time we were redirected to welcome
+    assert_redirected_to :controller => 'users', :action => 'welcome'
+  end
 end
