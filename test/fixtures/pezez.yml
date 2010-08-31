@@ -1,0 +1,36 @@
+
+geoff:
+  id: 1000020
+  identity: geoff
+  colour: blue
+  status: dispensed
+  priority: 0
+
+sachin:
+  id: 1000021
+  identity: sachin
+  colour: orange
+  status: seated
+  priority: 1
+  
+shishir:
+  id: 1000022
+  identity: shishir
+  colour: black
+  status: seated
+  priority: 2
+
+conrad:
+  id: 1000023
+  identity: conrad
+  colour: green
+  status: waiting
+  priority: 3
+  secret_code: 
+
+vanessa:
+  id: 1000024
+  identity: vanessa
+  colour: mauve
+  status: waiting
+  priority: 4

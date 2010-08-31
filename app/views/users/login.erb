@@ -1,15 +1,22 @@
-<% form_tag :action => "login", :method => 'post' do %>
-  <h3>Login</h3>  
 
-  <label for="user_identity">Identity:</label><br/>
-  <%= text_field "user", "identity", :size => 20 %><br/>
+<div>
+  <% form_tag :action => "login", :method => 'post' do %>
+    <h3>Login</h3>  
 
-  <label for="user_password">Password:</label><br/>
-  <%= password_field "user", "password", :size => 20 %><br/>
+    <% if flash[:warning] %>
+      <div><%= flash[:warning] %></div>
+    <% end %>
 
-  <%= submit_tag "Submit" %>
+    <label for="user_identity">Identity:</label><br/>
+    <%= text_field "user", "identity", :size => 20 %><br/>
 
-  <%= link_to 'Register', :action => 'signup' %> |
-  <%= link_to 'Forgot my password', :action => 'forgot_password' %>      
+    <label for="user_password">Password:</label><br/>
+    <%= password_field "user", "password", :size => 20 %><br/>
 
-<% end %>
+    <%= submit_tag "Submit" %>
+
+    <%= link_to 'Register', :action => 'signup' %> |
+    <%= link_to 'Forgot my password', :action => 'forgot_password' %>      
+
+  <% end %>
+</div>

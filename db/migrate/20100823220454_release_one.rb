@@ -18,10 +18,17 @@ class ReleaseOne < ActiveRecord::Migration
       t.string   :salt
       t.datetime :created_at
     end
+    
+    create_table :votes do |t|
+      t.integer  :pez_id, :null => false
+      t.integer  :user_id, :null => false
+      t.boolean  :approve, :null => false
+    end
   end
 
   def self.down
     drop_table :pezez
     drop_table :users
+    drop_table :votes
   end
 end

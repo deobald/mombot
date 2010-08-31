@@ -4,7 +4,7 @@ class Pez < ActiveRecord::Base
   
   def before_create
     self.priority = max_priority + 1
-    wait
+    wait_without_save
   end
   
   def max_priority

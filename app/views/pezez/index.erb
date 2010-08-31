@@ -1,16 +1,20 @@
 
 <div class='dispenser'>
   <div>seated:</div>
-  <% @seated.each do |pez| %>
-  <div><%= pez.identity %></div>
-  <% end %>
+  <ul>
+    <% @seated.each do |pez| %>
+    <li><%= pez.identity %></li>
+    <% end %>
+  </ul>
 </div>
 
 <div class='dispenser'>
   <div>waiting:</div>
-  <% @waiting.each do |pez| %>
-  <div><%= pez.identity %></div>
-  <% end %>
+  <ul>
+    <% @waiting.each do |pez| %>
+    <li><%= pez.identity %></li>
+    <% end %>
+  </ul>
 </div>
 
 <p>Welcome, potential celebrant! If you would like to celebrate, please 

@@ -14,9 +14,9 @@ ActiveRecord::Schema.define(:version => 20100823220454) do
   create_table "pezez", :force => true do |t|
     t.string   "identity",    :null => false
     t.string   "colour",      :null => false
-    t.string   "status"
+    t.string   "status",      :null => false
+    t.integer  "priority",    :null => false
     t.string   "secret_code"
-    t.integer  "priority"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -29,6 +29,12 @@ ActiveRecord::Schema.define(:version => 20100823220454) do
     t.string   "email"
     t.string   "salt"
     t.datetime "created_at"
+  end
+
+  create_table "votes", :force => true do |t|
+    t.integer "pez_id",  :null => false
+    t.integer "user_id", :null => false
+    t.boolean "approve", :null => false
   end
 
 end
