@@ -11420,3 +11420,932 @@ Please login and change it to something more memorable.
   [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
   [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
   [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT max("pezez".priority) AS max_priority FROM "pezez" [0m
+  [4;35;1mPez Create (0.4ms)[0m   [0mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "priority", "colour", "secret_code", "status") VALUES('steven', '2010-08-31 22:39:28', '2010-08-31 22:39:28', 2, 'red', NULL, 'waiting')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT max("pezez".priority) AS max_priority FROM "pezez" [0m
+  [4;35;1mPez Create (0.1ms)[0m   [0mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "priority", "colour", "secret_code", "status") VALUES('conrad', '2010-08-31 22:39:28', '2010-08-31 22:39:28', 3, 'blue', NULL, 'waiting')[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT max("pezez".priority) AS max_priority FROM "pezez" [0m
+  [4;36;1mPez Create (0.3ms)[0m   [0;1mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "priority", "colour", "secret_code", "status") VALUES('china', '2010-08-31 22:39:28', '2010-08-31 22:39:28', 2, 'aqua', NULL, 'waiting')[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" IS NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" IS NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: salt, id
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT max("pezez".priority) AS max_priority FROM "pezez" [0m
+  [4;35;1mPez Create (0.5ms)[0m   [0mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "priority", "colour", "secret_code", "status") VALUES('steven', '2010-08-31 22:41:46', '2010-08-31 22:41:46', 2, 'red', NULL, 'waiting')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT max("pezez".priority) AS max_priority FROM "pezez" [0m
+  [4;35;1mPez Create (0.1ms)[0m   [0mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "priority", "colour", "secret_code", "status") VALUES('conrad', '2010-08-31 22:41:46', '2010-08-31 22:41:46', 3, 'blue', NULL, 'waiting')[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'nonexistingbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES(NULL, 'xql8RDuyj1', 'nonexistingbob', '2010-08-31 22:41:46', 'f', '784afcc51b1bde3eeb1d71a737910dabf0c3c43d', 'nonexistingbob@mcbob.com')[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Delete all (0.2ms)[0m   [0mDELETE FROM "users" WHERE ("id" IN (1)) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES('Bob McBob', 'BpCYyllZUO', 'bob', '2010-08-31 22:41:46', 'f', 'b58f468d6e58f0644487cb673c06770b7671fc2d', 'bob@mcbob.com')[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'longbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'lbob@mcbob.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES('Longbob McBob', 'FiIcdj3dqQ', 'longbob', '2010-08-31 22:41:46', 'f', 'e9ae16212401100cf300e5035436ba9b7958909f', 'lbob@mcbob.com')[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'existingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" IS NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'x') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'okbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'hugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhug') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'okbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'okbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'okbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'okbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES(NULL, 'TERMB2hide', 'okbob', '2010-08-31 22:41:46', 'f', 'c6077df5e507adffb8441213c600691577c3d380', 'okbob@mcbob.com')[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'okbob' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" IS NULL AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'okbob' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'notavalidemail' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'okbob' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'validbob@mcbob.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "email" = 'validbob@mcbob.com' WHERE "id" = 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'nonbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'nonbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'nonbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'nonbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'nonbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'nonbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'nonbob') LIMIT 1[0m
+  [4;36;1mUser Load (47.5ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'nonbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES(NULL, 'p61MVgoS4p', 'nonbob', '2010-08-31 22:41:47', 'f', '88f763ef6ac3fd025d42852d189c1e8810c0539b', 'nonbob@mcbob.com')[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT max("pezez".priority) AS max_priority FROM "pezez" [0m
+  [4;35;1mPez Create (0.3ms)[0m   [0mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "priority", "colour", "secret_code", "status") VALUES('china', '2010-08-31 22:41:47', '2010-08-31 22:41:47', 2, 'aqua', NULL, 'waiting')[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'russia') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'russia@earth.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES('Russia McPrussia', '1000', 'russia', '2010-08-31 22:41:47', 'f', '4efff5cf40cbc4f5c8e4df5947c999f59ee35e86', 'russia@earth.com')[0m
+  [4;35;1mPez Load Including Associations (1.0ms)[0m   [0mSELECT "pezez"."id" AS t0_r0, "pezez"."identity" AS t0_r1, "pezez"."colour" AS t0_r2, "pezez"."status" AS t0_r3, "pezez"."priority" AS t0_r4, "pezez"."secret_code" AS t0_r5, "pezez"."created_at" AS t0_r6, "pezez"."updated_at" AS t0_r7, "users"."id" AS t1_r0, "users"."identity" AS t1_r1, "users"."admin" AS t1_r2, "users"."name" AS t1_r3, "users"."hashed_password" AS t1_r4, "users"."email" AS t1_r5, "users"."salt" AS t1_r6, "users"."created_at" AS t1_r7 FROM "pezez" LEFT OUTER JOIN "votes" ON ("pezez"."id" = "votes"."pez_id") LEFT OUTER JOIN "users" ON ("users"."id" = "votes"."user_id") WHERE ("users"."id" IS NULL) [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'nonexistingbob@mcbob.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES(NULL, '1000', 'nonexistingbob', '2010-08-31 22:41:47', 'f', 'b1d27036d59f9499d403f90e0bcf43281adaa844', 'nonexistingbob@mcbob.com')[0m
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Delete all (0.2ms)[0m   [0;1mDELETE FROM "users" WHERE ("id" IN (1)) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" IS NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" IS NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: salt, id
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'badbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'badbob@mcbob.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES(NULL, 'kQkrNA11Wi', 'badbob', '2010-08-31 22:41:47', 'f', '38f071c90fe06356b2970af8ce2996f2d98b3457', 'badbob@mcbob.com')[0m
+WARNING: Can't mass-assign these protected attributes: salt, id
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'verybadbob' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'badbob@mcbob.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "identity" = 'verybadbob' WHERE "id" = 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'verybadbob' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'badbob@mcbob.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES('Bob McBob', '7S4nmWnJE5', 'bob', '2010-08-31 22:41:47', 'f', '0b8ac2acdeffcffaa67b4d967dd04c1a8b159f38', 'bob@mcbob.com')[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.9ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT max("pezez".priority) AS max_priority FROM "pezez" [0m
+  [4;35;1mPez Create (0.5ms)[0m   [0mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "priority", "colour", "secret_code", "status") VALUES('steven', '2010-08-31 22:46:31', '2010-08-31 22:46:31', 2, 'red', NULL, 'waiting')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT max("pezez".priority) AS max_priority FROM "pezez" [0m
+  [4;35;1mPez Create (0.1ms)[0m   [0mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "priority", "colour", "secret_code", "status") VALUES('conrad', '2010-08-31 22:46:31', '2010-08-31 22:46:31', 3, 'blue', NULL, 'waiting')[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT max("pezez".priority) AS max_priority FROM "pezez" [0m
+  [4;36;1mPez Create (0.3ms)[0m   [0;1mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "priority", "colour", "secret_code", "status") VALUES('china', '2010-08-31 22:46:31', '2010-08-31 22:46:31', 2, 'aqua', NULL, 'waiting')[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" IS NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" IS NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: salt, id
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT max("pezez".priority) AS max_priority FROM "pezez" [0m
+  [4;35;1mPez Create (0.5ms)[0m   [0mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "priority", "colour", "secret_code", "status") VALUES('steven', '2010-08-31 22:49:43', '2010-08-31 22:49:43', 2, 'red', NULL, 'waiting')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT max("pezez".priority) AS max_priority FROM "pezez" [0m
+  [4;35;1mPez Create (0.1ms)[0m   [0mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "priority", "colour", "secret_code", "status") VALUES('conrad', '2010-08-31 22:49:43', '2010-08-31 22:49:43', 3, 'blue', NULL, 'waiting')[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT max("pezez".priority) AS max_priority FROM "pezez" [0m
+  [4;36;1mPez Create (0.3ms)[0m   [0;1mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "priority", "colour", "secret_code", "status") VALUES('china', '2010-08-31 22:49:43', '2010-08-31 22:49:43', 2, 'aqua', NULL, 'waiting')[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" IS NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" IS NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: salt, id
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT max("pezez".priority) AS max_priority FROM "pezez" [0m
+  [4;35;1mPez Create (0.5ms)[0m   [0mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "priority", "colour", "secret_code", "status") VALUES('steven', '2010-08-31 22:50:28', '2010-08-31 22:50:28', 2, 'red', NULL, 'waiting')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT max("pezez".priority) AS max_priority FROM "pezez" [0m
+  [4;35;1mPez Create (0.1ms)[0m   [0mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "priority", "colour", "secret_code", "status") VALUES('conrad', '2010-08-31 22:50:28', '2010-08-31 22:50:28', 3, 'blue', NULL, 'waiting')[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT max("pezez".priority) AS max_priority FROM "pezez" [0m
+  [4;36;1mPez Create (0.3ms)[0m   [0;1mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "priority", "colour", "secret_code", "status") VALUES('china', '2010-08-31 22:50:28', '2010-08-31 22:50:28', 2, 'aqua', NULL, 'waiting')[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" IS NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" IS NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: salt, id
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT max("pezez".priority) AS max_priority FROM "pezez" [0m
+  [4;35;1mPez Create (0.5ms)[0m   [0mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "priority", "colour", "secret_code", "status") VALUES('steven', '2010-08-31 22:53:08', '2010-08-31 22:53:08', 2, 'red', NULL, 'waiting')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT max("pezez".priority) AS max_priority FROM "pezez" [0m
+  [4;35;1mPez Create (0.1ms)[0m   [0mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "priority", "colour", "secret_code", "status") VALUES('conrad', '2010-08-31 22:53:08', '2010-08-31 22:53:08', 3, 'blue', NULL, 'waiting')[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'nonexistingbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES(NULL, 'lKmbuq7sw1', 'nonexistingbob', '2010-08-31 22:53:08', 'f', 'b2bd20ef9129488cd98c21fb06554ac9dab0e176', 'nonexistingbob@mcbob.com')[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'newbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.1ms)[0m   [0mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES(NULL, '40Gk8DCsHo', 'newbob', '2010-08-31 22:53:08', 'f', '3c544bfdb129637aab1863b26ae3d8468ab84842', 'newbob@mcbob.com')[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'newbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Delete all (0.2ms)[0m   [0;1mDELETE FROM "users" WHERE ("id" IN (1)) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES('Bob McBob', 'aKpozZ6Oyy', 'bob', '2010-08-31 22:53:08', 'f', 'aab3fd52587e9ddb3c840850de1ecdf8be0876bd', 'bob@mcbob.com')[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'longbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'lbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES('Longbob McBob', 'ufQsncyokK', 'longbob', '2010-08-31 22:53:08', 'f', 'f69ebd1445196ba89cbc59e38b1a3e54fb4051ca', 'lbob@mcbob.com')[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'longbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'longbob' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'lbob@mcbob.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "hashed_password" = 'ab895501cf8047f69b81edcbf1ed82e82c222b87' WHERE "id" = 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'longbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'longbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'longbob' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'lbob@mcbob.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "hashed_password" = 'f69ebd1445196ba89cbc59e38b1a3e54fb4051ca' WHERE "id" = 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'longbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'longbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'existingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" IS NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'x') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'okbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'hugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhug') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'okbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'okbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'okbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'okbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES(NULL, 'G2plwOdCAG', 'okbob', '2010-08-31 22:53:08', 'f', 'bf0d724cb54ce8d27f67c325805aaf09657d1fbc', 'okbob@mcbob.com')[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'okbob' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" IS NULL AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'okbob' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'notavalidemail' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'okbob' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'validbob@mcbob.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "email" = 'validbob@mcbob.com' WHERE "id" = 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'nonbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'nonbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'nonbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'nonbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'nonbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'nonbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'nonbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'nonbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES(NULL, 'er0Sr1fIfy', 'nonbob', '2010-08-31 22:53:08', 'f', 'e7300765e23dc639f2ffddf86ac8dda35da45447', 'nonbob@mcbob.com')[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT max("pezez".priority) AS max_priority FROM "pezez" [0m
+  [4;35;1mPez Create (0.2ms)[0m   [0mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "priority", "colour", "secret_code", "status") VALUES('china', '2010-08-31 22:53:08', '2010-08-31 22:53:08', 2, 'aqua', NULL, 'waiting')[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'russia') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'russia@earth.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES('Russia McPrussia', '1000', 'russia', '2010-08-31 22:53:08', 'f', '6fd0d6ddea91c36e00a8c26515affe471f9a322a', 'russia@earth.com')[0m
+  [4;35;1mPez Load Including Associations (1.0ms)[0m   [0mSELECT "pezez"."id" AS t0_r0, "pezez"."identity" AS t0_r1, "pezez"."colour" AS t0_r2, "pezez"."status" AS t0_r3, "pezez"."priority" AS t0_r4, "pezez"."secret_code" AS t0_r5, "pezez"."created_at" AS t0_r6, "pezez"."updated_at" AS t0_r7, "users"."id" AS t1_r0, "users"."identity" AS t1_r1, "users"."admin" AS t1_r2, "users"."name" AS t1_r3, "users"."hashed_password" AS t1_r4, "users"."email" AS t1_r5, "users"."salt" AS t1_r6, "users"."created_at" AS t1_r7 FROM "pezez" LEFT OUTER JOIN "votes" ON ("pezez"."id" = "votes"."pez_id") LEFT OUTER JOIN "users" ON ("users"."id" = "votes"."user_id") WHERE ("users"."id" IS NULL) [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'nonexistingbob@mcbob.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES(NULL, '1000', 'nonexistingbob', '2010-08-31 22:53:08', 'f', 'b1d27036d59f9499d403f90e0bcf43281adaa844', 'nonexistingbob@mcbob.com')[0m
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Delete all (0.1ms)[0m   [0;1mDELETE FROM "users" WHERE ("id" IN (1)) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" IS NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" IS NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: salt, id
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'badbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'badbob@mcbob.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES(NULL, 'lexDraOsOb', 'badbob', '2010-08-31 22:53:08', 'f', '670413b263d113e2ae985f1522e6c5bfd9b4f7f6', 'badbob@mcbob.com')[0m
+WARNING: Can't mass-assign these protected attributes: salt, id
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'verybadbob' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'badbob@mcbob.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "identity" = 'verybadbob' WHERE "id" = 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'verybadbob' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'badbob@mcbob.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES('Bob McBob', 'Nv5MlLwuak', 'bob', '2010-08-31 22:53:08', 'f', '1c44e82828b057feaa692911c952ee96a0fde8c8', 'bob@mcbob.com')[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT max("pezez".priority) AS max_priority FROM "pezez" [0m
+  [4;35;1mPez Create (0.4ms)[0m   [0mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "priority", "colour", "secret_code", "status") VALUES('steven', '2010-08-31 22:53:31', '2010-08-31 22:53:31', 2, 'red', NULL, 'waiting')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT max("pezez".priority) AS max_priority FROM "pezez" [0m
+  [4;35;1mPez Create (0.1ms)[0m   [0mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "priority", "colour", "secret_code", "status") VALUES('conrad', '2010-08-31 22:53:31', '2010-08-31 22:53:31', 3, 'blue', NULL, 'waiting')[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'nonexistingbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES(NULL, 'cF06JAURyl', 'nonexistingbob', '2010-08-31 22:53:31', 'f', '8c697c729185c0ae81d3b38269ad80c075ce4542', 'nonexistingbob@mcbob.com')[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'newbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.1ms)[0m   [0mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES(NULL, 'eCMPflah2n', 'newbob', '2010-08-31 22:53:31', 'f', '31914dbaec7e24dba6e1f033377ce9d17f7155c2', 'newbob@mcbob.com')[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'newbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Delete all (0.2ms)[0m   [0;1mDELETE FROM "users" WHERE ("id" IN (1)) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES('Bob McBob', 'QRz5v6R237', 'bob', '2010-08-31 22:53:31', 'f', 'f6fd15a5d731b4a9acf5678680edbc7a79f6563e', 'bob@mcbob.com')[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'longbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'lbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES('Longbob McBob', 'XfaZ7ysU8Z', 'longbob', '2010-08-31 22:53:31', 'f', 'cfcff975a00f14f646d6662d58e3bb5fea8131bf', 'lbob@mcbob.com')[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'longbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'longbob' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'lbob@mcbob.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "hashed_password" = 'eecb3439cdce592c47581afb9a059441a232a45b' WHERE "id" = 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'longbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'longbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'longbob' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'lbob@mcbob.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "hashed_password" = 'cfcff975a00f14f646d6662d58e3bb5fea8131bf' WHERE "id" = 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'longbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'longbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'existingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" IS NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'x') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'okbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'hugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhug') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'okbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'okbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'okbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'okbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES(NULL, '1ABrGma7Gx', 'okbob', '2010-08-31 22:53:31', 'f', '4cd0d4c146f4099ae596fa8a0761dbf6270b40e7', 'okbob@mcbob.com')[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'okbob' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" IS NULL AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'okbob' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'notavalidemail' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'okbob' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'validbob@mcbob.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "email" = 'validbob@mcbob.com' WHERE "id" = 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'nonbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'nonbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'nonbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'nonbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'nonbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'nonbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'nonbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'nonbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES(NULL, 'VNNy5E3g5i', 'nonbob', '2010-08-31 22:53:31', 'f', '12e26c570c9b6c08289c4d4766053096c204d179', 'nonbob@mcbob.com')[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT max("pezez".priority) AS max_priority FROM "pezez" [0m
+  [4;35;1mPez Create (0.2ms)[0m   [0mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "priority", "colour", "secret_code", "status") VALUES('china', '2010-08-31 22:53:31', '2010-08-31 22:53:31', 2, 'aqua', NULL, 'waiting')[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'russia') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'russia@earth.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES('Russia McPrussia', '1000', 'russia', '2010-08-31 22:53:31', 'f', '29a8afa55b0dd58a39653558c7e4182b34e80add', 'russia@earth.com')[0m
+  [4;35;1mPez Load Including Associations (1.0ms)[0m   [0mSELECT "pezez"."id" AS t0_r0, "pezez"."identity" AS t0_r1, "pezez"."colour" AS t0_r2, "pezez"."status" AS t0_r3, "pezez"."priority" AS t0_r4, "pezez"."secret_code" AS t0_r5, "pezez"."created_at" AS t0_r6, "pezez"."updated_at" AS t0_r7, "users"."id" AS t1_r0, "users"."identity" AS t1_r1, "users"."admin" AS t1_r2, "users"."name" AS t1_r3, "users"."hashed_password" AS t1_r4, "users"."email" AS t1_r5, "users"."salt" AS t1_r6, "users"."created_at" AS t1_r7 FROM "pezez" LEFT OUTER JOIN "votes" ON ("pezez"."id" = "votes"."pez_id") LEFT OUTER JOIN "users" ON ("users"."id" = "votes"."user_id") WHERE ("users"."id" IS NULL) [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'nonexistingbob@mcbob.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES(NULL, '1000', 'nonexistingbob', '2010-08-31 22:53:31', 'f', 'b1d27036d59f9499d403f90e0bcf43281adaa844', 'nonexistingbob@mcbob.com')[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Delete all (0.1ms)[0m   [0;1mDELETE FROM "users" WHERE ("id" IN (1)) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" IS NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" IS NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: salt, id
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'badbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'badbob@mcbob.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES(NULL, '3KaQahuzoX', 'badbob', '2010-08-31 22:53:31', 'f', 'ad710b89a12f3030011665aa9c0ce081bea1f9a3', 'badbob@mcbob.com')[0m
+WARNING: Can't mass-assign these protected attributes: salt, id
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'verybadbob' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'badbob@mcbob.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "identity" = 'verybadbob' WHERE "id" = 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'verybadbob' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'badbob@mcbob.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES('Bob McBob', 'COBldp7BC0', 'bob', '2010-08-31 22:53:31', 'f', '2220902dd74ba21126577b4cc8a275e25d127843', 'bob@mcbob.com')[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "hashed_password" = 'bf8d6bce9bb39c782b41a8a85bb1b5ee1e74e1f9' WHERE "id" = 1[0m
+Sent mail to bob@mcbob.com
+
+Date: Tue, 31 Aug 2010 17:53:31 -0500
+From: support@mygtfo.com
+To: bob@mcbob.com
+Subject: Your password is ...
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+
+_____________
+Your identity is bob. Your new password is 2CnunYFyw6.
+
+Please login and change it to something more memorable.
+
+-------------
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT max("pezez".priority) AS max_priority FROM "pezez" [0m
+  [4;35;1mPez Create (0.5ms)[0m   [0mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "priority", "colour", "secret_code", "status") VALUES('steven', '2010-08-31 22:54:01', '2010-08-31 22:54:01', 2, 'red', NULL, 'waiting')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT max("pezez".priority) AS max_priority FROM "pezez" [0m
+  [4;35;1mPez Create (0.1ms)[0m   [0mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "priority", "colour", "secret_code", "status") VALUES('conrad', '2010-08-31 22:54:01', '2010-08-31 22:54:01', 3, 'blue', NULL, 'waiting')[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'nonexistingbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES(NULL, '0B3ItEQiOL', 'nonexistingbob', '2010-08-31 22:54:01', 'f', '5f35ee887e1e08cd39799bcc38533b1d71189748', 'nonexistingbob@mcbob.com')[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'newbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.1ms)[0m   [0mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES(NULL, 'N3MJiLo2xa', 'newbob', '2010-08-31 22:54:01', 'f', '26a777a33c9ffd93d976f29ef021f191149a2ba6', 'newbob@mcbob.com')[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'newbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Delete all (0.2ms)[0m   [0;1mDELETE FROM "users" WHERE ("id" IN (1)) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES('Bob McBob', 'RbzgyoUaWC', 'bob', '2010-08-31 22:54:01', 'f', 'd31bbdbfa6c90c45e14d713324f1c0ebdefc95c3', 'bob@mcbob.com')[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'longbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'lbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES('Longbob McBob', 'aE2kFdqLEr', 'longbob', '2010-08-31 22:54:01', 'f', '2b943a3fda9caa4f2c916c9d6161ab01aec4a4a5', 'lbob@mcbob.com')[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'longbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'longbob' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'lbob@mcbob.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "hashed_password" = '7f77c3f8731f0a212ea793ece8381226d823f497' WHERE "id" = 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'longbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'longbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'longbob' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'lbob@mcbob.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "hashed_password" = '2b943a3fda9caa4f2c916c9d6161ab01aec4a4a5' WHERE "id" = 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'longbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'longbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'existingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" IS NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'x') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'okbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'hugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhug') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'okbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'okbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'okbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'okbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES(NULL, 'yvb7rmEJxR', 'okbob', '2010-08-31 22:54:01', 'f', '7180a610e635387e510d5f2b96fea0ede099936c', 'okbob@mcbob.com')[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'okbob' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" IS NULL AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'okbob' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'notavalidemail' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'okbob' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'validbob@mcbob.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "email" = 'validbob@mcbob.com' WHERE "id" = 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'nonbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'nonbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'nonbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'nonbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'nonbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'nonbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'nonbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'nonbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES(NULL, 'prFc0Ca3di', 'nonbob', '2010-08-31 22:54:01', 'f', 'c7360548468d97cf523a9c50526c60eecb984442', 'nonbob@mcbob.com')[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT max("pezez".priority) AS max_priority FROM "pezez" [0m
+  [4;35;1mPez Create (0.2ms)[0m   [0mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "priority", "colour", "secret_code", "status") VALUES('china', '2010-08-31 22:54:01', '2010-08-31 22:54:01', 2, 'aqua', NULL, 'waiting')[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'russia') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'russia@earth.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES('Russia McPrussia', '1000', 'russia', '2010-08-31 22:54:01', 'f', '32d063984f2eb41f965d1bb03ac87260e5030b16', 'russia@earth.com')[0m
+  [4;35;1mPez Load Including Associations (1.0ms)[0m   [0mSELECT "pezez"."id" AS t0_r0, "pezez"."identity" AS t0_r1, "pezez"."colour" AS t0_r2, "pezez"."status" AS t0_r3, "pezez"."priority" AS t0_r4, "pezez"."secret_code" AS t0_r5, "pezez"."created_at" AS t0_r6, "pezez"."updated_at" AS t0_r7, "users"."id" AS t1_r0, "users"."identity" AS t1_r1, "users"."admin" AS t1_r2, "users"."name" AS t1_r3, "users"."hashed_password" AS t1_r4, "users"."email" AS t1_r5, "users"."salt" AS t1_r6, "users"."created_at" AS t1_r7 FROM "pezez" LEFT OUTER JOIN "votes" ON ("pezez"."id" = "votes"."pez_id") LEFT OUTER JOIN "users" ON ("users"."id" = "votes"."user_id") WHERE ("users"."id" IS NULL) [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'nonexistingbob@mcbob.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES(NULL, '1000', 'nonexistingbob', '2010-08-31 22:54:01', 'f', 'b1d27036d59f9499d403f90e0bcf43281adaa844', 'nonexistingbob@mcbob.com')[0m
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Delete all (0.2ms)[0m   [0;1mDELETE FROM "users" WHERE ("id" IN (1)) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" IS NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" IS NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: salt, id
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'badbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'badbob@mcbob.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES(NULL, 'vrPBukF1MC', 'badbob', '2010-08-31 22:54:01', 'f', 'ee1b27c464b2b9dbae6deb5d2e120ae9a7d213fe', 'badbob@mcbob.com')[0m
+WARNING: Can't mass-assign these protected attributes: salt, id
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'verybadbob' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'badbob@mcbob.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "identity" = 'verybadbob' WHERE "id" = 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'verybadbob' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'badbob@mcbob.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES('Bob McBob', 'a3Hrs0BAu1', 'bob', '2010-08-31 22:54:01', 'f', 'ddf65868863ee67dc0863523ee4c507b6879b77e', 'bob@mcbob.com')[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "hashed_password" = '2b22c7cc7371ce2afea94850870b8ef01690792b' WHERE "id" = 1[0m
+Sent mail to bob@mcbob.com
+
+Date: Tue, 31 Aug 2010 17:54:01 -0500
+From: support@mygtfo.com
+To: bob@mcbob.com
+Subject: Your password is ...
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+
+_____________
+Your identity is bob. Your new password is xXpPXQQXst.
+
+Please login and change it to something more memorable.
+
+-------------
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT max("pezez".priority) AS max_priority FROM "pezez" [0m
+  [4;35;1mPez Create (0.4ms)[0m   [0mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "priority", "colour", "secret_code", "status") VALUES('steven', '2010-08-31 22:54:14', '2010-08-31 22:54:14', 2, 'red', NULL, 'waiting')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT max("pezez".priority) AS max_priority FROM "pezez" [0m
+  [4;35;1mPez Create (0.1ms)[0m   [0mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "priority", "colour", "secret_code", "status") VALUES('conrad', '2010-08-31 22:54:14', '2010-08-31 22:54:14', 3, 'blue', NULL, 'waiting')[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'nonexistingbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES(NULL, '6ld4k8baK2', 'nonexistingbob', '2010-08-31 22:54:14', 'f', 'b4643a8980a17a6e42761d808e5e5d51e2b07ca9', 'nonexistingbob@mcbob.com')[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'newbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.1ms)[0m   [0mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES(NULL, 'dufwY6woTI', 'newbob', '2010-08-31 22:54:14', 'f', '596f5726b5982e36193df168903a0a6051e37aa9', 'newbob@mcbob.com')[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'newbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Delete all (0.2ms)[0m   [0;1mDELETE FROM "users" WHERE ("id" IN (1)) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES('Bob McBob', 'JNQJS7qilW', 'bob', '2010-08-31 22:54:14', 'f', '044b180e8f96008ce204fbb06941d5d446b32007', 'bob@mcbob.com')[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'longbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'lbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES('Longbob McBob', 'sY1mgdFFaf', 'longbob', '2010-08-31 22:54:14', 'f', '78c8d8158a01c9fbcc505802e0e01ab0f8fa3820', 'lbob@mcbob.com')[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'longbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'longbob' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'lbob@mcbob.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "hashed_password" = 'c0a6c795153b297f3660c2850a55c28b50c9e2bb' WHERE "id" = 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'longbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'longbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'longbob' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'lbob@mcbob.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "hashed_password" = '78c8d8158a01c9fbcc505802e0e01ab0f8fa3820' WHERE "id" = 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'longbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'longbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'existingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" IS NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'x') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'okbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'hugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhug') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'okbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'okbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'okbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'okbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES(NULL, 'dfQhm76tGR', 'okbob', '2010-08-31 22:54:14', 'f', '7364c77bee9c3c87e0b17f7f4cb66ab2bc6e8efb', 'okbob@mcbob.com')[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'okbob' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" IS NULL AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'okbob' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'notavalidemail' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'okbob' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'validbob@mcbob.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "email" = 'validbob@mcbob.com' WHERE "id" = 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'nonbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'nonbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'nonbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'nonbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'nonbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'nonbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'nonbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'nonbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES(NULL, '27NcvfhiF7', 'nonbob', '2010-08-31 22:54:14', 'f', 'f47a41d0dccf93656f54bcec1a8aa75f88b8bd48', 'nonbob@mcbob.com')[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT max("pezez".priority) AS max_priority FROM "pezez" [0m
+  [4;35;1mPez Create (0.3ms)[0m   [0mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "priority", "colour", "secret_code", "status") VALUES('china', '2010-08-31 22:54:14', '2010-08-31 22:54:14', 2, 'aqua', NULL, 'waiting')[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'russia') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'russia@earth.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES('Russia McPrussia', '1000', 'russia', '2010-08-31 22:54:14', 'f', '939fbb8e423919450bba8e90238bd289ec861cc7', 'russia@earth.com')[0m
+  [4;35;1mPez Load Including Associations (1.0ms)[0m   [0mSELECT "pezez"."id" AS t0_r0, "pezez"."identity" AS t0_r1, "pezez"."colour" AS t0_r2, "pezez"."status" AS t0_r3, "pezez"."priority" AS t0_r4, "pezez"."secret_code" AS t0_r5, "pezez"."created_at" AS t0_r6, "pezez"."updated_at" AS t0_r7, "users"."id" AS t1_r0, "users"."identity" AS t1_r1, "users"."admin" AS t1_r2, "users"."name" AS t1_r3, "users"."hashed_password" AS t1_r4, "users"."email" AS t1_r5, "users"."salt" AS t1_r6, "users"."created_at" AS t1_r7 FROM "pezez" LEFT OUTER JOIN "votes" ON ("pezez"."id" = "votes"."pez_id") LEFT OUTER JOIN "users" ON ("users"."id" = "votes"."user_id") WHERE ("users"."id" IS NULL) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'nonexistingbob@mcbob.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES(NULL, '1000', 'nonexistingbob', '2010-08-31 22:54:14', 'f', 'b1d27036d59f9499d403f90e0bcf43281adaa844', 'nonexistingbob@mcbob.com')[0m
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Delete all (0.1ms)[0m   [0;1mDELETE FROM "users" WHERE ("id" IN (1)) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" IS NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" IS NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: salt, id
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'badbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'badbob@mcbob.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES(NULL, 'oVrdmHHasq', 'badbob', '2010-08-31 22:54:14', 'f', '43d3d6fe51d8890eaa667b63f20936387ec96723', 'badbob@mcbob.com')[0m
+WARNING: Can't mass-assign these protected attributes: salt, id
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'verybadbob' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'badbob@mcbob.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "identity" = 'verybadbob' WHERE "id" = 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'verybadbob' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'badbob@mcbob.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES('Bob McBob', '8Caq6AAL8o', 'bob', '2010-08-31 22:54:14', 'f', 'c19415d9f27096cc5b1eaf772e8ce5e1edffce6a', 'bob@mcbob.com')[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "hashed_password" = 'bea21fea802132dd96c50418f3a0856a317d63f4' WHERE "id" = 1[0m
+Sent mail to bob@mcbob.com
+
+Date: Tue, 31 Aug 2010 17:54:14 -0500
+From: support@mygtfo.com
+To: bob@mcbob.com
+Subject: Your password is ...
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+
+_____________
+Your identity is bob. Your new password is BNVPzifNWN.
+
+Please login and change it to something more memorable.
+
+-------------
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT max("pezez".priority) AS max_priority FROM "pezez" [0m
+  [4;35;1mPez Create (0.5ms)[0m   [0mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "priority", "colour", "secret_code", "status") VALUES('steven', '2010-08-31 22:54:48', '2010-08-31 22:54:48', 2, 'red', NULL, 'waiting')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT max("pezez".priority) AS max_priority FROM "pezez" [0m
+  [4;35;1mPez Create (0.1ms)[0m   [0mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "priority", "colour", "secret_code", "status") VALUES('conrad', '2010-08-31 22:54:48', '2010-08-31 22:54:48', 3, 'blue', NULL, 'waiting')[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'nonexistingbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES(NULL, 'QsXPsGIwSB', 'nonexistingbob', '2010-08-31 22:54:48', 'f', '35b8abbdd4df40528377f35e2a8b176b1df43e25', 'nonexistingbob@mcbob.com')[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'newbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'newbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.1ms)[0m   [0mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES(NULL, 'AZ8BzWGZYG', 'newbob', '2010-08-31 22:54:48', 'f', 'd059fe2647608a5880ac97bc960384fb782dc798', 'newbob@mcbob.com')[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'newbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Delete all (0.2ms)[0m   [0;1mDELETE FROM "users" WHERE ("id" IN (1)) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES('Bob McBob', 'CcagkWRRII', 'bob', '2010-08-31 22:54:48', 'f', 'd2b8ab218cc1565fdd8db65b24fa2cca784844b2', 'bob@mcbob.com')[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'longbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'lbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES('Longbob McBob', 'wlPvmqrdKD', 'longbob', '2010-08-31 22:54:48', 'f', '4a02fbdc3e73146b10d0b2987af547f78685f00f', 'lbob@mcbob.com')[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'longbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'longbob' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'lbob@mcbob.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "hashed_password" = '4382340797d0f5d2370f140900620c434a082ee0' WHERE "id" = 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'longbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'longbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'longbob' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'lbob@mcbob.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "hashed_password" = '4a02fbdc3e73146b10d0b2987af547f78685f00f' WHERE "id" = 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'longbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'longbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'existingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" IS NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'x') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'okbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'hugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhug') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'okbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'okbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'okbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'okbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES(NULL, 'osa6fXiayR', 'okbob', '2010-08-31 22:54:48', 'f', 'eb0f765963a64f07d80738f66857d9c42ad4c0c1', 'okbob@mcbob.com')[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'okbob' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" IS NULL AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'okbob' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'notavalidemail' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'okbob' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'validbob@mcbob.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "email" = 'validbob@mcbob.com' WHERE "id" = 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'nonbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'nonbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'nonbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'nonbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'nonbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'nonbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'nonbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'nonbob@mcbob.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES(NULL, 'jAc3Kht54r', 'nonbob', '2010-08-31 22:54:48', 'f', 'f7e97df78e54b0d9fb29efd806295b5b5d801121', 'nonbob@mcbob.com')[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT max("pezez".priority) AS max_priority FROM "pezez" [0m
+  [4;35;1mPez Create (0.2ms)[0m   [0mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "priority", "colour", "secret_code", "status") VALUES('china', '2010-08-31 22:54:48', '2010-08-31 22:54:48', 2, 'aqua', NULL, 'waiting')[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'russia') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'russia@earth.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES('Russia McPrussia', '1000', 'russia', '2010-08-31 22:54:48', 'f', '591e558f8e9b1e264577855912761b18a5f3df9f', 'russia@earth.com')[0m
+  [4;35;1mPez Load Including Associations (1.0ms)[0m   [0mSELECT "pezez"."id" AS t0_r0, "pezez"."identity" AS t0_r1, "pezez"."colour" AS t0_r2, "pezez"."status" AS t0_r3, "pezez"."priority" AS t0_r4, "pezez"."secret_code" AS t0_r5, "pezez"."created_at" AS t0_r6, "pezez"."updated_at" AS t0_r7, "users"."id" AS t1_r0, "users"."identity" AS t1_r1, "users"."admin" AS t1_r2, "users"."name" AS t1_r3, "users"."hashed_password" AS t1_r4, "users"."email" AS t1_r5, "users"."salt" AS t1_r6, "users"."created_at" AS t1_r7 FROM "pezez" LEFT OUTER JOIN "votes" ON ("pezez"."id" = "votes"."pez_id") LEFT OUTER JOIN "users" ON ("users"."id" = "votes"."user_id") WHERE ("users"."id" IS NULL) [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'nonexistingbob@mcbob.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES(NULL, '1000', 'nonexistingbob', '2010-08-31 22:54:48', 'f', 'b1d27036d59f9499d403f90e0bcf43281adaa844', 'nonexistingbob@mcbob.com')[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Delete all (0.1ms)[0m   [0;1mDELETE FROM "users" WHERE ("id" IN (1)) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" IS NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" IS NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: salt, id
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'badbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'badbob@mcbob.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES(NULL, 'J0aaVAlG48', 'badbob', '2010-08-31 22:54:48', 'f', '1d2a82b4b8cb419287d9973c32f95f04c2f44081', 'badbob@mcbob.com')[0m
+WARNING: Can't mass-assign these protected attributes: salt, id
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'verybadbob' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'badbob@mcbob.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "identity" = 'verybadbob' WHERE "id" = 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'verybadbob' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'badbob@mcbob.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES('Bob McBob', 'gvsEbBKIyJ', 'bob', '2010-08-31 22:54:48', 'f', '96732227f7cbda7676a67299e3b573cf2de0ab7f', 'bob@mcbob.com')[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'bob' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bob@mcbob.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "hashed_password" = 'ab4f11b580f11d99767bbe1ca43d2f9f9caea1c6' WHERE "id" = 1[0m
+Sent mail to bob@mcbob.com
+
+Date: Tue, 31 Aug 2010 17:54:48 -0500
+From: support@mygtfo.com
+To: bob@mcbob.com
+Subject: Your password is ...
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+
+_____________
+Your identity is bob. Your new password is VoN8qHnzoX.
+
+Please login and change it to something more memorable.
+
+-------------
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'bob') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'nonexistingbob') LIMIT 1[0m
