@@ -5,7 +5,8 @@
 
 * users
 ** voting
-** creation by entering secret code.
+** finishing makes for secret code on admin page!
+** creation by entering secret code. expire the pez.
 
 * rails 3?
 
