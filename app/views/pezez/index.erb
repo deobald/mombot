@@ -1,6 +1,14 @@
 
-<div>
+<div class='dispenser'>
+  <div>seated:</div>
   <% @seated.each do |pez| %>
+  <div><%= pez.identity %></div>
+  <% end %>
+</div>
+
+<div class='dispenser'>
+  <div>waiting:</div>
+  <% @waiting.each do |pez| %>
   <div><%= pez.identity %></div>
   <% end %>
 </div>

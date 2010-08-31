@@ -2,7 +2,8 @@
 class PezezController < ApplicationController
   
   def index
-    @seated = Pez.all :order => 'priority ASC'
+    @seated = Pez.all :order => 'priority ASC', :conditions => ['status = ?', 'seated']
+    @waiting = Pez.all :order => 'priority ASC', :conditions => ['status = ?', 'waiting']
   end
   
   def new
