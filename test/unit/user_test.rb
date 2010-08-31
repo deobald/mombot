@@ -1,6 +1,6 @@
 require File.dirname(__FILE__) + '/../test_helper'
 
-class UserTest < Test::Unit::TestCase
+class UserTest < ActiveSupport::TestCase
   
   def setup
     clean_db
@@ -15,6 +15,12 @@ class UserTest < Test::Unit::TestCase
   def clean_db
     bob = User.first(:conditions => "identity = 'nonexistingbob'")
     bob.delete if bob
+  end
+
+  test "new users should not be admins" do
+    u = User.new
+    u.save
+    assert_false u.admin?
   end
 
   def test_auth 

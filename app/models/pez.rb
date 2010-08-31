@@ -4,6 +4,7 @@ class Pez < ActiveRecord::Base
   
   def before_create
     self.priority = max_priority + 1
+    self.status = 'waiting'
   end
   
   def max_priority

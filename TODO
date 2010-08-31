@@ -2,10 +2,17 @@
 == TODO
 
 === code
-* colour picker
-* users
-* admins
 
+* pez
+** waiting vs. seated
+
+* admins
+** seating pez upon receipt of snail mail
+
+* users
+** creation by entering secret code.
+
+* colour picker
 
 === sorta-code
 * graphic pez dispenser
