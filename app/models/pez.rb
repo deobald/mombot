@@ -2,6 +2,9 @@
 class Pez < ActiveRecord::Base
   set_table_name 'pezez'
   
+  has_many :votes
+  has_many :users, :through => :votes
+  
   def before_create
     self.priority = max_priority + 1
     wait_without_save
