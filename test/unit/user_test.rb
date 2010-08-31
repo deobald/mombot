@@ -22,9 +22,17 @@ class UserTest < ActiveSupport::TestCase
   end
   
   test "finds pez without votes from this user" do
-    pez = Factory :pez
+    pez = Factory(:pez).seat
     user = Factory :user
     assert_equal [pez], user.unvoted_candy
+  end
+  
+  test "only finds seated pez without votes from this user" do
+    waiting = Factory(:pez).wait
+    seated = Factory(:pez).seat
+    dispensed = Factory(:pez).dispense
+    user = Factory :user
+    assert_equal [seated], user.unvoted_candy
   end
 
   test "authenticates only valid user/pass combos" do

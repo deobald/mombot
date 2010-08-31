@@ -15,17 +15,29 @@ class Pez < ActiveRecord::Base
   end
   
   def wait_without_save
-    self.status = 'waiting'
+    change_state_without_save 'waiting'
   end
   
   def wait
-    wait_without_save
-    self.save!
+    change_state_to 'waiting'
   end
   
   def seat
-    self.status = 'seated'
+    change_state_to 'seated'
+  end
+  
+  def dispense
+    change_state_to 'dispensed'
+  end
+
+  def change_state_without_save what
+    self.status = what
+  end
+  
+  def change_state_to what
+    change_state_without_save what
     self.save!
+    self    
   end
   
   def waiting?
@@ -34,5 +46,9 @@ class Pez < ActiveRecord::Base
   
   def seated?
     self.status == 'seated'
+  end
+  
+  def dispensed?
+    self.status == 'dispensed'
   end
 end

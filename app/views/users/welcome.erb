@@ -1,4 +1,13 @@
 
 <div>
-TODO: 'new candy!'
+  <%= "new candy!" unless @new_candy.empty? %>
+  <% @new_candy.each do |pez| %>
+    <div>
+      <%= pez.identity %>
+      -
+      <%= link_to 'yes', :controller => 'users', :action => 'vote', :pez_id => pez.id, :approve => true %>
+      |
+      <%= link_to 'no', :controller => 'users', :action => 'vote', :pez_id => pez.id, :approve => false %>
+    </div>
+  <% end %>
 </div>
