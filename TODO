@@ -3,10 +3,8 @@
 
 === code
 
-* admins
-** seating pez upon receipt of snail mail
-
 * users
+** voting
 ** creation by entering secret code.
 
 * rails 3?
