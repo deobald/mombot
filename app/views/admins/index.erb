@@ -1,2 +1,11 @@
 
-<div>oh, hey. you're an admin. TODO: admin stuff goes here</div>
+<div>oh, hey. you're an admin. here are some pezez:</div>
+
+<ul>
+  <% @waiting.each do |pez| %>
+  <li>
+    <%= pez.identity %>
+    <%= link_to 'seat!', :controller => 'admins', :action => 'seat', :pez_id => pez.id %>
+  </li>
+  <% end %>
+</ul>

@@ -1,0 +1,26 @@
+
+
+<html>
+  <head>
+    <%= stylesheet_link_tag 'main' %>
+    <%= javascript_include_tag :defaults %>
+  </head>
+  <body>
+    <div class='header'>handy links: 
+      <%= link_to 'home', '/' %>
+      
+      <% if session[:user] %>
+        <%= link_to 'logout', :controller => 'users', :action => 'logout' %>
+        <% if session[:user].admin? %>
+          <%= link_to 'admin', :controller => 'admins', :action => 'index' %>
+        <% end %>
+      
+      <% else %>
+        <%= link_to 'login', :controller => 'users', :action => 'login' %>
+        <%= link_to 'apply', :controller => 'pezez', :action => 'new' %>
+      <% end %>
+    </div>
+
+    <%= yield %>
+  </body>
+</html>
