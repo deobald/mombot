@@ -14,17 +14,13 @@ class UserTest < ActiveSupport::TestCase
     bob = User.first(:conditions => "identity = 'nonexistingbob'")
     bob.delete if bob
   end
-
-  test "new users should not be admins" do
-    u = User.new
-    u.save
-    assert_false u.admin?
-  end
+  
+  # voting tests:
   
   test "finds pez without votes from this user" do
     pez = Factory(:pez).seat
     user = Factory :user
-    assert_equal [pez], user.unvoted_candy
+    assert_equal [pez], user.dispenser
   end
   
   test "only finds seated pez without votes from this user" do
@@ -32,9 +28,33 @@ class UserTest < ActiveSupport::TestCase
     seated = Factory(:pez).seat
     dispensed = Factory(:pez).dispense
     user = Factory :user
-    assert_equal [seated], user.unvoted_candy
+    assert_equal [seated], user.dispenser
+  end
+  
+  test "knows if this user liked a pez" do
+    liked = Factory(:pez).seat
+    user = Factory :user
+    like = Factory :vote, :user => user, :pez => liked, :approve => true
+    assert_equal 'liked', user.liked(liked)
+    assert_equal '', user.disliked(liked)
+  end
+  
+  test "knows if this user disliked a pez" do
+    liked = Factory(:pez).seat
+    user = Factory :user
+    like = Factory :vote, :user => user, :pez => liked, :approve => false
+    assert_equal '', user.liked(liked)
+    assert_equal 'disliked', user.disliked(liked)
   end
 
+  # auth tests:
+
+  test "new users should not be admins" do
+    u = User.new
+    u.save
+    assert_false u.admin?
+  end
+  
   test "authenticates only valid user/pass combos" do
     #check that we can identity a valid user
     bob = Factory :bob

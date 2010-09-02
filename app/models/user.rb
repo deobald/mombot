@@ -14,8 +14,22 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :identity, :email
   validates_format_of :email, :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i, :message => "Invalid email"  
   
-  def unvoted_candy
-    Pez.all :include => :users, :conditions => { :status => 'seated', :users => { :id => nil }}
+  def dispenser
+    Pez.all :conditions => { :status => 'seated' }
+  end
+  
+  def liked pez
+    with_preference_for(pez) { |vote| vote.approve ? 'liked' : '' }
+  end
+  
+  def disliked pez
+    with_preference_for(pez) { |vote| vote.approve ? '' : 'disliked' }
+  end
+  
+  def with_preference_for pez
+    vote = Vote.for(pez, self)
+    return '' unless vote
+    yield vote
   end
 
 end

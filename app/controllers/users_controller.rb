@@ -11,7 +11,18 @@ class UsersController < ApplicationController
   def vote
     @pez = Pez.find params[:pez_id]
     @approve = params[:approve] || false
-    Vote.create :user => session[:user], :pez => @pez, :approve => @approve
+    user = session[:user]
+    
+    vote = Vote.for(@pez, user)
+    if vote
+      puts "changing approval to: #{@approve}"
+      vote.approve = @approve
+      vote.save!
+    else
+      puts "creating vote: #{user.inspect}, #{@pez.inspect}, #{@approve.inspect}"
+      Vote.create! :user => user, :pez => @pez, :approve => @approve
+    end
+    show_candy
   end
   
   def show_candy

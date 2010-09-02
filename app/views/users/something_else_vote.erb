@@ -1,0 +1,8 @@
+
+<div>
+  you voted <%= @approve ? 'yes' : 'no' %> on <%= @pez.identity %>. thanks.
+</div>
+
+<div>
+  <%= link_to 'see other new candy', :controller => 'users', :action => 'welcome' unless new_candy.empty? %>
+</div>

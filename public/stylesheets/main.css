@@ -8,4 +8,7 @@ div { margin: 1em; }
 
 .status { font-size: 4em; }
 
+.liked { border-style: dotted; border-width: 3px; border-color: green; }
+.disliked { border-style: dotted; border-width: 3px; border-color: red; }
+
 #new-candy { font-size: 4em; }

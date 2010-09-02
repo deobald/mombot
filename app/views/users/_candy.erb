@@ -1,4 +1,12 @@
 
 <div>
-  <%= status_link candy %> - <%= vote_link candy, 'yes' %> | <%= vote_link candy, 'no' %>
+  <%= status_link candy %> 
+  - 
+  <span class='<%= liked candy %>'>
+  <%= vote_link candy, 'yes' %> 
+  </span>
+  | 
+  <span class='<%= disliked candy %>'>
+  <%= vote_link candy, 'no' %>
+  </span>
 </div>

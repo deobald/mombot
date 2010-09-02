@@ -7,8 +7,12 @@ module UsersHelper
     @approve ? 'yes' : 'no'
   end
   
+  def user
+    session[:user]
+  end
+  
   def new_candy
-    session[:user].unvoted_candy
+    user.dispenser
   end
   
   def status_link pez
@@ -24,7 +28,18 @@ module UsersHelper
   end
   
   def active_vote_link pez, yes_or_no
-    link_to yes_or_no, :controller => 'users', :action => 'vote', :pez_id => pez.id, :approve => yes_or_no.to_boolean
+    # link_to(yes_or_no, :controller => 'users', :action => 'vote', :pez_id => pez.id, :approve => yes_or_no.to_boolean)
+    link_to_remote yes_or_no,
+                   :update => 'new-candy', 
+                   :url => { :action => 'vote', :pez_id => pez.id, :approve => yes_or_no.to_boolean }
+  end
+  
+  def liked pez
+    user.liked pez
+  end
+  
+  def disliked pez
+    user.disliked pez
   end
   
 end
