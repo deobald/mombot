@@ -142,8 +142,8 @@ class UsersControllerTest < ActionController::TestCase
   end
   
   test "should return to login-required page" do
-    #cant access hidden without being logged in
-    get :hidden
+    #cant access voting page without being logged in
+    get :vote
     assert flash[:warning]
     assert_response :redirect
     assert_redirected_to :controller => 'users', :action => 'login'
@@ -151,8 +151,8 @@ class UsersControllerTest < ActionController::TestCase
     #login
     post :login, :user=>{ :identity => "bob", :password => "test"}
     assert_response :redirect
-    #redirected to hidden instead of default welcome
-    assert_redirected_to :controller => 'users', :action => 'hidden'
+    #redirected to voting page instead of default welcome
+    assert_redirected_to :controller => 'users', :action => 'vote'
     assert_nil session[:return_to]
     assert session[:user]
     assert flash[:message]
