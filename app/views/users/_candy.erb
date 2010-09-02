@@ -1,8 +1,4 @@
 
 <div>
-  <%= candy.identity %>
-  -
-  <%= vote_link candy, 'yes' %>
-  |
-  <%= vote_link candy, 'no' %>
+  <%= status_link candy %> - <%= vote_link candy, 'yes' %> | <%= vote_link candy, 'no' %>
 </div>

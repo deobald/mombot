@@ -22,5 +22,20 @@ class PezTest < ActiveSupport::TestCase
     assert_false not_seated.votable?
     assert seated.votable?
   end
+  
+  test "has a total of current votes" do
+    pez = Factory :pez
+    one = Factory :vote, :pez => pez, :user => Factory(:user)
+    two = Factory :vote, :pez => pez, :user => Factory(:user)
+    assert_equal 2, pez.votes_so_far
+  end
 
+  test "has a total of remaining votes" do
+    pez = Factory :pez
+    one = Factory :vote, :pez => pez, :user => Factory(:user)
+    Factory(:user)
+    Factory(:user)
+    Factory(:user)
+    assert_equal 3, pez.votes_remaining
+  end
 end

@@ -11,6 +11,14 @@ module UsersHelper
     session[:user].unvoted_candy
   end
   
+  def status_link pez
+    pez.votable? ? active_status_link(pez) : pez.identity
+  end
+  
+  def active_status_link pez
+    link_to pez.identity, :controller => 'pezez', :action => 'show', :id => pez.id
+  end
+  
   def vote_link pez, yes_or_no
     pez.votable? ? active_vote_link(pez, yes_or_no) : yes_or_no
   end

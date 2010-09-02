@@ -22,6 +22,14 @@ class Pez < ActiveRecord::Base
     Pez.minimum('priority', :conditions => ["status = ?", SEATED]) == self.priority
   end
   
+  def votes_so_far
+    self.votes.count
+  end
+  
+  def votes_remaining
+    User.all.count - votes_so_far
+  end
+  
   def wait_without_save
     change_state_without_save 'waiting'
   end

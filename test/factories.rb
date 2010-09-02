@@ -8,17 +8,17 @@ Factory.define :pez do |p|
 end
 
 Factory.define :user do |u|
-  u.identity   'russia'
-  u.admin      false
-  u.name       'Russia McPrussia'
-  u.hashed_password '77a0d943cdbace52716a9ef9fae12e45e2788d39' # test
-  u.password   'test'
+  u.sequence(:identity) {|n| "russia#{n}" }
+  u.admin                 false
+  u.name                  'Russia McPrussia'
+  u.hashed_password       '77a0d943cdbace52716a9ef9fae12e45e2788d39' # test
+  u.password              'test'
   u.password_confirmation 'test'
-  u.email      'russia@earth.com'
-  u.salt       '1000'
+  u.sequence(:email) {|n| "russia#{n}@earth.com" }
+  u.salt                  '1000'
 end
 
-Factory.define :votes do |v|
+Factory.define :vote do |v|
   v.association :pez
   v.association :user
   v.approve     false
