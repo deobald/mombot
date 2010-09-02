@@ -28,7 +28,6 @@ module UsersHelper
   end
   
   def active_vote_link pez, yes_or_no
-    # link_to(yes_or_no, :controller => 'users', :action => 'vote', :pez_id => pez.id, :approve => yes_or_no.to_boolean)
     link_to_remote yes_or_no,
                    :update => 'new-candy', 
                    :url => { :action => 'vote', :pez_id => pez.id, :approve => yes_or_no.to_boolean }

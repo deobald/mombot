@@ -24,18 +24,28 @@ class PezTest < ActiveSupport::TestCase
   end
   
   test "has a total of current votes" do
-    pez = Factory :pez
-    one = Factory :vote, :pez => pez, :user => Factory(:user)
-    two = Factory :vote, :pez => pez, :user => Factory(:user)
+    pez = Factory(:pez).seat
+    pez.receive_vote_from Factory(:user), true
+    pez.receive_vote_from Factory(:user), false
     assert_equal 2, pez.votes_so_far
   end
 
   test "has a total of remaining votes" do
-    pez = Factory :pez
-    one = Factory :vote, :pez => pez, :user => Factory(:user)
+    pez = Factory(:pez).seat
+    pez.receive_vote_from Factory(:user), true
     Factory(:user)
     Factory(:user)
     Factory(:user)
     assert_equal 3, pez.votes_remaining
+  end
+  
+  test "dispensed when last vote is cast" do
+    guy = Factory(:user)
+    gal = Factory(:user)
+    pez = Factory(:pez).seat
+    pez.receive_vote_from guy, true
+    assert_equal 'seated', pez.status
+    pez.receive_vote_from gal, true
+    assert_equal 'dispensed', pez.status
   end
 end

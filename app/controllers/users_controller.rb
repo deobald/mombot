@@ -13,15 +13,7 @@ class UsersController < ApplicationController
     @approve = params[:approve] || false
     user = session[:user]
     
-    vote = Vote.for(@pez, user)
-    if vote
-      puts "changing approval to: #{@approve}"
-      vote.approve = @approve
-      vote.save!
-    else
-      puts "creating vote: #{user.inspect}, #{@pez.inspect}, #{@approve.inspect}"
-      Vote.create! :user => user, :pez => @pez, :approve => @approve
-    end
+    @pez.receive_vote_from user, @approve
     show_candy
   end
   

@@ -22,6 +22,17 @@ class Pez < ActiveRecord::Base
     Pez.minimum('priority', :conditions => ["status = ?", SEATED]) == self.priority
   end
   
+  def receive_vote_from user, approves
+    vote = Vote.for(self, user)
+    if vote
+      vote.approve = approves
+      vote.save!
+    else
+      Vote.create! :user => user, :pez => self, :approve => approves
+    end
+    dispense if votes_remaining == 0
+  end
+  
   def votes_so_far
     self.votes.count
   end
