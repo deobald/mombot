@@ -4,7 +4,7 @@ class ReleaseOne < ActiveRecord::Migration
       t.string  :identity, :null => false
       t.string  :colour, :null => false
       t.string  :status, :null => false  # waiting, seated
-      t.integer :priority, :null => false
+      t.integer :priority
       t.string  :secret_code
       t.timestamps
     end

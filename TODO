@@ -5,6 +5,7 @@
 
 * users
 ** only one candy at a time
+
 ** top candy shows number of votes in/out
 ** finishing makes for secret code on admin page!
 ** creation by entering secret code. expire the pez.
@@ -13,6 +14,8 @@
 * put this shit on the internet someplace
 
 * rails 3?
+
+* hamlize. sassize.
 
 * colour picker
 

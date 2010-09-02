@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
 
   include Authentication
+  include UsersHelper # fuck you, rails -- isn't this shit free?
   
-  before_filter :login_required, :only => ['welcome', 'change_password', 'hidden', 'vote']
+  before_filter :login_required, :only => ['welcome', 'change_password', 'show_candy', 'vote']
 
   def welcome
-    @new_candy = session[:user].unvoted_candy
   end
   
   def vote
@@ -14,6 +14,8 @@ class UsersController < ApplicationController
     Vote.create :user => session[:user], :pez => @pez, :approve => @approve
   end
   
-  def hidden
+  def show_candy
+    render :partial => 'candy', :collection => new_candy
   end
+
 end

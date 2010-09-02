@@ -1,13 +1,6 @@
 
-<div>
-  <%= "new candy!" unless @new_candy.empty? %>
-  <% @new_candy.each do |pez| %>
-    <div>
-      <%= pez.identity %>
-      -
-      <%= link_to 'yes', :controller => 'users', :action => 'vote', :pez_id => pez.id, :approve => true %>
-      |
-      <%= link_to 'no', :controller => 'users', :action => 'vote', :pez_id => pez.id, :approve => false %>
-    </div>
-  <% end %>
+<div id='new-candy'>
+  <%= link_to_remote 'new candy!', 
+                     :update => 'new-candy',
+                     :url => { :action => :show_candy } unless new_candy.empty? %>
 </div>
