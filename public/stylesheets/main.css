@@ -1,6 +1,14 @@
 
 div { margin: 1em; }
 
+label {
+	display: block;
+	float: left;
+	width: 100px;
+	text-align: right;
+	margin: 0px 5px 0px 0px;
+}
+
 .header { border-style: dotted; border-width: 1px; }
 .dispenser { border-style: dotted; border-width: 1px; }
 

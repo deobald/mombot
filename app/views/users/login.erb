@@ -7,16 +7,23 @@
       <div><%= flash[:warning] %></div>
     <% end %>
 
-    <label for="user_identity">Identity:</label><br/>
-    <%= text_field "user", "identity", :size => 20 %><br/>
+    <div>
+      <label for="user_identity">Identity:</label>
+      <%= text_field "user", "identity", :size => 20 %>
+    </div>
 
-    <label for="user_password">Password:</label><br/>
-    <%= password_field "user", "password", :size => 20 %><br/>
+    <div>
+      <label for="user_password">Password:</label>
+      <%= password_field "user", "password", :size => 20 %>
+    </div>
 
-    <%= submit_tag "Submit" %>
+    <div>
+      <%= submit_tag "Submit" %>
+    </div>
 
-    <%= link_to 'Register', :action => 'signup' %> |
-    <%= link_to 'Forgot my password', :action => 'forgot_password' %>      
+    <div>
+      <%= link_to 'Forgot my password', :action => 'forgot_password' %>
+    </div>
 
   <% end %>
 </div>
