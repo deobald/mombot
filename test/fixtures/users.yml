@@ -6,44 +6,9 @@ steve:
   hashed_password: 77a0d943cdbace52716a9ef9fae12e45e2788d39 # test
   salt: 1000
 
-melissa:
-  id: 1000010
-  identity: melissa
-  email: melissa@melissa.com
-  hashed_password: 77a0d943cdbace52716a9ef9fae12e45e2788d39 # test
-  salt: 1000
-
 geoff:
-  id: 1000011
+  id: 1000010
   identity: geoff
   email: geoff@geoff.com
   hashed_password: 77a0d943cdbace52716a9ef9fae12e45e2788d39 # test
-  salt: 1000
-  
-gabe:
-  id: 1000012
-  identity: gabe
-  email: gabe@gabe.com
-  hashed_password: 77a0d943cdbace52716a9ef9fae12e45e2788d39 # test
-  salt: 1000
-
-bob:
-  id: 1000001
-  identity: bob
-  email: bob@mcbob.com
-  hashed_password: 77a0d943cdbace52716a9ef9fae12e45e2788d39 # test
-  salt: 1000
-
-existingbob:
-  id: 1000002
-  identity: existingbob
-  email: exbob@mcbob.com
-  hashed_password: 77a0d943cdbace52716a9ef9fae12e45e2788d39 # test
-  salt: 1000
-
-longbob:
-  id: 1000003
-  identity: longbob
-  email: lbob@mcbob.com
-  hashed_password: 00728d3362c26746ec25963f71be022b152237a9 # longtest
   salt: 1000

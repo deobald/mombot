@@ -6,9 +6,6 @@ class UsersController; def rescue_action(e) raise e end; end
 
 class UsersControllerTest < ActionController::TestCase
 
-  self.use_instantiated_fixtures  = true
-  fixtures :all
-
   def setup
     @controller = UsersController.new
     @request    = ActionController::TestRequest.new
@@ -17,9 +14,10 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test "should authenticate an existing user" do
-    post :login, :user => { :identity => "bob", :password => "test" }
+    bob = Factory :existingbob
+    post :login, :user => { :identity => "existingbob", :password => "test" }
     assert session[:user]
-    assert_equal @bob, session[:user]
+    assert_equal bob, session[:user]
     assert_response :redirect
     assert_redirected_to :controller => 'users', :action => 'welcome'
   end
@@ -58,6 +56,7 @@ class UsersControllerTest < ActionController::TestCase
   end
   
   test "should logoff" do
+    Factory :bob
     post :login, :user=>{ :identity => "bob", :password => "test"}
     assert_response :redirect
     assert session[:user]
@@ -68,8 +67,9 @@ class UsersControllerTest < ActionController::TestCase
   end
   
   test "should email forgotten passwords" do
+    Factory :existingbob
     #we can login
-    post :login, :user => { :identity => "bob", :password => "test"}
+    post :login, :user => { :identity => "existingbob", :password => "test"}
     assert_response :redirect
     assert session[:user]
     #logout
@@ -90,6 +90,7 @@ class UsersControllerTest < ActionController::TestCase
   end
   
   test "should require login to see protected pages" do
+    Factory :bob
     #can't access welcome if not logged in
     get :welcome
     assert flash[:warning]
@@ -107,6 +108,7 @@ class UsersControllerTest < ActionController::TestCase
   end
   
   test "should disable old password when password changes" do
+    Factory :bob
     #can login
     post :login, :user=>{ :identity => "bob", :password => "test"}
     assert_response :redirect
@@ -142,6 +144,7 @@ class UsersControllerTest < ActionController::TestCase
   end
   
   test "should return to login-required page" do
+    Factory :bob
     #cant access voting page without being logged in
     get :vote
     assert flash[:warning]

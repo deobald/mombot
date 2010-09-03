@@ -43,3 +43,12 @@ Factory.define :longbob, :class => User do |b|
   b.password_confirmation 'longtest'
   b.email                 'lbob@mcbob.com'
 end
+
+Factory.define :existingbob, :class => User do |b|
+  b.identity              'existingbob'
+  b.admin                 false
+  b.name                  'Exbob McBob'
+  b.password              'test'
+  b.password_confirmation 'test'
+  b.email                 'exbob@mcbob.com'
+end
