@@ -38,6 +38,10 @@ module Authenticatable
       return u if Secrets.encrypt(pass, u.salt) == u.hashed_password
       nil
     end
+    
+    def adminify! identity
+      first(:conditions => ["identity = ?", identity]).adminify!
+    end
   end
 
 end

@@ -3,7 +3,7 @@ class AdminsController < ApplicationController
   
   def index
     @waiting = Pez.all :conditions => ['status = ?', 'waiting']
-    @dispensed = Pez.all :conditions => ['status = ?', 'dispensed']
+    @dispensed = Pez.all :conditions => ['status = ? and priority > 0', 'dispensed']
   end
   
   def seat

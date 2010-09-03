@@ -7,21 +7,23 @@
   </head>
   <body>
     <div class='header'>
-      <span class='headerheader'>
-        <%= session[:user] ? session[:user].identity + ':' : 'handy links:' %>
-      </span>
-      <%= link_to 'home', '/' %>
+      <div>
+        <span class='headerheader'>
+          <%= session[:user] ? session[:user].identity + ':' : 'handy links:' %>
+        </span>
+        <%= link_to 'home', '/' %>
+        
+        <% if session[:user] %>
+          | <%= link_to 'logout', :controller => 'users', :action => 'logout' %>
+          <% if session[:user].admin? %>
+            | <%= link_to 'admin', :controller => 'admins', :action => 'index' %>
+          <% end %>
       
-      <% if session[:user] %>
-        <%= link_to 'logout', :controller => 'users', :action => 'logout' %>
-        <% if session[:user].admin? %>
-          <%= link_to 'admin', :controller => 'admins', :action => 'index' %>
+        <% else %>
+          | <%= link_to 'login', :controller => 'users', :action => 'login' %>
+          | <%= link_to 'apply', :controller => 'pezez', :action => 'new' %>
         <% end %>
-      
-      <% else %>
-        <%= link_to 'login', :controller => 'users', :action => 'login' %>
-        <%= link_to 'apply', :controller => 'pezez', :action => 'new' %>
-      <% end %>
+      </div>
     </div>
 
     <%= yield %>

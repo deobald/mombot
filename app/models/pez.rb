@@ -38,7 +38,11 @@ class Pez < ActiveRecord::Base
   end
   
   def votes_remaining
-    User.all.count - votes_so_far
+    votes_required - votes_so_far
+  end
+  
+  def votes_required
+    User.all.count
   end
   
   def wait_without_save
@@ -69,7 +73,7 @@ class Pez < ActiveRecord::Base
   end
   
   def generate_secret_code
-    self.secret_code = Secrets.random_string 256
+    self.secret_code = Secrets.random_string 16
   end
   
   def waiting?
