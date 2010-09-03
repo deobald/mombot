@@ -191,20 +191,20 @@ class UserTest < ActiveSupport::TestCase
   end
   
   test "random string does not collide with old password" do
-    new_pass = User.random_string(10)
+    new_pass = Secrets.random_string(10)
     assert_not_nil new_pass
     assert_equal 10, new_pass.length
   end
   
   test "hashes passwords based on salt" do
-    u=User.new
-    u.identity      = "nonexistingbob"
-    u.email="nonexistingbob@mcbob.com"  
-    u.salt="1000"
+    u = User.new
+    u.identity = "nonexistingbob"
+    u.email = "nonexistingbob@mcbob.com"  
+    u.salt = "1000"
     u.password = u.password_confirmation = "bobs_secure_password"
     assert u.save   
     assert_equal 'b1d27036d59f9499d403f90e0bcf43281adaa844', u.hashed_password
-    assert_equal 'b1d27036d59f9499d403f90e0bcf43281adaa844', User.encrypt("bobs_secure_password", "1000")
+    assert_equal 'b1d27036d59f9499d403f90e0bcf43281adaa844', Secrets.encrypt("bobs_secure_password", "1000")
   end
   
   test "protects id and salt attributes from user tampering" do

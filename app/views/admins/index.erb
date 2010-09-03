@@ -1,11 +1,26 @@
 
 <div>oh, hey. you're an admin. here are some pezez:</div>
 
-<ul>
-  <% @waiting.each do |pez| %>
-  <li>
-    <%= pez.identity %>
-    <%= link_to 'seat!', :controller => 'admins', :action => 'seat', :pez_id => pez.id %>
-  </li>
-  <% end %>
-</ul>
+<div>
+  dispensed:
+  <ul>
+    <% @dispensed.each do |pez| %>
+      <li>
+        <%= pez.identity %>
+        <%= pez.secret_code %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<div>
+  waiting:
+  <ul>
+    <% @waiting.each do |pez| %>
+      <li>
+        <%= pez.identity %>
+        <%= link_to 'seat!', :controller => 'admins', :action => 'seat', :pez_id => pez.id %>
+      </li>
+    <% end %>
+  </ul>
+</div>

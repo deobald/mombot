@@ -48,4 +48,11 @@ class PezTest < ActiveSupport::TestCase
     pez.receive_vote_from gal, true
     assert_equal 'dispensed', pez.status
   end
+  
+  test "dispensing generates a secret code" do
+    gal = Factory(:user)
+    pez = Factory(:pez).seat
+    pez.receive_vote_from gal, true
+    assert_not_equal '', pez.secret_code
+  end
 end

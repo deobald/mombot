@@ -54,6 +54,7 @@ class Pez < ActiveRecord::Base
   end
   
   def dispense
+    generate_secret_code
     change_state_to DISPENSED
   end
 
@@ -65,6 +66,10 @@ class Pez < ActiveRecord::Base
     change_state_without_save what
     self.save!
     self    
+  end
+  
+  def generate_secret_code
+    self.secret_code = Secrets.random_string 256
   end
   
   def waiting?
