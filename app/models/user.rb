@@ -21,8 +21,7 @@ class User < ActiveRecord::Base
   end
   
   def secret_code_checks_out
-    matched = Pez.all :conditions => ['status = ? AND secret_code = ?', 'dispensed', secret_code]
-    matched.first
+    Pez.first :conditions => ['status = ? AND identity = ? AND secret_code = ?', 'dispensed', identity, secret_code]
   end
   
   def dispenser

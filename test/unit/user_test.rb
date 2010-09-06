@@ -32,6 +32,16 @@ class UserTest < ActiveSupport::TestCase
     assert_equal 'disliked', user.disliked(liked)
   end
   
+  test "creating a user succeeds with a secret code" do
+    pez = Factory(:pez, :identity => 'sigmund').dispense
+    u = User.new
+    u.identity = 'sigmund'
+    u.email = 'sig@freud.name'
+    u.password = u.password_confirmation = 'password'
+    u.secret_code = pez.secret_code
+    u.save!    
+  end
+  
   test "creating a user fails without secret code" do
     pez = Factory(:pez, :identity => 'sigmund').dispense
     u = User.new
@@ -43,8 +53,17 @@ class UserTest < ActiveSupport::TestCase
     end
   end
   
-  # u.secret_code = pez.secret_code
-  # assert u.save
+  test "creating a user fails unless secret code matches by identity" do
+    pez = Factory(:pez, :identity => 'not-sigmund').dispense
+    u = User.new
+    u.identity = 'sigmund'
+    u.email = 'sig@freud.name'
+    u.password = u.password_confirmation = 'password'
+    u.secret_code = pez.secret_code
+    assert_raise Exception do
+      u.save!
+    end
+  end
   
 
 end

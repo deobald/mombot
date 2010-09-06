@@ -1,14 +1,14 @@
 require 'factory_girl'
 
 Factory.define :pez do |p|
-  p.identity 'china'
+  p.sequence(:identity) {|n| "china#{n}" }
   p.colour   'aqua'
   p.status   'seated'
   p.priority 1
 end
 
 Factory.define :dispensed_pez, :class => Pez do |p|
-  p.identity    'russia'
+  p.sequence(:identity) {|n| "china#{n}" }
   p.colour      'aqua'
   p.priority    1
   p.secret_code 'abcdef123456abcdef123456'
@@ -25,7 +25,7 @@ Factory.define :user do |u|
   u.sequence(:email) {|n| "russia#{n}@earth.com" }
   u.salt                  '1000'
   u.secret_code           'abcdef123456abcdef123456'
-  u.after_build { |after| Factory :dispensed_pez }
+  u.after_build { |after| Factory :dispensed_pez, :identity => after.identity }
 end
 
 Factory.define :vote do |v|
@@ -64,4 +64,5 @@ Factory.define :existingbob, :class => User do |b|
   b.password_confirmation 'test'
   b.email                 'exbob@mcbob.com'
   b.secret_code           'abcdef123456abcdef123456'
+  b.after_build { |after| Factory :dispensed_pez, :identity => after.identity }
 end

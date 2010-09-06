@@ -23,7 +23,7 @@ class AuthenticatableTest < ActiveSupport::TestCase
   
   test "authenticates only valid user/pass combos" do
     #check that we can identity a valid user
-    Factory :dispensed_pez
+    Factory :dispensed_pez, :identity => 'bob'
     bob = Factory :bob
     assert_equal  bob, User.authenticate("bob", "test")
     #wrong username
@@ -36,7 +36,7 @@ class AuthenticatableTest < ActiveSupport::TestCase
   
   test "disables old password on password change" do
     # check success
-    Factory :dispensed_pez
+    Factory :dispensed_pez, :identity => 'longbob'
     @longbob = Factory :longbob
     assert_equal @longbob, User.authenticate("longbob", "longtest")
     #change password
@@ -55,7 +55,7 @@ class AuthenticatableTest < ActiveSupport::TestCase
   
   test "does not allow short/long/empty passwords" do
     #check thaat we can't create a user with any of the disallowed paswords
-    pez = Factory :dispensed_pez
+    pez = Factory :dispensed_pez, :identity => 'nonbob'
     u = User.new    
     u.identity = "nonbob"
     u.email = "nonbob@mcbob.com"
@@ -86,18 +86,22 @@ class AuthenticatableTest < ActiveSupport::TestCase
     u.email = "okbob@mcbob.com"
     u.secret_code = pez.secret_code
     #too short
+    Factory :dispensed_pez, :identity => 'x'
     u.identity = "x"
     assert !u.save     
     assert u.errors.invalid?('identity')
     #too long
+    Factory :dispensed_pez, :identity => 'hugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhug'
     u.identity = "hugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhug"
     assert !u.save     
     assert u.errors.invalid?('identity')
     #empty
+    Factory :dispensed_pez, :identity => ''
     u.identity = ""
     assert !u.save
     assert u.errors.invalid?('identity')
     #ok
+    Factory :dispensed_pez, :identity => 'okbob'
     u.identity = "okbob"
     assert u.save  
     assert u.errors.empty?
@@ -116,18 +120,19 @@ class AuthenticatableTest < ActiveSupport::TestCase
   end
 
   test "does not allow creation of a user with an existing name" do
-    #check can't create new user with existing username
-    pez = Factory :dispensed_pez
+    existing = Factory :user, :identity => 'existingbob'
     u = User.new
     u.identity = "existingbob"
+    u.email = "already@taken.org"
     u.password = u.password_confirmation = "bobs_secure_password"
-    u.secret_code = pez.secret_code
+    u.secret_code = existing.secret_code
     assert !u.save
+    assert u.errors.invalid?('identity')
   end
   
   test "authenticates new users" do
     #check create works and we can authenticate after creation
-    pez = Factory :dispensed_pez
+    pez = Factory :dispensed_pez, :identity => 'nonexistingbob'
     u = User.new
     u.identity = "nonexistingbob"
     u.password = u.password_confirmation = "bobs_secure_password"
@@ -138,7 +143,7 @@ class AuthenticatableTest < ActiveSupport::TestCase
     assert_equal 10, u.salt.length
     assert_equal u, User.authenticate(u.identity, u.password)
   
-    new_pez = Factory :dispensed_pez
+    new_pez = Factory :dispensed_pez, :identity => 'newbob'
     u = User.new :identity => "newbob", 
                  :password => "newpassword", 
                  :password_confirmation => "newpassword", 
@@ -153,7 +158,7 @@ class AuthenticatableTest < ActiveSupport::TestCase
   
   test "sends email when new password requested" do
     #check user authenticates
-    Factory :dispensed_pez
+    Factory :dispensed_pez, :identity => 'bob'
     @bob = Factory :bob
     assert_equal  @bob, User.authenticate("bob", "test")    
     #send new password
@@ -179,7 +184,7 @@ class AuthenticatableTest < ActiveSupport::TestCase
   end
   
   test "hashes passwords based on salt" do
-    pez = Factory :dispensed_pez
+    pez = Factory :dispensed_pez, :identity => 'nonexistingbob'
     u = User.new
     u.identity = "nonexistingbob"
     u.email = "nonexistingbob@mcbob.com"
@@ -193,7 +198,7 @@ class AuthenticatableTest < ActiveSupport::TestCase
   
   test "protects id and salt attributes from user tampering" do
     #check attributes are protected
-    pez = Factory :dispensed_pez
+    pez = Factory :dispensed_pez, :identity => 'badbob'
     u = User.new :id => 999999, 
                  :salt => "I-want-to-set-my-salt", 
                  :identity => "badbob", 

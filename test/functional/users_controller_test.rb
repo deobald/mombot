@@ -14,7 +14,6 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test "should authenticate an existing user" do
-    Factory :dispensed_pez
     bob = Factory :existingbob
     post :login, :user => { :identity => "existingbob", :password => "test" }
     assert session[:user]
@@ -24,7 +23,7 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test "should login after signup" do
-    pez = Factory :dispensed_pez
+    pez = Factory :dispensed_pez, :identity => 'newbob'
     post :signup, :user => { :identity => "newbob", 
                              :password => "newpassword", 
                              :password_confirmation => "newpassword", 
@@ -37,24 +36,29 @@ class UsersControllerTest < ActionController::TestCase
   end
   
   test "should fail a bad signup" do
-    post :signup, :user => { :identity => "newbob", :password => "newpassword", :password_confirmation => "wrong" , :email => "newbob@mcbob.com"}
+    pez = Factory :dispensed_pez, :identity => 'newbob'
+    post :signup, :user => { :identity => "newbob", :password => "newpassword", :password_confirmation => "wrong", 
+                             :email => "newbob@mcbob.com", :secret_code => pez.secret_code }
     assert_response :success
     assert_template "users/signup.erb"
     assert_nil session[:user]
   
-    post :signup, :user => { :identity => "yo", :password => "newpassword", :password_confirmation => "newpassword" , :email => "newbob@mcbob.com"}
+    post :signup, :user => { :identity => "yo", :password => "newpassword", :password_confirmation => "newpassword", 
+                             :email => "newbob@mcbob.com", :secret_code => pez.secret_code }
     assert_response :success
     assert_template "users/signup.erb"
     assert_nil session[:user]
   
-    post :signup, :user => { :identity => "yo", :password => "newpassword", :password_confirmation => "wrong" , :email => "newbob@mcbob.com"}
+    post :signup, :user => { :identity => "yo", :password => "newpassword", :password_confirmation => "wrong", 
+                             :email => "newbob@mcbob.com", :secret_code => pez.secret_code }
     assert_response :success
     assert_template "users/signup.erb"
     assert_nil session[:user]
   end
   
   test "should fail login with bad password" do
-    post :login, :user=> { :identity => "bob", :password => "not_correct" }
+    bob = Factory :existingbob
+    post :login, :user => { :identity => "existingbob", :password => "not_correct" }
     assert_response :success
     assert_nil session[:user]
     assert flash[:warning]
@@ -62,9 +66,8 @@ class UsersControllerTest < ActionController::TestCase
   end
   
   test "should logoff" do
-    Factory :dispensed_pez
-    Factory :bob
-    post :login, :user=>{ :identity => "bob", :password => "test"}
+    bob = Factory :existingbob
+    post :login, :user=>{ :identity => "existingbob", :password => "test"}
     assert_response :redirect
     assert session[:user]
     get :logout
@@ -74,7 +77,6 @@ class UsersControllerTest < ActionController::TestCase
   end
   
   test "should email forgotten passwords" do
-    Factory :dispensed_pez
     Factory :existingbob
     #we can login
     post :login, :user => { :identity => "existingbob", :password => "test"}
@@ -98,15 +100,14 @@ class UsersControllerTest < ActionController::TestCase
   end
   
   test "should require login to see protected pages" do
-    Factory :dispensed_pez
-    Factory :bob
+    Factory :existingbob
     #can't access welcome if not logged in
     get :welcome
     assert flash[:warning]
     assert_response :redirect
     assert_redirected_to :controller => 'users', :action => 'login'
     #login
-    post :login, :user => { :identity => "bob", :password => "test"}
+    post :login, :user => { :identity => "existingbob", :password => "test"}
     assert_response :redirect
     assert session[:user]
     #can access it now
@@ -117,10 +118,9 @@ class UsersControllerTest < ActionController::TestCase
   end
   
   test "should disable old password when password changes" do
-    Factory :dispensed_pez
-    Factory :bob
+    Factory :existingbob
     #can login
-    post :login, :user=>{ :identity => "bob", :password => "test"}
+    post :login, :user=>{ :identity => "existingbob", :password => "test"}
     assert_response :redirect
     assert session[:user]
     #try to change password
@@ -142,20 +142,19 @@ class UsersControllerTest < ActionController::TestCase
     assert_response :redirect
     assert_nil session[:user]
     #old password no longer works
-    post :login, :user=> { :identity => "bob", :password => "test" }
+    post :login, :user=> { :identity => "existingbob", :password => "test" }
     assert_response :success
     assert_nil session[:user]
     assert flash[:warning]
     assert_template "users/login.erb"
     #new password works
-    post :login, :user=>{ :identity => "bob", :password => "newpass"}
+    post :login, :user=>{ :identity => "existingbob", :password => "newpass"}
     assert_response :redirect
     assert session[:user]
   end
   
   test "should return to login-required page" do
-    Factory :dispensed_pez
-    Factory :bob
+    Factory :existingbob
     #cant access voting page without being logged in
     get :vote
     assert flash[:warning]
@@ -163,7 +162,7 @@ class UsersControllerTest < ActionController::TestCase
     assert_redirected_to :controller => 'users', :action => 'login'
     assert session[:return_to]
     #login
-    post :login, :user=>{ :identity => "bob", :password => "test"}
+    post :login, :user=>{ :identity => "existingbob", :password => "test"}
     assert_response :redirect
     #redirected to voting page instead of default welcome
     assert_redirected_to :controller => 'users', :action => 'vote'
@@ -173,7 +172,7 @@ class UsersControllerTest < ActionController::TestCase
     #logout and login again
     get :logout
     assert_nil session[:user]
-    post :login, :user=>{ :identity => "bob", :password => "test"}
+    post :login, :user=>{ :identity => "existingbob", :password => "test"}
     assert_response :redirect
     #this time we were redirected to welcome
     assert_redirected_to :controller => 'users', :action => 'welcome'

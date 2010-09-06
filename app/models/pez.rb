@@ -5,6 +5,8 @@ class Pez < ActiveRecord::Base
   has_many :votes
   has_many :users, :through => :votes
   
+  validates_uniqueness_of :identity
+  
   SEATED = 'seated'
   WAITING = 'waiting'
   DISPENSED = 'dispensed'
