@@ -66,5 +66,16 @@ class UserTest < ActiveSupport::TestCase
     end
   end
   
+  test "creating a user changes the priority of the associated pez to zero" do
+    pez = Factory(:pez, :identity => 'sigmund').dispense
+    u = User.new
+    u.identity = 'sigmund'
+    u.email = 'sig@freud.name'
+    u.password = u.password_confirmation = 'password'
+    u.secret_code = pez.secret_code
+    u.save!
+    pez.reload
+    assert_equal 0, pez.priority
+  end
 
 end

@@ -63,6 +63,11 @@ class Pez < ActiveRecord::Base
     generate_secret_code
     change_state_to DISPENSED
   end
+  
+  def expire
+    self.priority = 0
+    self.save!
+  end
 
   def change_state_without_save what
     self.status = what

@@ -21,7 +21,15 @@ class User < ActiveRecord::Base
     true
   end
   
+  def after_create
+    my_dispensed_pez.expire
+  end
+  
   def secret_code_checks_out
+    my_dispensed_pez
+  end
+  
+  def my_dispensed_pez
     Pez.first :conditions => ['status = ? AND identity = ? AND secret_code = ?', 'dispensed', identity, secret_code]
   end
   
