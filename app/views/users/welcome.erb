@@ -4,3 +4,7 @@
                      :update => 'new-candy',
                      :url => { :action => :show_candy } unless new_candy.empty? %>
 </div>
+
+<div id='no-candy'>
+  <%= 'no new candy :(' if new_candy.empty? %>
+</div>

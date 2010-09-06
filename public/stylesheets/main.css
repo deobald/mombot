@@ -20,3 +20,4 @@ label {
 .disliked { border-style: dotted; border-width: 3px; border-color: red; }
 
 #new-candy { font-size: 4em; }
+#no-candy { font-size: 4em; }
