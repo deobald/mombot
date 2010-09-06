@@ -20,5 +20,5 @@ class UsersController < ApplicationController
   def show_candy
     render :partial => 'candy', :collection => new_candy
   end
-
+  
 end

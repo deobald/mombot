@@ -3,15 +3,17 @@ module Authentication
 
   def signup
     @user = User.new(params[:user])
-    if request.post?  
-      if @user.save
-        session[:user] = User.authenticate(@user.identity, @user.password)
-        flash[:message] = "Signup successful"
-        redirect_to :action => "welcome"          
-      else
-        flash[:warning] = "Signup unsuccessful"
-      end
+    return unless request.post?
+
+    if @user.save
+      session[:user] = User.authenticate(@user.identity, @user.password)
+      flash[:message] = "Signup successful"
+      redirect_to :action => "welcome"          
+    else
+      flash[:warning] = "Signup unsuccessful"
     end
+  rescue SecretCodeError
+    flash[:warning] = "Signup unsuccessful: the secret code you entered is invalid."
   end
 
   def login

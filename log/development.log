@@ -15714,3 +15714,988 @@ Completed in 76ms (View: 44, DB: 0) | 200 OK [http://localhost/users/signup]
 [0m
   [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
   [4;35;1mSQL (1.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100823220454')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (3.4ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to ReleaseOne (20100823220454)
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "pezez" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "colour" varchar(255) NOT NULL, "status" varchar(255) NOT NULL, "priority" integer, "secret_code" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "admin" boolean DEFAULT 0, "name" varchar(255), "hashed_password" varchar(255), "email" varchar(255), "salt" varchar(255), "created_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pez_id" integer NOT NULL, "user_id" integer NOT NULL, "approve" boolean NOT NULL) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100823220454')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("pezez")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("votes")[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("pezez")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("votes")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mCREATE TABLE "pezez" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "colour" varchar(255) NOT NULL, "status" varchar(255) NOT NULL, "priority" integer, "secret_code" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "admin" boolean DEFAULT 'f', "name" varchar(255), "hashed_password" varchar(255), "email" varchar(255), "salt" varchar(255), "created_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pez_id" integer NOT NULL, "user_id" integer NOT NULL, "approve" boolean NOT NULL) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("schema_migrations")[0m
+  [4;35;1mSQL (2.8ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100823220454')[0m
+
+
+Processing PezezController#index (for 127.0.0.1 at 2010-09-06 05:41:27) [GET]
+  [4;36;1mPez Load (1.5ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'seated') ORDER BY priority ASC[0m
+  [4;35;1mPez Load (0.9ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'waiting') ORDER BY priority ASC[0m
+Rendering template within layouts/main
+Rendering pezez/index
+Completed in 43ms (View: 31, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-09-06 05:41:28) [GET]
+Rendering template within layouts/main
+Rendering users/login
+Completed in 27ms (View: 20, DB: 0) | 200 OK [http://localhost/users/login]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-09-06 05:41:32) [POST]
+  Parameters: {"commit"=>"Submit", "method"=>"post", "authenticity_token"=>"eLfB+bAahAiC4Kzu3m9CZ2/Enp+b/ID8BBCVrm8h/gI=", "user"=>{"identity"=>"steve", "password"=>"test"}}
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'steve') LIMIT 1[0m
+Redirected to http://localhost:3000/users/welcome
+Completed in 46ms (DB: 1) | 302 Found [http://localhost/users/login?method=post]
+
+
+Processing UsersController#welcome (for 127.0.0.1 at 2010-09-06 05:41:32) [GET]
+Rendering template within layouts/main
+Rendering users/welcome
+  [4;35;1mPez Load (1.3ms)[0m   [0mSELECT * FROM "pezez" WHERE ("pezez"."status" = 'seated') [0m
+Completed in 65ms (View: 34, DB: 1) | 200 OK [http://localhost/users/welcome]
+
+
+Processing UsersController#show_candy (for 127.0.0.1 at 2010-09-06 05:41:44) [POST]
+  Parameters: {"authenticity_token"=>"eLfB+bAahAiC4Kzu3m9CZ2/Enp+b/ID8BBCVrm8h/gI=", "_"=>""}
+  [4;36;1mPez Load (1.2ms)[0m   [0;1mSELECT * FROM "pezez" WHERE ("pezez"."status" = 'seated') [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = 1000099 AND "votes"."pez_id" = 1000021) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = 1000099 AND "votes"."pez_id" = 1000021) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+Rendered users/_candy (34.7ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = 1000099 AND "votes"."pez_id" = 1000022) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = 1000099 AND "votes"."pez_id" = 1000022) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+Rendered users/_candy (5.8ms)
+Completed in 149ms (View: 48, DB: 2) | 200 OK [http://localhost/users/show_candy]
+
+
+Processing UsersController#vote (for 127.0.0.1 at 2010-09-06 05:41:45) [POST]
+  Parameters: {"pez_id"=>"1000021", "authenticity_token"=>"eLfB+bAahAiC4Kzu3m9CZ2/Enp+b/ID8BBCVrm8h/gI=", "approve"=>"true", "_"=>""}
+  [4;35;1mPez Load (0.7ms)[0m   [0mSELECT * FROM "pezez" WHERE ("pezez"."id" = 1000021) [0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = 1000099 AND "votes"."pez_id" = 1000021) [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 1000099 AND "votes".pez_id = 1000021) LIMIT 1[0m
+  [4;36;1mVote Create (0.5ms)[0m   [0;1mINSERT INTO "votes" ("pez_id", "user_id", "approve") VALUES(1000021, 1000099, 't')[0m
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".pez_id = 1000021) [0m
+  [4;35;1mPez Load (0.9ms)[0m   [0mSELECT * FROM "pezez" WHERE ("pezez"."status" = 'seated') [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+  [4;35;1mVote Load (0.4ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = 1000099 AND "votes"."pez_id" = 1000021) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = 1000099 AND "votes"."pez_id" = 1000021) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+Rendered users/_candy (11.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = 1000099 AND "votes"."pez_id" = 1000022) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = 1000099 AND "votes"."pez_id" = 1000022) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+Rendered users/_candy (5.9ms)
+Completed in 101ms (View: 19, DB: 5) | 200 OK [http://localhost/users/vote?approve=true&pez_id=1000021]
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (3.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to ReleaseOne (20100823220454)
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "pezez" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "colour" varchar(255) NOT NULL, "status" varchar(255) NOT NULL, "priority" integer, "secret_code" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "admin" boolean DEFAULT 0, "name" varchar(255), "hashed_password" varchar(255), "email" varchar(255), "salt" varchar(255), "created_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pez_id" integer NOT NULL, "user_id" integer NOT NULL, "approve" boolean NOT NULL) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100823220454')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("pezez")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("votes")[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("pezez")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("votes")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mCREATE TABLE "pezez" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "colour" varchar(255) NOT NULL, "status" varchar(255) NOT NULL, "priority" integer, "secret_code" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "admin" boolean DEFAULT 'f', "name" varchar(255), "hashed_password" varchar(255), "email" varchar(255), "salt" varchar(255), "created_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pez_id" integer NOT NULL, "user_id" integer NOT NULL, "approve" boolean NOT NULL) [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("schema_migrations")[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100823220454')[0m
+
+
+Processing UsersController#logout (for 127.0.0.1 at 2010-09-06 05:43:09) [GET]
+Redirected to http://localhost:3000/users/login
+Completed in 30ms (DB: 0) | 302 Found [http://localhost/users/logout]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-09-06 05:43:10) [GET]
+Rendering template within layouts/main
+Rendering users/login
+Completed in 17ms (View: 11, DB: 0) | 200 OK [http://localhost/users/login]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-09-06 05:43:16) [POST]
+  Parameters: {"commit"=>"Submit", "method"=>"post", "authenticity_token"=>"eLfB+bAahAiC4Kzu3m9CZ2/Enp+b/ID8BBCVrm8h/gI=", "user"=>{"identity"=>"steve", "password"=>"test"}}
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'steve') LIMIT 1[0m
+Redirected to http://localhost:3000/users/welcome
+Completed in 61ms (DB: 1) | 302 Found [http://localhost/users/login?method=post]
+
+
+Processing UsersController#welcome (for 127.0.0.1 at 2010-09-06 05:43:16) [GET]
+Rendering template within layouts/main
+Rendering users/welcome
+  [4;35;1mPez Load (1.2ms)[0m   [0mSELECT * FROM "pezez" WHERE ("pezez"."status" = 'seated') [0m
+Completed in 57ms (View: 26, DB: 1) | 200 OK [http://localhost/users/welcome]
+
+
+Processing UsersController#show_candy (for 127.0.0.1 at 2010-09-06 05:43:21) [POST]
+  Parameters: {"authenticity_token"=>"eLfB+bAahAiC4Kzu3m9CZ2/Enp+b/ID8BBCVrm8h/gI=", "_"=>""}
+  [4;36;1mPez Load (1.2ms)[0m   [0;1mSELECT * FROM "pezez" WHERE ("pezez"."status" = 'seated') [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = 1000099 AND "votes"."pez_id" = 1000021) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = 1000099 AND "votes"."pez_id" = 1000021) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+Rendered users/_candy (31.8ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = 1000099 AND "votes"."pez_id" = 1000022) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = 1000099 AND "votes"."pez_id" = 1000022) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+Rendered users/_candy (5.8ms)
+Completed in 81ms (View: 39, DB: 2) | 200 OK [http://localhost/users/show_candy]
+
+
+Processing UsersController#vote (for 127.0.0.1 at 2010-09-06 05:43:23) [POST]
+  Parameters: {"pez_id"=>"1000021", "authenticity_token"=>"eLfB+bAahAiC4Kzu3m9CZ2/Enp+b/ID8BBCVrm8h/gI=", "approve"=>"true", "_"=>""}
+  [4;35;1mPez Load (0.6ms)[0m   [0mSELECT * FROM "pezez" WHERE ("pezez"."id" = 1000021) [0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = 1000099 AND "votes"."pez_id" = 1000021) [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 1000099 AND "votes".pez_id = 1000021) LIMIT 1[0m
+  [4;36;1mVote Create (0.3ms)[0m   [0;1mINSERT INTO "votes" ("pez_id", "user_id", "approve") VALUES(1000021, 1000099, 't')[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".pez_id = 1000021) [0m
+  [4;35;1mPez Load (0.9ms)[0m   [0mSELECT * FROM "pezez" WHERE ("pezez"."status" = 'seated') [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+  [4;35;1mVote Load (0.4ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = 1000099 AND "votes"."pez_id" = 1000021) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = 1000099 AND "votes"."pez_id" = 1000021) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+Rendered users/_candy (11.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = 1000099 AND "votes"."pez_id" = 1000022) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = 1000099 AND "votes"."pez_id" = 1000022) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+Rendered users/_candy (5.7ms)
+Completed in 99ms (View: 18, DB: 4) | 200 OK [http://localhost/users/vote?approve=true&pez_id=1000021]
+
+
+Processing UsersController#logout (for 127.0.0.1 at 2010-09-06 05:43:25) [GET]
+Redirected to http://localhost:3000/users/login
+Completed in 29ms (DB: 0) | 302 Found [http://localhost/users/logout]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-09-06 05:43:25) [GET]
+Rendering template within layouts/main
+Rendering users/login
+Completed in 17ms (View: 11, DB: 0) | 200 OK [http://localhost/users/login]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-09-06 05:43:28) [POST]
+  Parameters: {"commit"=>"Submit", "method"=>"post", "authenticity_token"=>"eLfB+bAahAiC4Kzu3m9CZ2/Enp+b/ID8BBCVrm8h/gI=", "user"=>{"identity"=>"geoff", "password"=>"test"}}
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'geoff') LIMIT 1[0m
+Redirected to http://localhost:3000/users/welcome
+Completed in 45ms (DB: 1) | 302 Found [http://localhost/users/login?method=post]
+
+
+Processing UsersController#welcome (for 127.0.0.1 at 2010-09-06 05:43:28) [GET]
+Rendering template within layouts/main
+Rendering users/welcome
+  [4;35;1mPez Load (1.3ms)[0m   [0mSELECT * FROM "pezez" WHERE ("pezez"."status" = 'seated') [0m
+Completed in 55ms (View: 25, DB: 1) | 200 OK [http://localhost/users/welcome]
+
+
+Processing UsersController#show_candy (for 127.0.0.1 at 2010-09-06 05:43:30) [POST]
+  Parameters: {"authenticity_token"=>"eLfB+bAahAiC4Kzu3m9CZ2/Enp+b/ID8BBCVrm8h/gI=", "_"=>""}
+  [4;36;1mPez Load (1.2ms)[0m   [0;1mSELECT * FROM "pezez" WHERE ("pezez"."status" = 'seated') [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = 1000010 AND "votes"."pez_id" = 1000021) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = 1000010 AND "votes"."pez_id" = 1000021) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+Rendered users/_candy (32.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = 1000010 AND "votes"."pez_id" = 1000022) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = 1000010 AND "votes"."pez_id" = 1000022) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+Rendered users/_candy (5.8ms)
+Completed in 144ms (View: 39, DB: 2) | 200 OK [http://localhost/users/show_candy]
+
+
+Processing UsersController#vote (for 127.0.0.1 at 2010-09-06 05:43:31) [POST]
+  Parameters: {"pez_id"=>"1000021", "authenticity_token"=>"eLfB+bAahAiC4Kzu3m9CZ2/Enp+b/ID8BBCVrm8h/gI=", "approve"=>"true", "_"=>""}
+  [4;35;1mPez Load (0.7ms)[0m   [0mSELECT * FROM "pezez" WHERE ("pezez"."id" = 1000021) [0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = 1000010 AND "votes"."pez_id" = 1000021) [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 1000010 AND "votes".pez_id = 1000021) LIMIT 1[0m
+  [4;36;1mVote Create (0.3ms)[0m   [0;1mINSERT INTO "votes" ("pez_id", "user_id", "approve") VALUES(1000021, 1000010, 't')[0m
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".pez_id = 1000021) [0m
+  [4;35;1mPez Load (0.2ms)[0m   [0mSELECT "pezez".id FROM "pezez" WHERE ("pezez"."identity" = 'sachin' AND "pezez".id <> 1000021) LIMIT 1[0m
+  [4;36;1mPez Update (0.5ms)[0m   [0;1mUPDATE "pezez" SET "updated_at" = '2010-09-06 10:43:31', "status" = 'dispensed', "secret_code" = 'SPo0WJ4cLLA7knAk' WHERE "id" = 1000021[0m
+  [4;35;1mPez Load (0.7ms)[0m   [0mSELECT * FROM "pezez" WHERE ("pezez"."status" = 'seated') [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = 1000010 AND "votes"."pez_id" = 1000022) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = 1000010 AND "votes"."pez_id" = 1000022) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+Rendered users/_candy (11.8ms)
+Completed in 108ms (View: 13, DB: 5) | 200 OK [http://localhost/users/vote?approve=true&pez_id=1000021]
+
+
+Processing UsersController#logout (for 127.0.0.1 at 2010-09-06 05:43:33) [GET]
+Redirected to http://localhost:3000/users/login
+Completed in 29ms (DB: 0) | 302 Found [http://localhost/users/logout]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-09-06 05:43:33) [GET]
+Rendering template within layouts/main
+Rendering users/login
+Completed in 17ms (View: 10, DB: 0) | 200 OK [http://localhost/users/login]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-09-06 05:43:37) [POST]
+  Parameters: {"commit"=>"Submit", "method"=>"post", "authenticity_token"=>"eLfB+bAahAiC4Kzu3m9CZ2/Enp+b/ID8BBCVrm8h/gI=", "user"=>{"identity"=>"steve", "password"=>"test"}}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'steve') LIMIT 1[0m
+Redirected to http://localhost:3000/users/welcome
+Completed in 45ms (DB: 1) | 302 Found [http://localhost/users/login?method=post]
+
+
+Processing UsersController#welcome (for 127.0.0.1 at 2010-09-06 05:43:37) [GET]
+Rendering template within layouts/main
+Rendering users/welcome
+  [4;36;1mPez Load (0.9ms)[0m   [0;1mSELECT * FROM "pezez" WHERE ("pezez"."status" = 'seated') [0m
+Completed in 55ms (View: 25, DB: 1) | 200 OK [http://localhost/users/welcome]
+
+
+Processing AdminsController#index (for 127.0.0.1 at 2010-09-06 05:43:39) [GET]
+  [4;35;1mPez Load (1.2ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'waiting') [0m
+  [4;36;1mPez Load (0.6ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'dispensed' and priority > 0) [0m
+Rendering template within layouts/main
+Rendering admins/index
+Completed in 135ms (View: 114, DB: 2) | 200 OK [http://localhost/admins]
+
+
+Processing UsersController#logout (for 127.0.0.1 at 2010-09-06 05:43:53) [GET]
+Redirected to http://localhost:3000/users/login
+Completed in 29ms (DB: 0) | 302 Found [http://localhost/users/logout]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-09-06 05:43:53) [GET]
+Rendering template within layouts/main
+Rendering users/login
+Completed in 17ms (View: 10, DB: 0) | 200 OK [http://localhost/users/login]
+
+
+Processing UsersController#signup (for 127.0.0.1 at 2010-09-06 05:43:56) [GET]
+Rendering template within layouts/main
+Rendering users/signup
+Completed in 55ms (View: 22, DB: 0) | 200 OK [http://localhost/users/signup]
+
+
+Processing UsersController#signup (for 127.0.0.1 at 2010-09-06 05:44:11) [POST]
+  Parameters: {"commit"=>"Signup", "method"=>"post", "authenticity_token"=>"eLfB+bAahAiC4Kzu3m9CZ2/Enp+b/ID8BBCVrm8h/gI=", "user"=>{"identity"=>"sachin", "password_confirmation"=>"test", "secret_code"=>"SPo0WJ4cLLA7knAk", "password"=>"test", "email"=>"sachin@d.com"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'sachin') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'sachin@d.com') LIMIT 1[0m
+  [4;35;1mPez Load (0.6ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'dispensed' AND identity = 'sachin' AND secret_code = 'SPo0WJ4cLLA7knAk') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "identity", "created_at", "admin", "hashed_password", "email") VALUES(NULL, '1Ak2bq2An5', 'sachin', '2010-09-06 10:44:11', 'f', '816e82e6e49e2c06653c368c3b47117ff3eb94c3', 'sachin@d.com')[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'sachin') LIMIT 1[0m
+Redirected to http://localhost:3000/users/welcome
+Completed in 68ms (DB: 2) | 302 Found [http://localhost/users/signup?method=post]
+
+
+Processing UsersController#welcome (for 127.0.0.1 at 2010-09-06 05:44:11) [GET]
+Rendering template within layouts/main
+Rendering users/welcome
+  [4;36;1mPez Load (0.9ms)[0m   [0;1mSELECT * FROM "pezez" WHERE ("pezez"."status" = 'seated') [0m
+Completed in 55ms (View: 25, DB: 1) | 200 OK [http://localhost/users/welcome]
+
+
+Processing UsersController#show_candy (for 127.0.0.1 at 2010-09-06 05:44:13) [POST]
+  Parameters: {"authenticity_token"=>"eLfB+bAahAiC4Kzu3m9CZ2/Enp+b/ID8BBCVrm8h/gI=", "_"=>""}
+  [4;35;1mPez Load (0.9ms)[0m   [0mSELECT * FROM "pezez" WHERE ("pezez"."status" = 'seated') [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = 1000100 AND "votes"."pez_id" = 1000022) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = 1000100 AND "votes"."pez_id" = 1000022) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+Rendered users/_candy (100.1ms)
+Completed in 143ms (View: 101, DB: 1) | 200 OK [http://localhost/users/show_candy]
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (3.4ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to ReleaseOne (20100823220454)
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "pezez" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "colour" varchar(255) NOT NULL, "status" varchar(255) NOT NULL, "priority" integer, "secret_code" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "admin" boolean DEFAULT 0, "name" varchar(255), "hashed_password" varchar(255), "email" varchar(255), "salt" varchar(255), "created_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pez_id" integer NOT NULL, "user_id" integer NOT NULL, "approve" boolean NOT NULL) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100823220454')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("pezez")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("votes")[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("pezez")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("votes")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCREATE TABLE "pezez" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "colour" varchar(255) NOT NULL, "status" varchar(255) NOT NULL, "priority" integer, "secret_code" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "admin" boolean DEFAULT 'f', "name" varchar(255), "hashed_password" varchar(255), "email" varchar(255), "salt" varchar(255), "created_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pez_id" integer NOT NULL, "user_id" integer NOT NULL, "approve" boolean NOT NULL) [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("schema_migrations")[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100823220454')[0m
+
+
+Processing UsersController#logout (for 127.0.0.1 at 2010-09-06 05:44:35) [GET]
+Redirected to http://localhost:3000/users/login
+Completed in 30ms (DB: 0) | 302 Found [http://localhost/users/logout]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-09-06 05:44:35) [GET]
+Rendering template within layouts/main
+Rendering users/login
+Completed in 17ms (View: 10, DB: 0) | 200 OK [http://localhost/users/login]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-09-06 05:44:42) [POST]
+  Parameters: {"commit"=>"Submit", "method"=>"post", "authenticity_token"=>"eLfB+bAahAiC4Kzu3m9CZ2/Enp+b/ID8BBCVrm8h/gI=", "user"=>{"identity"=>"geoff", "password"=>"test"}}
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'geoff') LIMIT 1[0m
+Redirected to http://localhost:3000/users/welcome
+Completed in 44ms (DB: 1) | 302 Found [http://localhost/users/login?method=post]
+
+
+Processing UsersController#welcome (for 127.0.0.1 at 2010-09-06 05:44:43) [GET]
+Rendering template within layouts/main
+Rendering users/welcome
+  [4;36;1mPez Load (1.2ms)[0m   [0;1mSELECT * FROM "pezez" WHERE ("pezez"."status" = 'seated') [0m
+Completed in 55ms (View: 25, DB: 1) | 200 OK [http://localhost/users/welcome]
+
+
+Processing UsersController#show_candy (for 127.0.0.1 at 2010-09-06 05:44:44) [POST]
+  Parameters: {"authenticity_token"=>"eLfB+bAahAiC4Kzu3m9CZ2/Enp+b/ID8BBCVrm8h/gI=", "_"=>""}
+  [4;35;1mPez Load (1.2ms)[0m   [0mSELECT * FROM "pezez" WHERE ("pezez"."status" = 'seated') [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = 1000010 AND "votes"."pez_id" = 1000021) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = 1000010 AND "votes"."pez_id" = 1000021) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+Rendered users/_candy (32.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = 1000010 AND "votes"."pez_id" = 1000022) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = 1000010 AND "votes"."pez_id" = 1000022) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+Rendered users/_candy (6.2ms)
+Completed in 83ms (View: 40, DB: 2) | 200 OK [http://localhost/users/show_candy]
+
+
+Processing UsersController#vote (for 127.0.0.1 at 2010-09-06 05:44:45) [POST]
+  Parameters: {"pez_id"=>"1000021", "authenticity_token"=>"eLfB+bAahAiC4Kzu3m9CZ2/Enp+b/ID8BBCVrm8h/gI=", "approve"=>"true", "_"=>""}
+  [4;36;1mPez Load (0.6ms)[0m   [0;1mSELECT * FROM "pezez" WHERE ("pezez"."id" = 1000021) [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = 1000010 AND "votes"."pez_id" = 1000021) [0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 1000010 AND "votes".pez_id = 1000021) LIMIT 1[0m
+  [4;35;1mVote Create (47.8ms)[0m   [0mINSERT INTO "votes" ("pez_id", "user_id", "approve") VALUES(1000021, 1000010, 't')[0m
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".pez_id = 1000021) [0m
+  [4;36;1mPez Load (1.1ms)[0m   [0;1mSELECT * FROM "pezez" WHERE ("pezez"."status" = 'seated') [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+  [4;36;1mVote Load (0.5ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = 1000010 AND "votes"."pez_id" = 1000021) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = 1000010 AND "votes"."pez_id" = 1000021) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+Rendered users/_candy (80.3ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = 1000010 AND "votes"."pez_id" = 1000022) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = 1000010 AND "votes"."pez_id" = 1000022) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+Rendered users/_candy (6.1ms)
+Completed in 221ms (View: 88, DB: 52) | 200 OK [http://localhost/users/vote?approve=true&pez_id=1000021]
+
+
+Processing UsersController#logout (for 127.0.0.1 at 2010-09-06 05:44:46) [GET]
+Redirected to http://localhost:3000/users/login
+Completed in 32ms (DB: 0) | 302 Found [http://localhost/users/logout]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-09-06 05:44:47) [GET]
+Rendering template within layouts/main
+Rendering users/login
+Completed in 18ms (View: 11, DB: 0) | 200 OK [http://localhost/users/login]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-09-06 05:44:50) [POST]
+  Parameters: {"commit"=>"Submit", "method"=>"post", "authenticity_token"=>"eLfB+bAahAiC4Kzu3m9CZ2/Enp+b/ID8BBCVrm8h/gI=", "user"=>{"identity"=>"steve", "password"=>"test"}}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'steve') LIMIT 1[0m
+Redirected to http://localhost:3000/users/welcome
+Completed in 51ms (DB: 1) | 302 Found [http://localhost/users/login?method=post]
+
+
+Processing UsersController#welcome (for 127.0.0.1 at 2010-09-06 05:44:50) [GET]
+Rendering template within layouts/main
+Rendering users/welcome
+  [4;36;1mPez Load (1.2ms)[0m   [0;1mSELECT * FROM "pezez" WHERE ("pezez"."status" = 'seated') [0m
+Completed in 59ms (View: 27, DB: 1) | 200 OK [http://localhost/users/welcome]
+
+
+Processing UsersController#show_candy (for 127.0.0.1 at 2010-09-06 05:44:56) [POST]
+  Parameters: {"authenticity_token"=>"eLfB+bAahAiC4Kzu3m9CZ2/Enp+b/ID8BBCVrm8h/gI=", "_"=>""}
+  [4;35;1mPez Load (1.2ms)[0m   [0mSELECT * FROM "pezez" WHERE ("pezez"."status" = 'seated') [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = 1000099 AND "votes"."pez_id" = 1000021) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = 1000099 AND "votes"."pez_id" = 1000021) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+Rendered users/_candy (31.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = 1000099 AND "votes"."pez_id" = 1000022) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = 1000099 AND "votes"."pez_id" = 1000022) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+Rendered users/_candy (5.9ms)
+Completed in 80ms (View: 39, DB: 2) | 200 OK [http://localhost/users/show_candy]
+
+
+Processing UsersController#vote (for 127.0.0.1 at 2010-09-06 05:44:57) [POST]
+  Parameters: {"pez_id"=>"1000021", "authenticity_token"=>"eLfB+bAahAiC4Kzu3m9CZ2/Enp+b/ID8BBCVrm8h/gI=", "approve"=>"true", "_"=>""}
+  [4;36;1mPez Load (0.6ms)[0m   [0;1mSELECT * FROM "pezez" WHERE ("pezez"."id" = 1000021) [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = 1000099 AND "votes"."pez_id" = 1000021) [0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 1000099 AND "votes".pez_id = 1000021) LIMIT 1[0m
+  [4;35;1mVote Create (0.3ms)[0m   [0mINSERT INTO "votes" ("pez_id", "user_id", "approve") VALUES(1000021, 1000099, 't')[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".pez_id = 1000021) [0m
+  [4;36;1mPez Load (0.2ms)[0m   [0;1mSELECT "pezez".id FROM "pezez" WHERE ("pezez"."identity" = 'sachin' AND "pezez".id <> 1000021) LIMIT 1[0m
+  [4;35;1mPez Update (0.5ms)[0m   [0mUPDATE "pezez" SET "updated_at" = '2010-09-06 10:44:57', "status" = 'dispensed', "secret_code" = 'zEGDw364mqTgYBn5' WHERE "id" = 1000021[0m
+  [4;36;1mPez Load (0.7ms)[0m   [0;1mSELECT * FROM "pezez" WHERE ("pezez"."status" = 'seated') [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+  [4;36;1mVote Load (0.5ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = 1000099 AND "votes"."pez_id" = 1000022) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = 1000099 AND "votes"."pez_id" = 1000022) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+Rendered users/_candy (75.2ms)
+Completed in 172ms (View: 76, DB: 5) | 200 OK [http://localhost/users/vote?approve=true&pez_id=1000021]
+
+
+Processing AdminsController#index (for 127.0.0.1 at 2010-09-06 05:44:59) [GET]
+  [4;36;1mPez Load (1.2ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'waiting') [0m
+  [4;35;1mPez Load (0.6ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'dispensed' and priority > 0) [0m
+Rendering template within layouts/main
+Rendering admins/index
+Completed in 63ms (View: 43, DB: 2) | 200 OK [http://localhost/admins]
+
+
+Processing UsersController#logout (for 127.0.0.1 at 2010-09-06 05:45:20) [GET]
+Redirected to http://localhost:3000/users/login
+Completed in 29ms (DB: 0) | 302 Found [http://localhost/users/logout]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-09-06 05:45:20) [GET]
+Rendering template within layouts/main
+Rendering users/login
+Completed in 17ms (View: 10, DB: 0) | 200 OK [http://localhost/users/login]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-09-06 05:45:26) [POST]
+  Parameters: {"commit"=>"Submit", "method"=>"post", "authenticity_token"=>"eLfB+bAahAiC4Kzu3m9CZ2/Enp+b/ID8BBCVrm8h/gI=", "user"=>{"identity"=>"sachin", "password"=>"test"}}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'sachin') LIMIT 1[0m
+Rendering template within layouts/main
+Rendering users/login
+Completed in 41ms (View: 10, DB: 0) | 200 OK [http://localhost/users/login?method=post]
+
+
+Processing UsersController#signup (for 127.0.0.1 at 2010-09-06 05:45:29) [GET]
+Rendering template within layouts/main
+Rendering users/signup
+Completed in 46ms (View: 14, DB: 0) | 200 OK [http://localhost/users/signup]
+
+
+Processing UsersController#signup (for 127.0.0.1 at 2010-09-06 05:45:44) [POST]
+  Parameters: {"commit"=>"Signup", "method"=>"post", "authenticity_token"=>"eLfB+bAahAiC4Kzu3m9CZ2/Enp+b/ID8BBCVrm8h/gI=", "user"=>{"identity"=>"sachin", "password_confirmation"=>"test", "secret_code"=>"zig", "password"=>"test", "email"=>"hi@u.com"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'sachin') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'hi@u.com') LIMIT 1[0m
+  [4;35;1mPez Load (0.2ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'dispensed' AND identity = 'sachin' AND secret_code = 'zig') LIMIT 1[0m
+
+Exception (Exception):
+  app/models/user.rb:19:in `before_create'
+  app/controllers/authentication.rb:7:in `signup'
+
+Rendered rescues/_trace (134.3ms)
+Rendered rescues/_request_and_response (2.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PezezController#index (for 127.0.0.1 at 2010-09-06 11:26:17) [GET]
+  [4;36;1mPez Load (1.9ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'seated') ORDER BY priority ASC[0m
+  [4;35;1mPez Load (0.9ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'waiting') ORDER BY priority ASC[0m
+Rendering template within layouts/main
+Rendering pezez/index
+Completed in 44ms (View: 32, DB: 3) | 200 OK [http://localhost/]
+
+
+Processing UsersController#signup (for 127.0.0.1 at 2010-09-06 11:26:23) [GET]
+Rendering template within layouts/main
+Rendering users/signup
+Completed in 58ms (View: 25, DB: 0) | 200 OK [http://localhost/users/signup]
+
+
+Processing PezezController#index (for 127.0.0.1 at 2010-09-06 11:26:26) [GET]
+  [4;36;1mPez Load (1.0ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'seated') ORDER BY priority ASC[0m
+  [4;35;1mPez Load (0.9ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'waiting') ORDER BY priority ASC[0m
+Rendering template within layouts/main
+Rendering pezez/index
+Completed in 34ms (View: 13, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-09-06 11:26:27) [GET]
+Rendering template within layouts/main
+Rendering users/login
+Completed in 27ms (View: 20, DB: 0) | 200 OK [http://localhost/users/login]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-09-06 11:26:33) [POST]
+  Parameters: {"commit"=>"Submit", "method"=>"post", "authenticity_token"=>"eLfB+bAahAiC4Kzu3m9CZ2/Enp+b/ID8BBCVrm8h/gI=", "user"=>{"identity"=>"steve", "password"=>"test"}}
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'steve') LIMIT 1[0m
+Redirected to http://localhost:3000/users/welcome
+Completed in 46ms (DB: 1) | 302 Found [http://localhost/users/login?method=post]
+
+
+Processing UsersController#welcome (for 127.0.0.1 at 2010-09-06 11:26:33) [GET]
+Rendering template within layouts/main
+Rendering users/welcome
+  [4;35;1mPez Load (1.0ms)[0m   [0mSELECT * FROM "pezez" WHERE ("pezez"."status" = 'seated') [0m
+Completed in 147ms (View: 115, DB: 1) | 200 OK [http://localhost/users/welcome]
+
+
+Processing UsersController#show_candy (for 127.0.0.1 at 2010-09-06 11:26:35) [POST]
+  Parameters: {"authenticity_token"=>"eLfB+bAahAiC4Kzu3m9CZ2/Enp+b/ID8BBCVrm8h/gI=", "_"=>""}
+  [4;36;1mPez Load (0.9ms)[0m   [0;1mSELECT * FROM "pezez" WHERE ("pezez"."status" = 'seated') [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+  [4;36;1mVote Load (0.3ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."pez_id" = 1000022 AND "votes"."user_id" = 1000099) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."pez_id" = 1000022 AND "votes"."user_id" = 1000099) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT min("pezez".priority) AS min_priority FROM "pezez" WHERE (status = 'seated') [0m
+Rendered users/_candy (72.2ms)
+Completed in 121ms (View: 79, DB: 2) | 200 OK [http://localhost/users/show_candy]
+
+
+Processing AdminsController#index (for 127.0.0.1 at 2010-09-06 11:26:37) [GET]
+  [4;36;1mPez Load (1.2ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'waiting') [0m
+  [4;35;1mPez Load (0.7ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'dispensed' and priority > 0) [0m
+Rendering template within layouts/main
+Rendering admins/index
+Completed in 70ms (View: 50, DB: 2) | 200 OK [http://localhost/admins]
+
+
+Processing UsersController#logout (for 127.0.0.1 at 2010-09-06 11:26:44) [GET]
+Redirected to http://localhost:3000/users/login
+Completed in 30ms (DB: 0) | 302 Found [http://localhost/users/logout]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-09-06 11:26:45) [GET]
+Rendering template within layouts/main
+Rendering users/login
+Completed in 17ms (View: 10, DB: 0) | 200 OK [http://localhost/users/login]
+
+
+Processing UsersController#signup (for 127.0.0.1 at 2010-09-06 11:26:46) [GET]
+Rendering template within layouts/main
+Rendering users/signup
+Completed in 47ms (View: 14, DB: 0) | 200 OK [http://localhost/users/signup]
+
+
+Processing UsersController#signup (for 127.0.0.1 at 2010-09-06 11:26:57) [POST]
+  Parameters: {"commit"=>"Signup", "method"=>"post", "authenticity_token"=>"eLfB+bAahAiC4Kzu3m9CZ2/Enp+b/ID8BBCVrm8h/gI=", "user"=>{"identity"=>"sachin", "password_confirmation"=>"test", "secret_code"=>"baz", "password"=>"test", "email"=>"s@d.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'sachin') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 's@d.com') LIMIT 1[0m
+  [4;36;1mPez Load (0.2ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'dispensed' AND identity = 'sachin' AND secret_code = 'baz') LIMIT 1[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.3ms)[0m   [0;1mCREATE TABLE "pezez" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "colour" varchar(255) NOT NULL, "status" varchar(255) NOT NULL, "priority" integer, "secret_code" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "admin" boolean DEFAULT 'f', "name" varchar(255), "hashed_password" varchar(255), "email" varchar(255), "salt" varchar(255), "created_at" datetime) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pez_id" integer NOT NULL, "user_id" integer NOT NULL, "approve" boolean NOT NULL) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.9ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100823220454')[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mCREATE TABLE "pezez" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "colour" varchar(255) NOT NULL, "status" varchar(255) NOT NULL, "priority" integer, "secret_code" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "admin" boolean DEFAULT 'f', "name" varchar(255), "hashed_password" varchar(255), "email" varchar(255), "salt" varchar(255), "created_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pez_id" integer NOT NULL, "user_id" integer NOT NULL, "approve" boolean NOT NULL) [0m
+  [4;35;1mSQL (0.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100823220454')[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.4ms)[0m   [0;1mCREATE TABLE "pezez" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "colour" varchar(255) NOT NULL, "status" varchar(255) NOT NULL, "priority" integer, "secret_code" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "admin" boolean DEFAULT 'f', "name" varchar(255), "hashed_password" varchar(255), "email" varchar(255), "salt" varchar(255), "created_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pez_id" integer NOT NULL, "user_id" integer NOT NULL, "approve" boolean NOT NULL) [0m
+  [4;35;1mSQL (0.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100823220454')[0m
+
+
+Processing UsersController#signup (for 127.0.0.1 at 2010-09-06 12:23:45) [POST]
+  Parameters: {"commit"=>"Signup", "method"=>"post", "authenticity_token"=>"eLfB+bAahAiC4Kzu3m9CZ2/Enp+b/ID8BBCVrm8h/gI=", "user"=>{"identity"=>"sachin", "password_confirmation"=>"test", "secret_code"=>"baz", "password"=>"test", "email"=>"s@d.com"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'sachin') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 's@d.com') LIMIT 1[0m
+  [4;35;1mPez Load (0.2ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'dispensed' AND identity = 'sachin' AND secret_code = 'baz') LIMIT 1[0m
+
+
+Processing PezezController#index (for 127.0.0.1 at 2010-09-06 12:23:53) [GET]
+  [4;36;1mPez Load (0.9ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'seated') ORDER BY priority ASC[0m
+  [4;35;1mPez Load (0.9ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'waiting') ORDER BY priority ASC[0m
+Rendering template within layouts/main
+Rendering pezez/index
+Completed in 33ms (View: 13, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing PezezController#index (for 127.0.0.1 at 2010-09-06 12:23:53) [GET]
+  [4;36;1mPez Load (0.9ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'seated') ORDER BY priority ASC[0m
+  [4;35;1mPez Load (1.0ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'waiting') ORDER BY priority ASC[0m
+Rendering template within layouts/main
+Rendering pezez/index
+Completed in 33ms (View: 13, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing UsersController#signup (for 127.0.0.1 at 2010-09-06 12:23:55) [GET]
+Rendering template within layouts/main
+Rendering users/signup
+Completed in 52ms (View: 15, DB: 0) | 200 OK [http://localhost/users/signup]
+
+
+Processing UsersController#signup (for 127.0.0.1 at 2010-09-06 12:24:11) [POST]
+  Parameters: {"commit"=>"Signup", "method"=>"post", "authenticity_token"=>"eLfB+bAahAiC4Kzu3m9CZ2/Enp+b/ID8BBCVrm8h/gI=", "user"=>{"identity"=>"sachin", "password_confirmation"=>"test", "secret_code"=>"booz", "password"=>"test", "email"=>"u@h.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'sachin') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'u@h.com') LIMIT 1[0m
+  [4;36;1mPez Load (0.2ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'dispensed' AND identity = 'sachin' AND secret_code = 'booz') LIMIT 1[0m
+
+
+Processing UsersController#signup (for 127.0.0.1 at 2010-09-06 12:24:56) [GET]
+Rendering template within layouts/main
+Rendering users/signup
+Completed in 52ms (View: 14, DB: 0) | 200 OK [http://localhost/users/signup]
+
+
+Processing UsersController#signup (for 127.0.0.1 at 2010-09-06 12:25:05) [POST]
+  Parameters: {"commit"=>"Signup", "method"=>"post", "authenticity_token"=>"eLfB+bAahAiC4Kzu3m9CZ2/Enp+b/ID8BBCVrm8h/gI=", "user"=>{"identity"=>"sachin", "password_confirmation"=>"test", "secret_code"=>"zig", "password"=>"test", "email"=>"s@d.com"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'sachin') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 's@d.com') LIMIT 1[0m
+  [4;35;1mPez Load (0.2ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'dispensed' AND identity = 'sachin' AND secret_code = 'zig') LIMIT 1[0m
+
+NameError (uninitialized constant Authentication::SecretCodeException):
+  app/controllers/authentication.rb:15:in `signup'
+
+Rendered rescues/_trace (121.5ms)
+Rendered rescues/_request_and_response (2.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#signup (for 127.0.0.1 at 2010-09-06 12:25:27) [GET]
+Rendering template within layouts/main
+Rendering users/signup
+Completed in 52ms (View: 15, DB: 0) | 200 OK [http://localhost/users/signup]
+
+
+Processing UsersController#signup (for 127.0.0.1 at 2010-09-06 12:25:35) [POST]
+  Parameters: {"commit"=>"Signup", "method"=>"post", "authenticity_token"=>"eLfB+bAahAiC4Kzu3m9CZ2/Enp+b/ID8BBCVrm8h/gI=", "user"=>{"identity"=>"sachin", "password_confirmation"=>"test", "secret_code"=>"zag", "password"=>"test", "email"=>"s@d.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'sachin') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 's@d.com') LIMIT 1[0m
+  [4;36;1mPez Load (0.2ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'dispensed' AND identity = 'sachin' AND secret_code = 'zag') LIMIT 1[0m
+Rendering template within layouts/main
+Rendering users/signup
+Completed in 75ms (View: 12, DB: 1) | 200 OK [http://localhost/users/signup?method=post]
+
+
+Processing UsersController#signup (for 127.0.0.1 at 2010-09-06 12:26:22) [POST]
+  Parameters: {"commit"=>"Signup", "method"=>"post", "authenticity_token"=>"eLfB+bAahAiC4Kzu3m9CZ2/Enp+b/ID8BBCVrm8h/gI=", "user"=>{"identity"=>"sachin", "password_confirmation"=>"test", "secret_code"=>"zag", "password"=>"test", "email"=>"s@d.com"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'sachin') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 's@d.com') LIMIT 1[0m
+  [4;35;1mPez Load (0.2ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'dispensed' AND identity = 'sachin' AND secret_code = 'zag') LIMIT 1[0m
+Rendering template within layouts/main
+Rendering users/signup
+Completed in 83ms (View: 19, DB: 0) | 200 OK [http://localhost/users/signup?method=post]
+
+
+Processing UsersController#signup (for 127.0.0.1 at 2010-09-06 12:26:40) [POST]
+  Parameters: {"commit"=>"Signup", "method"=>"post", "authenticity_token"=>"eLfB+bAahAiC4Kzu3m9CZ2/Enp+b/ID8BBCVrm8h/gI=", "user"=>{"identity"=>"sachin", "password_confirmation"=>"test", "secret_code"=>"zag", "password"=>"test", "email"=>"s@d.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identity" = 'sachin') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 's@d.com') LIMIT 1[0m
+  [4;36;1mPez Load (0.2ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'dispensed' AND identity = 'sachin' AND secret_code = 'zag') LIMIT 1[0m
+Rendering template within layouts/main
+Rendering users/signup
+Completed in 82ms (View: 19, DB: 0) | 200 OK [http://localhost/users/signup?method=post]
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.3ms)[0m   [0;1mCREATE TABLE "pezez" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "colour" varchar(255) NOT NULL, "status" varchar(255) NOT NULL, "priority" integer, "secret_code" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "admin" boolean DEFAULT 'f', "name" varchar(255), "hashed_password" varchar(255), "email" varchar(255), "salt" varchar(255), "created_at" datetime) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pez_id" integer NOT NULL, "user_id" integer NOT NULL, "approve" boolean NOT NULL) [0m
+  [4;35;1mSQL (0.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100823220454')[0m

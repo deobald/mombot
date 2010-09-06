@@ -1,0 +1,2 @@
+
+class SecretCodeError < RuntimeError ; end

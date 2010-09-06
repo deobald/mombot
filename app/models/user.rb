@@ -1,4 +1,5 @@
 require 'digest/sha1'
+require "#{RAILS_ROOT}/lib/exceptions"
 
 class User < ActiveRecord::Base
   include Authenticatable
@@ -16,7 +17,7 @@ class User < ActiveRecord::Base
   validates_format_of :email, :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i, :message => "Invalid email"  
   
   def before_create
-    raise Exception unless secret_code_checks_out
+    raise SecretCodeError unless secret_code_checks_out
     true
   end
   

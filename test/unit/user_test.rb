@@ -1,4 +1,5 @@
 require File.dirname(__FILE__) + '/../test_helper'
+require "#{RAILS_ROOT}/lib/exceptions"
 
 class UserTest < ActiveSupport::TestCase
   
@@ -48,7 +49,7 @@ class UserTest < ActiveSupport::TestCase
     u.identity = 'sigmund'
     u.email = 'sig@freud.name'
     u.password = u.password_confirmation = 'password'
-    assert_raise Exception do
+    assert_raise SecretCodeError do
       u.save!
     end
   end
@@ -60,7 +61,7 @@ class UserTest < ActiveSupport::TestCase
     u.email = 'sig@freud.name'
     u.password = u.password_confirmation = 'password'
     u.secret_code = pez.secret_code
-    assert_raise Exception do
+    assert_raise SecretCodeError do
       u.save!
     end
   end

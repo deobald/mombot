@@ -1,10 +1,13 @@
 
 <% form_tag :action=> "signup", :method => 'post' do %>
 
-  <%= error_messages_for 'user' %>
+  <div>
+    <%= error_messages_for 'user' %>
+    <%= flash[:warning] if flash[:warning] %>
+  </div>
 
   <div>
-    <label for="user_identity">Secret Code</label>
+    <label for="user_secret_code">Secret Code</label>
     <%= text_field "user", "secret_code", :size => 20 %>
   </div>
 

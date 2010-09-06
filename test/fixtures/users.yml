@@ -5,6 +5,7 @@ steve:
   email: steve@steve.com
   hashed_password: 77a0d943cdbace52716a9ef9fae12e45e2788d39 # test
   salt: 1000
+  admin: true
 
 geoff:
   id: 1000010
