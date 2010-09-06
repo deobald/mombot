@@ -4,6 +4,11 @@
   <%= error_messages_for 'user' %>
 
   <div>
+    <label for="user_identity">Secret Code</label>
+    <%= text_field "user", "secret_code", :size => 20 %>
+  </div>
+
+  <div>
     <label for="user_identity">Identity</label>
     <%= text_field "user", "identity", :size => 20 %>
   </div>

@@ -3,7 +3,7 @@ class ReleaseOne < ActiveRecord::Migration
     create_table :pezez do |t|
       t.string  :identity, :null => false
       t.string  :colour, :null => false
-      t.string  :status, :null => false  # waiting, seated
+      t.string  :status, :null => false  # waiting, seated, dispensed
       t.integer :priority
       t.string  :secret_code
       t.timestamps

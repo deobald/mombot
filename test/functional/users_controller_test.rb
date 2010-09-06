@@ -14,6 +14,7 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test "should authenticate an existing user" do
+    Factory :dispensed_pez
     bob = Factory :existingbob
     post :login, :user => { :identity => "existingbob", :password => "test" }
     assert session[:user]
@@ -23,7 +24,12 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test "should login after signup" do
-    post :signup, :user => { :identity => "newbob", :password => "newpassword", :password_confirmation => "newpassword", :email => "newbob@mcbob.com" }
+    pez = Factory :dispensed_pez
+    post :signup, :user => { :identity => "newbob", 
+                             :password => "newpassword", 
+                             :password_confirmation => "newpassword", 
+                             :email => "newbob@mcbob.com",
+                             :secret_code => pez.secret_code }
     assert_response :redirect
     assert_not_nil session[:user]
     assert session[:user]
@@ -56,6 +62,7 @@ class UsersControllerTest < ActionController::TestCase
   end
   
   test "should logoff" do
+    Factory :dispensed_pez
     Factory :bob
     post :login, :user=>{ :identity => "bob", :password => "test"}
     assert_response :redirect
@@ -67,6 +74,7 @@ class UsersControllerTest < ActionController::TestCase
   end
   
   test "should email forgotten passwords" do
+    Factory :dispensed_pez
     Factory :existingbob
     #we can login
     post :login, :user => { :identity => "existingbob", :password => "test"}
@@ -90,6 +98,7 @@ class UsersControllerTest < ActionController::TestCase
   end
   
   test "should require login to see protected pages" do
+    Factory :dispensed_pez
     Factory :bob
     #can't access welcome if not logged in
     get :welcome
@@ -108,6 +117,7 @@ class UsersControllerTest < ActionController::TestCase
   end
   
   test "should disable old password when password changes" do
+    Factory :dispensed_pez
     Factory :bob
     #can login
     post :login, :user=>{ :identity => "bob", :password => "test"}
@@ -144,6 +154,7 @@ class UsersControllerTest < ActionController::TestCase
   end
   
   test "should return to login-required page" do
+    Factory :dispensed_pez
     Factory :bob
     #cant access voting page without being logged in
     get :vote

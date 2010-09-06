@@ -7,6 +7,14 @@ Factory.define :pez do |p|
   p.priority 1
 end
 
+Factory.define :dispensed_pez, :class => Pez do |p|
+  p.identity    'russia'
+  p.colour      'aqua'
+  p.priority    1
+  p.secret_code 'abcdef123456abcdef123456'
+  p.after_create { |after| after.change_state_to 'dispensed' }
+end
+
 Factory.define :user do |u|
   u.sequence(:identity) {|n| "russia#{n}" }
   u.admin                 false
@@ -16,6 +24,8 @@ Factory.define :user do |u|
   u.password_confirmation 'test'
   u.sequence(:email) {|n| "russia#{n}@earth.com" }
   u.salt                  '1000'
+  u.secret_code           'abcdef123456abcdef123456'
+  u.after_build { |after| Factory :dispensed_pez }
 end
 
 Factory.define :vote do |v|
@@ -33,6 +43,7 @@ Factory.define :bob, :class => User do |b|
   b.password              'test'
   b.password_confirmation 'test'
   b.email                 'bob@mcbob.com'
+  b.secret_code           'abcdef123456abcdef123456'
 end
 
 Factory.define :longbob, :class => User do |b|
@@ -42,6 +53,7 @@ Factory.define :longbob, :class => User do |b|
   b.password              'longtest'
   b.password_confirmation 'longtest'
   b.email                 'lbob@mcbob.com'
+  b.secret_code           'abcdef123456abcdef123456'
 end
 
 Factory.define :existingbob, :class => User do |b|
@@ -51,4 +63,5 @@ Factory.define :existingbob, :class => User do |b|
   b.password              'test'
   b.password_confirmation 'test'
   b.email                 'exbob@mcbob.com'
+  b.secret_code           'abcdef123456abcdef123456'
 end

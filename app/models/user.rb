@@ -2,6 +2,7 @@ require 'digest/sha1'
 
 class User < ActiveRecord::Base
   include Authenticatable
+  attr_accessor  :secret_code
   attr_protected :id, :salt, :admin
   
   has_many :votes
@@ -13,6 +14,16 @@ class User < ActiveRecord::Base
   validates_presence_of :identity, :email, :password, :password_confirmation, :salt
   validates_uniqueness_of :identity, :email
   validates_format_of :email, :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i, :message => "Invalid email"  
+  
+  def before_create
+    raise Exception unless secret_code_checks_out
+    true
+  end
+  
+  def secret_code_checks_out
+    matched = Pez.all :conditions => ['status = ? AND secret_code = ?', 'dispensed', secret_code]
+    matched.first
+  end
   
   def dispenser
     Pez.all :conditions => { :status => 'seated' }
