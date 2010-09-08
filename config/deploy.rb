@@ -16,7 +16,7 @@ role :app, domain
 role :db,  domain, :primary => true
 #role :db,  "your slave db-server here"
 
-after "deploy:update_code", :fix_production_config
+after "deploy:symlink", :fix_production_config
 
 task :fix_production_config do
   run "/users/home/deobald/railsapps/mombot/fix-production-config.rb"
