@@ -21,7 +21,7 @@ module Authentication
       if session[:user] = User.authenticate(params[:user][:identity], params[:user][:password])
         flash.clear
         flash[:message]  = "Login successful"
-        redirect_to_stored
+        return_to_stored
       else
         flash[:warning] = "Login unsuccessful"
       end

@@ -4,6 +4,8 @@
 === code
 
 * prod db password autodeploy w/o git
+* bounce mongrel on deploy
+
 * beta
 * instructions
 * feedback
