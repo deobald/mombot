@@ -15,8 +15,8 @@ class PezezController < ApplicationController
     
     respond_to do |format|
       if @pez.save
-        flash[:notice] = 'You have been seated.'
-        format.html { redirect_to(@pez) }
+        flash[:notice] = 'You need to mail in an application before we can seat you.'
+        format.html { render :partial => "mail_in_application", :layout => "main" }
       else
         flash[:error] = 'Your pez broke for some reason. Snap dang.'
         format.html { render :action => "new" }

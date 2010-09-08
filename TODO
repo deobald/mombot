@@ -3,24 +3,19 @@
 
 === code
 
-* email for LaTeX
-* fix 'allow_forgery_protection' in production (proxy issue?)
-
 * colour picker
 
-* placeholder LaTeX form (email)
-
-* put this shit on the internet someplace
+* users can add 'things' or comment on 'things'
 
 * rails 3?
+
+* fix 'allow_forgery_protection' in production (proxy issue?)
 
 * rename to 'treehouse'
 
 * hamlize. sassize.
 
-* users can add 'things' or comment on 'things'
-
 === sorta-code
 * graphic pez dispenser
 * mail-in form
-* CSS from geoff or wherever
+* CSS from geoff or gabe or wherever

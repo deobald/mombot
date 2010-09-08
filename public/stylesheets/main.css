@@ -15,6 +15,12 @@ label {
 .headerheader { font-size: 2em; margin-right: 1em; }
 
 .status { font-size: 4em; }
+.mail-in-form { 
+  border-style: dotted; 
+  border-width: 3px; 
+  border-color: orange;
+  background-color: yellow;
+}
 
 .liked { border-style: dotted; border-width: 3px; border-color: green; }
 .disliked { border-style: dotted; border-width: 3px; border-color: red; }
