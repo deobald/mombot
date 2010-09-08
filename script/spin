@@ -1,12 +1,5 @@
 #!/bin/sh
 
-# olden days:
-#/users/home/deobald/railsapps/releases/current/script/process/spawner \
-#  mongrel \
-#  --environment=production \
-#  --instances=1 \
-#  --address=127.0.0.1 \
-#  --port=10030
   
 /usr/local/bin/mongrel_rails start \
   -c /users/home/deobald/railsapps/mombot/current \
@@ -15,3 +8,5 @@
   -e production \
   -a 127.0.0.1 \
   -P /users/home/deobald/var/run/mongrel-run-mombot-10030.pid
+
+
