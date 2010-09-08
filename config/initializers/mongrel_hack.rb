@@ -1,4 +1,5 @@
-if Rails.version == '2.3.8' && Gem.available?('mongrel', Gem::Requirement.new('~>1.1.5')) && self.class.const_defined?(:Mongrel)
+#was: if Rails.version == '2.3.8' && Gem.available?('mongrel', Gem::Requirement.new('~>1.1.5')) && self.class.const_defined?(:Mongrel)
+if Rails.version == '2.3.8' && Gem.available?('mongrel', '~>1.1.5') && self.class.const_defined?(:Mongrel)
   
   # Pulled right from latest rack. Old looked like this in 1.1.0 version.
   # 
