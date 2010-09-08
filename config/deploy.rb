@@ -6,7 +6,7 @@ set :scm, :git
 set :user, "deobald"
 set :domain, "deobald.ca"
 set :use_sudo, false
-set :deploy_to, "/users/home/deobald/railsapps"
+set :deploy_to, "/users/home/deobald/railsapps/mombot"
 #set :path, "/users/home/#{user}"
 #set :port, 3000
 #set :apps_directory, "railsapps"
