@@ -16,6 +16,12 @@ role :app, domain
 role :db,  domain, :primary => true
 #role :db,  "your slave db-server here"
 
+after "deploy:update_code", :fix_production_config
+
+task :fix_production_config do
+  run "/users/home/deobald/railsapps/mombot/fix-production-config.rb"
+end
+
 # If you are using Passenger mod_rails uncomment this:
 # if you're still using the script/reapear helper you will need
 # these http://github.com/rails/irs_process_scripts
