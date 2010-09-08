@@ -45,7 +45,7 @@ class Pez < ActiveRecord::Base
   end
   
   def votes_required
-    User.all.count
+    User.all.size
   end
   
   def wait_without_save
