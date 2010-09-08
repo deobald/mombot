@@ -18,7 +18,7 @@ test:
 production:
   adapter: mysql
   encoding: utf8
-  database: deobald_production
-  username: deobald
+  database: deobald_4440_mombot
+  username: mombot-4440
   password: 
   socket: /tmp/mysql.sock
