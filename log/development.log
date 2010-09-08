@@ -17769,3 +17769,729 @@ Processing PezezController#create (for 127.0.0.1 at 2010-09-08 16:05:15) [POST]
 Rendering template within layouts/main
 Rendered pezez/_mail_in_application (0.9ms)
 Completed in 54ms (View: 13, DB: 1) | 200 OK [http://localhost/pezez]
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.8ms)[0m   [0;1mCREATE TABLE "pezez" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "colour" varchar(255) NOT NULL, "status" varchar(255) NOT NULL, "priority" integer, "secret_code" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "admin" boolean DEFAULT 'f', "name" varchar(255), "hashed_password" varchar(255), "email" varchar(255), "salt" varchar(255), "created_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pez_id" integer NOT NULL, "user_id" integer NOT NULL, "approve" boolean NOT NULL) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100823220454')[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.5ms)[0m   [0;1mCREATE TABLE "pezez" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "colour" varchar(255) NOT NULL, "status" varchar(255) NOT NULL, "priority" integer, "secret_code" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "admin" boolean DEFAULT 'f', "name" varchar(255), "hashed_password" varchar(255), "email" varchar(255), "salt" varchar(255), "created_at" datetime) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pez_id" integer NOT NULL, "user_id" integer NOT NULL, "approve" boolean NOT NULL) [0m
+  [4;35;1mSQL (0.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100823220454')[0m
+  [4;36;1mPez Load (0.3ms)[0m   [0;1mSELECT "pezez".id FROM "pezez" WHERE ("pezez"."identity" = 'blah') LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT max("pezez".priority) AS max_priority FROM "pezez" [0m
+  [4;36;1mPez Create (0.6ms)[0m   [0;1mINSERT INTO "pezez" ("identity", "created_at", "updated_at", "priority", "colour", "secret_code", "status") VALUES('blah', '2010-09-08 21:22:59', '2010-09-08 21:22:59', 11, '#24d43c', NULL, 'waiting')[0m
+
+
+Processing PezezController#index (for 127.0.0.1 at 2010-09-08 16:30:11) [GET]
+  [4;35;1mPez Load (0.5ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'seated') ORDER BY priority ASC[0m
+  [4;36;1mPez Load (2.7ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'waiting') ORDER BY priority ASC[0m
+Rendering template within layouts/main
+Rendering pezez/index
+Completed in 35ms (View: 13, DB: 3) | 200 OK [http://localhost/]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:30:14) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 41ms (View: 21, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:30:18) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 33ms (View: 13, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:30:30) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+
+ActionView::TemplateError (can't convert nil into String) on line #15 of app/views/pezez/new.erb:
+12:   <div>
+13:     <%= f.label :colour, "colour:" %>
+14:     <%= f.hidden_field :colour, :value => '12345' %>
+15:     <%= 'color: ' + @pez.colour %>
+16:   </div>
+17: 
+18:   <div>
+
+    app/views/pezez/new.erb:15:in `+'
+    app/views/pezez/new.erb:15
+    app/views/pezez/new.erb:5
+
+Rendered rescues/_trace (67.3ms)
+Rendered rescues/_request_and_response (2.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:30:54) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.5ms)[0m   [0;1mCREATE TABLE "pezez" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "colour" varchar(255) NOT NULL, "status" varchar(255) NOT NULL, "priority" integer, "secret_code" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "admin" boolean DEFAULT 'f', "name" varchar(255), "hashed_password" varchar(255), "email" varchar(255), "salt" varchar(255), "created_at" datetime) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pez_id" integer NOT NULL, "user_id" integer NOT NULL, "approve" boolean NOT NULL) [0m
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100823220454')[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mCREATE TABLE "pezez" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "colour" varchar(255) NOT NULL, "status" varchar(255) NOT NULL, "priority" integer, "secret_code" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "admin" boolean DEFAULT 'f', "name" varchar(255), "hashed_password" varchar(255), "email" varchar(255), "salt" varchar(255), "created_at" datetime) [0m
+  [4;35;1mSQL (0.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pez_id" integer NOT NULL, "user_id" integer NOT NULL, "approve" boolean NOT NULL) [0m
+  [4;35;1mSQL (0.9ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (1.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100823220454')[0m
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:32:16) [GET]
+
+ArgumentError (wrong number of arguments (0 for 1)):
+  app/controllers/pezez_controller.rb:10:in `new_with_colour'
+  app/controllers/pezez_controller.rb:10:in `new'
+
+Rendered rescues/_trace (51.8ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:32:34) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 48ms (View: 19, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:33:38) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 112ms (View: 19, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:33:46) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 48ms (View: 18, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:34:24) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 47ms (View: 18, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:35:24) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 48ms (View: 18, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:03) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 48ms (View: 19, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:17) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 106ms (View: 77, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:19) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:20) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:21) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:21) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:22) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:22) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 97ms (View: 68, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:23) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:24) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:24) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:25) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:25) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:26) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 44ms (View: 13, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:27) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 41ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:27) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:28) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:29) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:29) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:30) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:31) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 44ms (View: 12, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:31) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:32) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:33) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 43ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:33) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:34) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:35) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 41ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:35) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:36) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:36) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:36) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:37) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:38) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:39) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 42ms (View: 12, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:39) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:40) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:41) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:41) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:42) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 96ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:43) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:43) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:44) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:45) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:45) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:46) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 95ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:47) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:47) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:48) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:49) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:49) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:50) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:51) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:52) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:52) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:53) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:53) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:54) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 41ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:55) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:55) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:56) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:57) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:57) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:58) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:59) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:36:59) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:37:00) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:37:01) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:37:02) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:37:03) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:37:04) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:37:05) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:37:06) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:37:07) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:37:08) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:37:09) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:37:10) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 41ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:37:10) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:37:11) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:37:12) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:37:13) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:37:14) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 40ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:37:15) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 101ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:37:16) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 41ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]

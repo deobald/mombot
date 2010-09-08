@@ -7,7 +7,7 @@ class PezezController < ApplicationController
   end
   
   def new
-    @pez = Pez.new
+    @pez = Pez.new_with_colour
   end
   
   def create

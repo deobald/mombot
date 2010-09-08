@@ -10,9 +10,9 @@ class PezTest < ActiveSupport::TestCase
   end
   
   test "generates a new colour on each new pez" do
-    first = Pez.create! :identity => 'steven'
-    second = Pez.create! :identity => 'conrad'
-    assert_equal '#', first.colour[0].to_s
+    first = Pez.new_with_colour :identity => 'steven'
+    second = Pez.new_with_colour :identity => 'conrad'
+    assert_equal '#', first.colour[0..0]
     assert_equal 7, first.colour.length
     assert second.colour != first.colour
   end

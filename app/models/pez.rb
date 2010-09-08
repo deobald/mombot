@@ -11,9 +11,14 @@ class Pez < ActiveRecord::Base
   WAITING = 'waiting'
   DISPENSED = 'dispensed'
   
+  def self.new_with_colour options={}
+    pez = Pez.new options
+    pez.colour = '#' + Secrets.random_string(6)
+    pez
+  end
+  
   def before_create
     self.priority = max_priority + 1
-    self.colour = '#' + Secrets.random_string(6)
     wait_without_save
   end
   
