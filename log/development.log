@@ -17582,3 +17582,51 @@ Completed in 109ms (View: 78, DB: 0) | 200 OK [http://localhost/pezez/new]
 [0m
   [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
   [4;35;1mSQL (2.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100823220454')[0m
+
+
+Processing PezezController#index (for 127.0.0.1 at 2010-09-08 15:13:34) [GET]
+  [4;36;1mPez Load (0.8ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'seated') ORDER BY priority ASC[0m
+  [4;35;1mPez Load (0.7ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'waiting') ORDER BY priority ASC[0m
+Rendering template within layouts/main
+Rendering pezez/index
+Completed in 42ms (View: 32, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing PezezController#index (for 127.0.0.1 at 2010-09-08 15:45:07) [GET]
+  [4;36;1mPez Load (69.1ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'seated') ORDER BY priority ASC[0m
+  [4;35;1mPez Load (0.8ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'waiting') ORDER BY priority ASC[0m
+Rendering template within layouts/main
+Rendering pezez/index
+Completed in 256ms (View: 177, DB: 70) | 200 OK [http://localhost/]
+
+
+Processing PezezController#index (for 127.0.0.1 at 2010-09-08 15:47:03) [GET]
+  [4;36;1mPez Load (0.5ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'seated') ORDER BY priority ASC[0m
+  [4;35;1mPez Load (0.7ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'waiting') ORDER BY priority ASC[0m
+Rendering template within layouts/main
+Rendering pezez/index
+Completed in 42ms (View: 22, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PezezController#index (for 127.0.0.1 at 2010-09-08 15:47:51) [GET]
+  [4;36;1mPez Load (0.5ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'seated') ORDER BY priority ASC[0m
+  [4;35;1mPez Load (0.7ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'waiting') ORDER BY priority ASC[0m
+Rendering template within layouts/main
+Rendering pezez/index
+Completed in 42ms (View: 22, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PezezController#index (for 127.0.0.1 at 2010-09-08 15:48:08) [GET]
+  [4;36;1mPez Load (0.6ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'seated') ORDER BY priority ASC[0m
+  [4;35;1mPez Load (0.7ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'waiting') ORDER BY priority ASC[0m
+Rendering template within layouts/main
+Rendering pezez/index
+Completed in 42ms (View: 22, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PezezController#index (for 127.0.0.1 at 2010-09-08 15:48:19) [GET]
+  [4;36;1mPez Load (0.5ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'seated') ORDER BY priority ASC[0m
+  [4;35;1mPez Load (0.6ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'waiting') ORDER BY priority ASC[0m
+Rendering template within layouts/main
+Rendering pezez/index
+Completed in 41ms (View: 22, DB: 1) | 200 OK [http://localhost/]

@@ -3,12 +3,6 @@
 
 === code
 
-* prod db password autodeploy w/o git
-* bounce mongrel on deploy
-
-* beta
-* instructions
-* feedback
 * email for LaTeX
 * fix 'allow_forgery_protection' in production (proxy issue?)
 
