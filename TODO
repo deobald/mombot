@@ -1,21 +1,20 @@
 
 == TODO
 
-=== code
-
+=== A
 * colour picker
-
 * users can add 'things' or comment on 'things'
+* deploy to second location; easy initial setup (admin user)
 
-* rails 3?
 
-* fix 'allow_forgery_protection' in production (proxy issue?)
-
-* rename to 'treehouse'
-
-* hamlize. sassize.
-
-=== sorta-code
+=== B
 * graphic pez dispenser
 * mail-in form
 * CSS from geoff or gabe or wherever
+
+
+=== C
+* rails 3?
+* fix 'allow_forgery_protection' in production (proxy issue?)
+* rename to 'treehouse'?
+* hamlize. sassize.
