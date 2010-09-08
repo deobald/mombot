@@ -17371,3 +17371,146 @@ Completed in 59ms (View: 24, DB: 0) | 200 OK [http://localhost/users/welcome]
 [0m
   [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
   [4;35;1mSQL (1.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100823220454')[0m
+
+
+Processing UsersController#logout (for 127.0.0.1 at 2010-09-06 16:09:31) [GET]
+Redirected to http://localhost:3000/users/login
+Completed in 35ms (DB: 0) | 302 Found [http://localhost/users/logout]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-09-06 16:09:32) [GET]
+Rendering template within layouts/main
+Rendering users/login
+Completed in 17ms (View: 10, DB: 0) | 200 OK [http://localhost/users/login]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-06 16:09:34) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 102ms (View: 82, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-06 16:09:56) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 41ms (View: 21, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-06 16:10:29) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 41ms (View: 21, DB: 0) | 200 OK [http://localhost/pezez/new]
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-06 16:11:15) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 33ms (View: 13, DB: 0) | 200 OK [http://localhost/pezez/new]
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mCREATE TABLE "pezez" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "colour" varchar(255) NOT NULL, "status" varchar(255) NOT NULL, "priority" integer, "secret_code" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "admin" boolean DEFAULT 'f', "name" varchar(255), "hashed_password" varchar(255), "email" varchar(255), "salt" varchar(255), "created_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pez_id" integer NOT NULL, "user_id" integer NOT NULL, "approve" boolean NOT NULL) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100823220454')[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.3ms)[0m   [0;1mCREATE TABLE "pezez" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "colour" varchar(255) NOT NULL, "status" varchar(255) NOT NULL, "priority" integer, "secret_code" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "admin" boolean DEFAULT 'f', "name" varchar(255), "hashed_password" varchar(255), "email" varchar(255), "salt" varchar(255), "created_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pez_id" integer NOT NULL, "user_id" integer NOT NULL, "approve" boolean NOT NULL) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100823220454')[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.3ms)[0m   [0;1mCREATE TABLE "pezez" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "colour" varchar(255) NOT NULL, "status" varchar(255) NOT NULL, "priority" integer, "secret_code" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "admin" boolean DEFAULT 'f', "name" varchar(255), "hashed_password" varchar(255), "email" varchar(255), "salt" varchar(255), "created_at" datetime) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pez_id" integer NOT NULL, "user_id" integer NOT NULL, "approve" boolean NOT NULL) [0m
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.9ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100823220454')[0m
+
+
+Processing PezezController#new (for 127.0.0.1 at 2010-09-08 06:57:13) [GET]
+Rendering template within layouts/main
+Rendering pezez/new
+Completed in 109ms (View: 78, DB: 0) | 200 OK [http://localhost/pezez/new]

@@ -13,6 +13,7 @@ class Pez < ActiveRecord::Base
   
   def before_create
     self.priority = max_priority + 1
+    self.colour = '#' + Secrets.random_string(6)
     wait_without_save
   end
   

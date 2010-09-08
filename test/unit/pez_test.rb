@@ -3,10 +3,18 @@ require 'test_helper'
 
 class PezTest < ActiveSupport::TestCase
   
-  test "should bump priority on each pez" do
+  test "bumps priority on each new pez" do
     first = Pez.create! :identity => 'steven', :colour => 'red'
     second = Pez.create! :identity => 'conrad', :colour => 'blue'
     assert second.priority > first.priority
+  end
+  
+  test "generates a new colour on each new pez" do
+    first = Pez.create! :identity => 'steven'
+    second = Pez.create! :identity => 'conrad'
+    assert_equal '#', first.colour[0].to_s
+    assert_equal 7, first.colour.length
+    assert second.colour != first.colour
   end
   
   test "only votable if it's top priority" do

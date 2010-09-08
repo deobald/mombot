@@ -1,16 +1,23 @@
 
-<h1>hello</h1>
+<div>
+  <h1>hello</h1>
 
-<% form_for @pez do |f| %>
+  <% form_for @pez do |f| %>
 
-<%= f.label :identity, "identity:" %>
-<%= f.text_field :identity %>
+  <div>
+    <%= f.label :identity, "identity:" %>
+    <%= f.text_field :identity %>
+  </div>
 
-<div></div>
-<%= f.label :colour, "colour:" %>
-<%= f.text_field :colour %>
+  <div>
+    <%= f.label :colour, "colour:" %>
+    <%= f.hidden_field :colour, :value => '12345' %>
+    <%= @pez.colour %>
+  </div>
 
-<div></div>
-<%= submit_tag 'add me to the dispenser, please!' %>
+  <div>
+    <%= submit_tag 'add me to the dispenser, please!' %>
+  </div>
 
-<% end %>
+  <% end %>
+</div>
