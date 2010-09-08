@@ -18,6 +18,10 @@ config.action_mailer.smtp_settings = {
   :authentication       => 'plain',
   :enable_starttls_auto => true  }
 
+# Disable request forgery protection in test environment
+# forgive me, oh lord, but this gets turned off for now:
+config.action_controller.allow_forgery_protection    = false
+
 # See everything in the log (default is :info)
 # config.log_level = :debug
 

@@ -3,6 +3,13 @@
 
 === code
 
+* prod db password autodeploy w/o git
+* beta
+* instructions
+* feedback
+* email for LaTeX
+* fix 'allow_forgery_protection' in production (proxy issue?)
+
 * colour picker
 
 * placeholder LaTeX form (email)
