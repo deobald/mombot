@@ -1,4 +1,7 @@
 
+app_root = "/users/home/deobald/railsapps/mombot"
+current_app_root = "#{app_root}/current"
+
 set :application, "mombot"
 set :repository,  "git://github.com/deobald/mombot.git"
 set :scm, :git
@@ -14,22 +17,23 @@ set :deploy_to, "/users/home/deobald/railsapps/mombot"
 role :web, domain
 role :app, domain
 role :db,  domain, :primary => true
-#role :db,  "your slave db-server here"
 
 after "deploy:symlink", :fix_production_config
+after "deploy:restart", "deploy:stop", "deploy:start"
 
-task :fix_production_config do
-  run "/users/home/deobald/railsapps/mombot/fix-production-config.rb"
+namespace :deploy do
+  task :start do
+    run "#{current_app_root}/script/spin"
+  end
+
+  task :stop do
+    run "#{current_app_root}/script/unspin"
+  end
+
+  task :restart do
+  end
 end
 
-# If you are using Passenger mod_rails uncomment this:
-# if you're still using the script/reapear helper you will need
-# these http://github.com/rails/irs_process_scripts
-
-# namespace :deploy do
-#   task :start do ; end
-#   task :stop do ; end
-#   task :restart, :roles => :app, :except => { :no_release => true } do
-#     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
-#   end
-# end
+task :fix_production_config do
+  run "#{app_root}/fix-production-config.rb"
+end

@@ -1,5 +1,4 @@
 #!/bin/sh
-
   
 /usr/local/bin/mongrel_rails start \
   -c /users/home/deobald/railsapps/mombot/current \

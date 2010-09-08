@@ -1,0 +1,5 @@
+#!/bin/sh
+  
+/usr/local/bin/mongrel_rails stop \
+  -P /users/home/deobald/var/run/mongrel-run-mombot-10030.pid
+
