@@ -15,7 +15,7 @@ Rails::Initializer.run do |config|
   # config.load_paths += %W( #{RAILS_ROOT}/extras )
   # config.load_paths += %W( #{RAILS_ROOT}/lib )
 
-#steve:  
+#steven:  
   # config.load_paths += Dir["#{RAILS_ROOT}/vendor/gems/**"].map do |dir| 
   #   File.directory?(lib = "#{dir}/lib") ? lib : dir
   # end

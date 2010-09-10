@@ -18495,3 +18495,735 @@ Processing PezezController#new (for 127.0.0.1 at 2010-09-08 16:37:16) [GET]
 Rendering template within layouts/main
 Rendering pezez/new
 Completed in 41ms (View: 11, DB: 0) | 200 OK [http://localhost/pezez/new]
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to ReleaseOne (20100823220454)
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "pezez" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "colour" varchar(255) NOT NULL, "status" varchar(255) NOT NULL, "priority" integer, "secret_code" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "admin" boolean DEFAULT 0, "name" varchar(255), "hashed_password" varchar(255), "email" varchar(255), "salt" varchar(255), "created_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pez_id" integer NOT NULL, "user_id" integer NOT NULL, "approve" boolean NOT NULL) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100823220454')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("pezez")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("votes")[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("pezez")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("votes")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mCREATE TABLE "pezez" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "colour" varchar(255) NOT NULL, "status" varchar(255) NOT NULL, "priority" integer, "secret_code" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "admin" boolean DEFAULT 'f', "name" varchar(255), "hashed_password" varchar(255), "email" varchar(255), "salt" varchar(255), "created_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pez_id" integer NOT NULL, "user_id" integer NOT NULL, "approve" boolean NOT NULL) [0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("schema_migrations")[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100823220454')[0m
+
+
+Processing PezezController#index (for 127.0.0.1 at 2010-09-10 15:40:43) [GET]
+  [4;36;1mPez Load (1.6ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'seated') ORDER BY priority ASC[0m
+  [4;35;1mPez Load (0.9ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'waiting') ORDER BY priority ASC[0m
+Rendering template within layouts/main
+Rendering pezez/index
+Completed in 43ms (View: 32, DB: 3) | 200 OK [http://localhost/]
+
+
+Processing AdminsController#index (for 127.0.0.1 at 2010-09-10 15:40:48) [GET]
+Redirected to http://localhost:3000/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/admins]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-09-10 15:40:49) [GET]
+Rendering template within layouts/main
+Rendering users/login
+Completed in 28ms (View: 21, DB: 0) | 200 OK [http://localhost/users/login]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-09-10 15:40:54) [POST]
+  Parameters: {"commit"=>"Submit", "method"=>"post", "authenticity_token"=>"BODPt2I/S5RWD7v7e5xK2fxkw3KU86/275kywZ8i1sI=", "user"=>{"identity"=>"steve", "password"=>"test"}}
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'steve') LIMIT 1[0m
+Redirected to http://localhost:3000/admins
+Completed in 50ms (DB: 1) | 302 Found [http://localhost/users/login?method=post]
+
+
+Processing AdminsController#index (for 127.0.0.1 at 2010-09-10 15:40:55) [GET]
+  [4;35;1mPez Load (1.2ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'waiting') [0m
+  [4;36;1mPez Load (0.2ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'dispensed' and priority > 0) [0m
+Rendering template within layouts/main
+Rendering admins/index
+Completed in 80ms (View: 32, DB: 1) | 200 OK [http://localhost/admins]
+
+
+Processing AdminsController#index (for 127.0.0.1 at 2010-09-10 15:42:18) [GET]
+  [4;35;1mPez Load (1.2ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'waiting') [0m
+  [4;36;1mPez Load (0.2ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'dispensed' and priority > 0) [0m
+Rendering template within layouts/main
+Rendering admins/index
+Completed in 77ms (View: 29, DB: 1) | 200 OK [http://localhost/admins]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-10 15:42:20) [POST]
+  Parameters: {"commit"=>"Zig", "authenticity_token"=>"BODPt2I/S5RWD7v7e5xK2fxkw3KU86/275kywZ8i1sI="}
+
+ActionController::RoutingError (No route matches "/adminify" with {:method=>:post}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-10 15:42:30) [POST]
+  Parameters: {"commit"=>"Zig", "authenticity_token"=>"BODPt2I/S5RWD7v7e5xK2fxkw3KU86/275kywZ8i1sI="}
+
+ActionController::RoutingError (No route matches "/adminify" with {:method=>:post}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminsController#index (for 127.0.0.1 at 2010-09-10 15:43:06) [GET]
+  [4;35;1mPez Load (1.2ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'waiting') [0m
+  [4;36;1mPez Load (0.2ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'dispensed' and priority > 0) [0m
+Rendering template within layouts/main
+Rendering admins/index
+Completed in 76ms (View: 29, DB: 1) | 200 OK [http://localhost/admins]
+
+
+Processing AdminsController#adminify (for 127.0.0.1 at 2010-09-10 15:43:08) [POST]
+  Parameters: {"commit"=>"Zig", "authenticity_token"=>"BODPt2I/S5RWD7v7e5xK2fxkw3KU86/275kywZ8i1sI="}
+
+ActionView::MissingTemplate (Missing template admins/adminify.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminsController#index (for 127.0.0.1 at 2010-09-10 15:46:08) [GET]
+  [4;35;1mPez Load (1.2ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'waiting') [0m
+  [4;36;1mPez Load (0.2ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'dispensed' and priority > 0) [0m
+Rendering template within layouts/main
+Rendering admins/index
+
+ActionView::TemplateError (wrong number of arguments (1 for 2)) on line #31 of app/views/admins/index.erb:
+28: <div>
+29:   <% form_tag :controller => 'admins', :action => 'adminify' do %>
+30:     <%= label :who, "Adminify someone:"%>
+31:     <%= text_field :who %>
+32:     <div><%= submit_tag 'Adminify!' %></div>
+33:   <% end %>
+34: </div>
+
+    app/views/admins/index.erb:31:in `text_field'
+    app/views/admins/index.erb:31
+    app/views/admins/index.erb:29
+
+Rendered rescues/_trace (69.9ms)
+Rendered rescues/_request_and_response (2.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminsController#index (for 127.0.0.1 at 2010-09-10 15:49:35) [GET]
+  [4;35;1mPez Load (1.2ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'waiting') [0m
+  [4;36;1mPez Load (0.2ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'dispensed' and priority > 0) [0m
+Rendering template within layouts/main
+Rendering admins/index
+Completed in 77ms (View: 30, DB: 1) | 200 OK [http://localhost/admins]
+
+
+Processing AdminsController#adminify (for 127.0.0.1 at 2010-09-10 15:49:44) [POST]
+  Parameters: {"commit"=>"Adminify!", "authenticity_token"=>"BODPt2I/S5RWD7v7e5xK2fxkw3KU86/275kywZ8i1sI=", "who"=>"whoever"}
+Rendering template within layouts/main
+Rendering admins/adminify
+Completed in 54ms (View: 20, DB: 0) | 200 OK [http://localhost/admins/adminify]
+
+
+Processing AdminsController#adminify (for 127.0.0.1 at 2010-09-10 15:50:09) [POST]
+  Parameters: {"commit"=>"Adminify!", "authenticity_token"=>"BODPt2I/S5RWD7v7e5xK2fxkw3KU86/275kywZ8i1sI=", "who"=>"zag"}
+Rendering template within layouts/main
+Rendering admins/adminify
+Completed in 48ms (View: 13, DB: 0) | 200 OK [http://localhost/admins/adminify]
+
+
+Processing AdminsController#index (for 127.0.0.1 at 2010-09-10 15:53:37) [GET]
+  [4;35;1mPez Load (1.2ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'waiting') [0m
+  [4;36;1mPez Load (0.2ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'dispensed' and priority > 0) [0m
+Rendering template within layouts/main
+Rendering admins/index
+Completed in 78ms (View: 30, DB: 1) | 200 OK [http://localhost/admins]
+
+
+Processing AdminsController#index (for 127.0.0.1 at 2010-09-10 15:54:03) [GET]
+  [4;35;1mPez Load (1.2ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'waiting') [0m
+  [4;36;1mPez Load (0.2ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'dispensed' and priority > 0) [0m
+Rendering template within layouts/main
+Rendering admins/index
+Completed in 77ms (View: 30, DB: 1) | 200 OK [http://localhost/admins]
+
+
+Processing AdminsController#index (for 127.0.0.1 at 2010-09-10 15:54:28) [GET]
+  [4;35;1mPez Load (1.3ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'waiting') [0m
+  [4;36;1mPez Load (0.2ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'dispensed' and priority > 0) [0m
+Rendering template within layouts/main
+Rendering admins/index
+Completed in 78ms (View: 30, DB: 1) | 200 OK [http://localhost/admins]
+
+
+Processing AdminsController#adminify (for 127.0.0.1 at 2010-09-10 15:58:26) [POST]
+  Parameters: {"commit"=>"Adminify!", "authenticity_token"=>"BODPt2I/S5RWD7v7e5xK2fxkw3KU86/275kywZ8i1sI=", "who"=>"wha"}
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `any' for #<Class:0x2385228>):
+  app/controllers/admins_controller.rb:18:in `adminify'
+
+Rendered rescues/_trace (112.2ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminsController#adminify (for 127.0.0.1 at 2010-09-10 15:58:42) [POST]
+  Parameters: {"commit"=>"Adminify!", "authenticity_token"=>"BODPt2I/S5RWD7v7e5xK2fxkw3KU86/275kywZ8i1sI=", "who"=>"wha"}
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE (admin = 't') [0m
+
+Exception (Bad dog!):
+  app/controllers/admins_controller.rb:18:in `adminify'
+
+Rendered rescues/_trace (50.8ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminsController#adminify (for 127.0.0.1 at 2010-09-10 16:01:48) [POST]
+  Parameters: {"commit"=>"Adminify!", "authenticity_token"=>"BODPt2I/S5RWD7v7e5xK2fxkw3KU86/275kywZ8i1sI=", "who"=>"wha"}
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE (admin = 't') [0m
+
+NoMethodError (undefined method `index_url' for #<AdminsController:0x23e4214>):
+  app/controllers/admins_controller.rb:20:in `adminify'
+
+Rendered rescues/_trace (54.5ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminsController#adminify (for 127.0.0.1 at 2010-09-10 16:02:12) [POST]
+  Parameters: {"commit"=>"Adminify!", "authenticity_token"=>"BODPt2I/S5RWD7v7e5xK2fxkw3KU86/275kywZ8i1sI=", "who"=>"wha"}
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE (admin = 't') [0m
+Redirected to http://localhost:3000/admins
+Completed in 102ms (DB: 1) | 302 Found [http://localhost/admins/adminify]
+
+
+Processing AdminsController#index (for 127.0.0.1 at 2010-09-10 16:02:12) [GET]
+  [4;35;1mPez Load (1.2ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'waiting') [0m
+  [4;36;1mPez Load (0.2ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'dispensed' and priority > 0) [0m
+Rendering template within layouts/main
+Rendering admins/index
+Completed in 70ms (View: 22, DB: 1) | 200 OK [http://localhost/admins]
+
+
+Processing PezezController#index (for 127.0.0.1 at 2010-09-10 16:06:40) [GET]
+  [4;35;1mPez Load (1.2ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'seated') ORDER BY priority ASC[0m
+  [4;36;1mPez Load (0.9ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'waiting') ORDER BY priority ASC[0m
+Rendering template within layouts/main
+Rendering pezez/index
+Completed in 76ms (View: 55, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing PezezController#index (for 127.0.0.1 at 2010-09-10 16:07:21) [GET]
+  [4;35;1mPez Load (1.2ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'seated') ORDER BY priority ASC[0m
+  [4;36;1mPez Load (0.9ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'waiting') ORDER BY priority ASC[0m
+Rendering template within layouts/main
+Rendering pezez/index
+Completed in 76ms (View: 55, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing AdminsController#index (for 127.0.0.1 at 2010-09-10 16:07:40) [GET]
+  [4;35;1mPez Load (1.2ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'waiting') [0m
+  [4;36;1mPez Load (0.2ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'dispensed' and priority > 0) [0m
+Rendering template within layouts/main
+Rendering admins/index
+Completed in 78ms (View: 32, DB: 1) | 200 OK [http://localhost/admins]
+
+
+Processing AdminsController#adminify (for 127.0.0.1 at 2010-09-10 16:07:45) [POST]
+  Parameters: {"commit"=>"Adminify!", "authenticity_token"=>"BODPt2I/S5RWD7v7e5xK2fxkw3KU86/275kywZ8i1sI=", "who"=>"whoever"}
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE (admin = 't') [0m
+Redirected to http://localhost:3000/admins
+Completed in 100ms (DB: 1) | 302 Found [http://localhost/admins/adminify]
+
+
+Processing AdminsController#index (for 127.0.0.1 at 2010-09-10 16:07:45) [GET]
+  [4;36;1mPez Load (1.2ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'waiting') [0m
+  [4;35;1mPez Load (0.2ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'dispensed' and priority > 0) [0m
+Rendering template within layouts/main
+Rendering admins/index
+Completed in 69ms (View: 22, DB: 1) | 200 OK [http://localhost/admins]
+
+
+Processing PezezController#index (for 127.0.0.1 at 2010-09-10 16:07:48) [GET]
+  [4;36;1mPez Load (1.2ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'seated') ORDER BY priority ASC[0m
+  [4;35;1mPez Load (0.9ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'waiting') ORDER BY priority ASC[0m
+Rendering template within layouts/main
+Rendering pezez/index
+Completed in 66ms (View: 46, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing PezezController#index (for 127.0.0.1 at 2010-09-10 16:15:34) [GET]
+  [4;36;1mPez Load (1.2ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'seated') ORDER BY priority ASC[0m
+  [4;35;1mPez Load (0.9ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'waiting') ORDER BY priority ASC[0m
+Rendering template within layouts/main
+Rendering pezez/index
+Completed in 77ms (View: 56, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing AdminsController#index (for 127.0.0.1 at 2010-09-10 16:15:38) [GET]
+  [4;36;1mPez Load (1.2ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'waiting') [0m
+  [4;35;1mPez Load (0.2ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'dispensed' and priority > 0) [0m
+Rendering template within layouts/main
+Rendering admins/index
+Completed in 88ms (View: 22, DB: 1) | 200 OK [http://localhost/admins]
+
+
+Processing AdminsController#adminify (for 127.0.0.1 at 2010-09-10 16:15:52) [POST]
+  Parameters: {"commit"=>"Adminify!", "authenticity_token"=>"BODPt2I/S5RWD7v7e5xK2fxkw3KU86/275kywZ8i1sI=", "who"=>"wang"}
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE (admin = 't') [0m
+Redirected to http://localhost:3000/admins
+Completed in 99ms (DB: 1) | 302 Found [http://localhost/admins/adminify]
+
+
+Processing AdminsController#index (for 127.0.0.1 at 2010-09-10 16:15:52) [GET]
+  [4;35;1mPez Load (1.2ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'waiting') [0m
+  [4;36;1mPez Load (0.2ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'dispensed' and priority > 0) [0m
+Rendering template within layouts/main
+Rendering admins/index
+Completed in 70ms (View: 22, DB: 1) | 200 OK [http://localhost/admins]
+
+
+Processing AdminsController#index (for 127.0.0.1 at 2010-09-10 17:20:50) [GET]
+  [4;35;1mPez Load (1.2ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'waiting') [0m
+  [4;36;1mPez Load (0.2ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'dispensed' and priority > 0) [0m
+Rendering template within layouts/main
+Rendering admins/index
+Completed in 69ms (View: 22, DB: 1) | 200 OK [http://localhost/admins]
+
+
+Processing AdminsController#adminify (for 127.0.0.1 at 2010-09-10 17:20:54) [POST]
+  Parameters: {"commit"=>"Adminify!", "authenticity_token"=>"BODPt2I/S5RWD7v7e5xK2fxkw3KU86/275kywZ8i1sI=", "who"=>"feck"}
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE (admin = 't') [0m
+Redirected to http://localhost:3000/admins
+Completed in 43ms (DB: 1) | 302 Found [http://localhost/admins/adminify]
+
+
+Processing AdminsController#index (for 127.0.0.1 at 2010-09-10 17:20:54) [GET]
+  [4;36;1mPez Load (1.2ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'waiting') [0m
+  [4;35;1mPez Load (0.2ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'dispensed' and priority > 0) [0m
+Rendering template within layouts/main
+Rendering admins/index
+Completed in 69ms (View: 22, DB: 1) | 200 OK [http://localhost/admins]
+
+
+Processing AdminsController#index (for 127.0.0.1 at 2010-09-10 17:21:22) [GET]
+  [4;36;1mPez Load (1.2ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'waiting') [0m
+  [4;35;1mPez Load (0.2ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'dispensed' and priority > 0) [0m
+Rendering template within layouts/main
+Rendering admins/index
+Completed in 132ms (View: 22, DB: 1) | 200 OK [http://localhost/admins]
+
+
+Processing AdminsController#adminify (for 127.0.0.1 at 2010-09-10 17:21:26) [POST]
+  Parameters: {"commit"=>"Adminify!", "authenticity_token"=>"BODPt2I/S5RWD7v7e5xK2fxkw3KU86/275kywZ8i1sI=", "who"=>"h"}
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE (admin = 't') [0m
+Redirected to http://localhost:3000/admins
+Completed in 43ms (DB: 1) | 302 Found [http://localhost/admins/adminify]
+
+
+Processing AdminsController#index (for 127.0.0.1 at 2010-09-10 17:21:26) [GET]
+  [4;35;1mPez Load (1.2ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'waiting') [0m
+  [4;36;1mPez Load (0.2ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'dispensed' and priority > 0) [0m
+Rendering template within layouts/main
+Rendering admins/index
+Completed in 70ms (View: 22, DB: 1) | 200 OK [http://localhost/admins]
+
+
+Processing AdminsController#index (for 127.0.0.1 at 2010-09-10 17:22:40) [GET]
+  [4;35;1mPez Load (1.2ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'waiting') [0m
+  [4;36;1mPez Load (0.2ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'dispensed' and priority > 0) [0m
+Rendering template within layouts/main
+Rendering admins/index
+Completed in 69ms (View: 22, DB: 1) | 200 OK [http://localhost/admins]
+
+
+Processing AdminsController#adminify (for 127.0.0.1 at 2010-09-10 17:22:43) [POST]
+  Parameters: {"commit"=>"Adminify!", "authenticity_token"=>"BODPt2I/S5RWD7v7e5xK2fxkw3KU86/275kywZ8i1sI=", "who"=>"shit"}
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE (admin = 't') [0m
+Rendering template within layouts/main
+Rendering admins/adminify
+Completed in 49ms (View: 12, DB: 1) | 200 OK [http://localhost/admins/adminify]
+
+
+Processing UsersController#logout (for 127.0.0.1 at 2010-09-10 17:22:52) [GET]
+Redirected to http://localhost:3000/users/login
+Completed in 35ms (DB: 0) | 302 Found [http://localhost/users/logout]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-09-10 17:22:52) [GET]
+Rendering template within layouts/main
+Rendering users/login
+Completed in 17ms (View: 11, DB: 0) | 200 OK [http://localhost/users/login]
+
+
+Processing AdminsController#index (for 127.0.0.1 at 2010-09-10 17:23:02) [GET]
+Redirected to http://localhost:3000/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/admins]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-09-10 17:23:02) [GET]
+Rendering template within layouts/main
+Rendering users/login
+Completed in 17ms (View: 10, DB: 0) | 200 OK [http://localhost/users/login]
+
+
+Processing AdminsController#adminify (for 127.0.0.1 at 2010-09-10 17:24:48) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (admin = 't') [0m
+Rendering template within layouts/main
+Rendering admins/adminify
+Completed in 55ms (View: 16, DB: 1) | 200 OK [http://localhost/admins/adminify]
+
+
+Processing AdminsController#adminify (for 127.0.0.1 at 2010-09-10 17:25:06) [GET]
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE (admin = 't') [0m
+Rendering template within layouts/main
+Rendering admins/adminify
+Completed in 45ms (View: 9, DB: 1) | 200 OK [http://localhost/admins/adminify]
+
+
+Processing AdminsController#adminify (for 127.0.0.1 at 2010-09-10 17:25:06) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (admin = 't') [0m
+Rendering template within layouts/main
+Rendering admins/adminify
+Completed in 45ms (View: 9, DB: 1) | 200 OK [http://localhost/admins/adminify]
+
+
+Processing AdminsController#adminify (for 127.0.0.1 at 2010-09-10 17:28:15) [GET]
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE (admin = 't') [0m
+Redirected to http://localhost:3000/admins
+Completed in 43ms (DB: 1) | 302 Found [http://localhost/admins/adminify]
+
+
+Processing AdminsController#index (for 127.0.0.1 at 2010-09-10 17:28:15) [GET]
+Redirected to http://localhost:3000/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/admins]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-09-10 17:28:15) [GET]
+Rendering template within layouts/main
+Rendering users/login
+Completed in 17ms (View: 10, DB: 0) | 200 OK [http://localhost/users/login]
+
+
+Processing AdminsController#adminify (for 127.0.0.1 at 2010-09-10 17:28:24) [GET]
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE (admin = 't') [0m
+Redirected to http://localhost:3000/admins
+Completed in 43ms (DB: 1) | 302 Found [http://localhost/admins/adminify]
+
+
+Processing AdminsController#index (for 127.0.0.1 at 2010-09-10 17:28:24) [GET]
+Redirected to http://localhost:3000/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/admins]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-09-10 17:28:24) [GET]
+Rendering template within layouts/main
+Rendering users/login
+Completed in 17ms (View: 10, DB: 0) | 200 OK [http://localhost/users/login]
+
+
+Processing AdminsController#adminify (for 127.0.0.1 at 2010-09-10 17:28:54) [GET]
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE (admin = 't') [0m
+Rendering template within layouts/main
+Rendering admins/adminify
+Completed in 51ms (View: 9, DB: 1) | 200 OK [http://localhost/admins/adminify]
+
+
+Processing AdminsController#adminify (for 127.0.0.1 at 2010-09-10 17:30:09) [GET]
+Rendering template within layouts/main
+Rendering admins/adminify
+Completed in 18ms (View: 9, DB: 0) | 200 OK [http://localhost/admins/adminify]
+
+
+Processing AdminsController#adminify (for 127.0.0.1 at 2010-09-10 17:30:13) [GET]
+Rendering template within layouts/main
+Rendering admins/adminify
+Completed in 16ms (View: 9, DB: 0) | 200 OK [http://localhost/admins/adminify]
+
+
+Processing AdminsController#adminify (for 127.0.0.1 at 2010-09-10 17:30:21) [POST]
+  Parameters: {"commit"=>"Adminify!", "authenticity_token"=>"BODPt2I/S5RWD7v7e5xK2fxkw3KU86/275kywZ8i1sI=", "who"=>"geoff"}
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE (admin = 't') [0m
+Rendering template within layouts/main
+Rendering admins/adminify
+Completed in 50ms (View: 9, DB: 1) | 200 OK [http://localhost/admins/adminify]
+
+
+Processing AdminsController#adminify (for 127.0.0.1 at 2010-09-10 17:31:25) [GET]
+Rendering template within layouts/main
+Rendering admins/adminify
+Completed in 16ms (View: 9, DB: 0) | 200 OK [http://localhost/admins/adminify]
+
+
+Processing AdminsController#adminify (for 127.0.0.1 at 2010-09-10 17:31:27) [GET]
+Rendering template within layouts/main
+Rendering admins/adminify
+Completed in 16ms (View: 9, DB: 0) | 200 OK [http://localhost/admins/adminify]
+
+
+Processing AdminsController#adminify (for 127.0.0.1 at 2010-09-10 17:31:33) [POST]
+  Parameters: {"commit"=>"Adminify!", "authenticity_token"=>"BODPt2I/S5RWD7v7e5xK2fxkw3KU86/275kywZ8i1sI=", "who"=>"conrad"}
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE (admin = 't') [0m
+Rendering template within layouts/main
+Rendering admins/adminify
+Completed in 55ms (View: 9, DB: 1) | 200 OK [http://localhost/admins/adminify]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-09-10 17:31:42) [GET]
+Rendering template within layouts/main
+Rendering users/login
+Completed in 17ms (View: 10, DB: 0) | 200 OK [http://localhost/users/login]
+
+
+Processing PezezController#index (for 127.0.0.1 at 2010-09-10 17:31:55) [GET]
+  [4;36;1mPez Load (1.2ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'seated') ORDER BY priority ASC[0m
+  [4;35;1mPez Load (0.9ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'waiting') ORDER BY priority ASC[0m
+Rendering template within layouts/main
+Rendering pezez/index
+Completed in 33ms (View: 13, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-09-10 17:31:57) [GET]
+Rendering template within layouts/main
+Rendering users/login
+Completed in 17ms (View: 10, DB: 0) | 200 OK [http://localhost/users/login]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-09-10 17:32:04) [POST]
+  Parameters: {"commit"=>"Submit", "method"=>"post", "authenticity_token"=>"BODPt2I/S5RWD7v7e5xK2fxkw3KU86/275kywZ8i1sI=", "user"=>{"identity"=>"steve", "password"=>"test"}}
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'steve') LIMIT 1[0m
+Redirected to http://localhost:3000/admins
+Completed in 49ms (DB: 1) | 302 Found [http://localhost/users/login?method=post]
+
+
+Processing AdminsController#index (for 127.0.0.1 at 2010-09-10 17:32:04) [GET]
+  [4;35;1mPez Load (1.2ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'waiting') [0m
+  [4;36;1mPez Load (0.2ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'dispensed' and priority > 0) [0m
+Rendering template within layouts/main
+Rendering admins/index
+Completed in 74ms (View: 27, DB: 1) | 200 OK [http://localhost/admins]
+
+
+Processing UsersController#welcome (for 127.0.0.1 at 2010-09-10 17:32:23) [GET]
+Rendering template within layouts/main
+Rendering users/welcome
+  [4;35;1mPez Load (1.6ms)[0m   [0mSELECT * FROM "pezez" WHERE ("pezez"."status" = 'seated') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "pezez" WHERE ("pezez"."status" = 'seated') [0m
+Completed in 427ms (View: 391, DB: 2) | 200 OK [http://localhost/users/welcome]
+
+
+Processing PezezController#index (for 127.0.0.1 at 2010-09-10 17:32:34) [GET]
+  [4;35;1mPez Load (1.3ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'seated') ORDER BY priority ASC[0m
+  [4;36;1mPez Load (0.9ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'waiting') ORDER BY priority ASC[0m
+Rendering template within layouts/main
+Rendering pezez/index
+Completed in 68ms (View: 47, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing UsersController#logout (for 127.0.0.1 at 2010-09-10 17:32:39) [GET]
+Redirected to http://localhost:3000/users/login
+Completed in 34ms (DB: 0) | 302 Found [http://localhost/users/logout]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-09-10 17:32:39) [GET]
+Rendering template within layouts/main
+Rendering users/login
+Completed in 17ms (View: 10, DB: 0) | 200 OK [http://localhost/users/login]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-09-10 17:32:41) [GET]
+Rendering template within layouts/main
+Rendering users/login
+Completed in 17ms (View: 10, DB: 0) | 200 OK [http://localhost/users/login]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-09-10 17:32:44) [POST]
+  Parameters: {"commit"=>"Submit", "method"=>"post", "authenticity_token"=>"BODPt2I/S5RWD7v7e5xK2fxkw3KU86/275kywZ8i1sI=", "user"=>{"identity"=>"geoff", "password"=>"test"}}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'geoff') LIMIT 1[0m
+Redirected to http://localhost:3000/users/welcome
+Completed in 50ms (DB: 1) | 302 Found [http://localhost/users/login?method=post]
+
+
+Processing UsersController#welcome (for 127.0.0.1 at 2010-09-10 17:32:44) [GET]
+Rendering template within layouts/main
+Rendering users/welcome
+  [4;36;1mPez Load (1.2ms)[0m   [0;1mSELECT * FROM "pezez" WHERE ("pezez"."status" = 'seated') [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "pezez" WHERE ("pezez"."status" = 'seated') [0m
+Completed in 62ms (View: 27, DB: 1) | 200 OK [http://localhost/users/welcome]
+
+
+Processing UsersController#logout (for 127.0.0.1 at 2010-09-10 17:32:47) [GET]
+Redirected to http://localhost:3000/users/login
+Completed in 34ms (DB: 0) | 302 Found [http://localhost/users/logout]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-09-10 17:32:47) [GET]
+Rendering template within layouts/main
+Rendering users/login
+Completed in 17ms (View: 10, DB: 0) | 200 OK [http://localhost/users/login]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-09-10 17:32:51) [POST]
+  Parameters: {"commit"=>"Submit", "method"=>"post", "authenticity_token"=>"BODPt2I/S5RWD7v7e5xK2fxkw3KU86/275kywZ8i1sI=", "user"=>{"identity"=>"steve", "password"=>"test"}}
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'steve') LIMIT 1[0m
+Redirected to http://localhost:3000/users/welcome
+Completed in 114ms (DB: 1) | 302 Found [http://localhost/users/login?method=post]
+
+
+Processing UsersController#welcome (for 127.0.0.1 at 2010-09-10 17:32:52) [GET]
+Rendering template within layouts/main
+Rendering users/welcome
+  [4;35;1mPez Load (1.2ms)[0m   [0mSELECT * FROM "pezez" WHERE ("pezez"."status" = 'seated') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "pezez" WHERE ("pezez"."status" = 'seated') [0m
+Completed in 62ms (View: 27, DB: 1) | 200 OK [http://localhost/users/welcome]
+
+
+Processing AdminsController#index (for 127.0.0.1 at 2010-09-10 17:33:03) [GET]
+  [4;35;1mPez Load (1.2ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'waiting') [0m
+  [4;36;1mPez Load (0.2ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'dispensed' and priority > 0) [0m
+Rendering template within layouts/main
+Rendering admins/index
+Completed in 67ms (View: 20, DB: 1) | 200 OK [http://localhost/admins]
+
+
+Processing UsersController#logout (for 127.0.0.1 at 2010-09-10 17:33:10) [GET]
+Redirected to http://localhost:3000/users/login
+Completed in 34ms (DB: 0) | 302 Found [http://localhost/users/logout]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-09-10 17:33:10) [GET]
+Rendering template within layouts/main
+Rendering users/login
+Completed in 17ms (View: 10, DB: 0) | 200 OK [http://localhost/users/login]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-09-10 17:33:15) [POST]
+  Parameters: {"commit"=>"Submit", "method"=>"post", "authenticity_token"=>"BODPt2I/S5RWD7v7e5xK2fxkw3KU86/275kywZ8i1sI=", "user"=>{"identity"=>"geoff", "password"=>"test"}}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE (identity = 'geoff') LIMIT 1[0m
+Redirected to http://localhost:3000/users/welcome
+Completed in 50ms (DB: 1) | 302 Found [http://localhost/users/login?method=post]
+
+
+Processing UsersController#welcome (for 127.0.0.1 at 2010-09-10 17:33:15) [GET]
+Rendering template within layouts/main
+Rendering users/welcome
+  [4;36;1mPez Load (1.2ms)[0m   [0;1mSELECT * FROM "pezez" WHERE ("pezez"."status" = 'seated') [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "pezez" WHERE ("pezez"."status" = 'seated') [0m
+Completed in 62ms (View: 27, DB: 1) | 200 OK [http://localhost/users/welcome]
+
+
+Processing AdminsController#index (for 127.0.0.1 at 2010-09-10 17:33:21) [GET]
+  [4;36;1mPez Load (1.2ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'waiting') [0m
+  [4;35;1mPez Load (0.2ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'dispensed' and priority > 0) [0m
+Rendering template within layouts/main
+Rendering admins/index
+Completed in 67ms (View: 19, DB: 1) | 200 OK [http://localhost/admins]
+
+
+Processing AdminsController#index (for 127.0.0.1 at 2010-09-10 17:38:56) [GET]
+Redirected to http://localhost:3000/users/login
+Filter chain halted as [:admin_login_required] rendered_or_redirected.
+Completed in 35ms (DB: 0) | 302 Found [http://localhost/admins]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-09-10 17:38:56) [GET]
+Rendering template within layouts/main
+Rendering users/login
+Completed in 51ms (View: 44, DB: 0) | 200 OK [http://localhost/users/login]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-09-10 17:39:08) [GET]
+Rendering template within layouts/main
+Rendering users/login
+Completed in 51ms (View: 44, DB: 0) | 200 OK [http://localhost/users/login]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-09-10 17:39:13) [POST]
+  Parameters: {"commit"=>"Submit", "method"=>"post", "authenticity_token"=>"BODPt2I/S5RWD7v7e5xK2fxkw3KU86/275kywZ8i1sI=", "user"=>{"identity"=>"steve", "password"=>"test"}}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'steve') LIMIT 1[0m
+Redirected to http://localhost:3000/admins
+Completed in 51ms (DB: 1) | 302 Found [http://localhost/users/login?method=post]
+
+
+Processing AdminsController#index (for 127.0.0.1 at 2010-09-10 17:39:13) [GET]
+  [4;35;1mPez Load (1.0ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'waiting') [0m
+  [4;36;1mPez Load (0.2ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'dispensed' and priority > 0) [0m
+Rendering template within layouts/main
+Rendering admins/index
+Completed in 67ms (View: 14, DB: 1) | 200 OK [http://localhost/admins]
+
+
+Processing AdminsController#index (for 127.0.0.1 at 2010-09-10 17:39:16) [GET]
+  [4;35;1mPez Load (1.0ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'waiting') [0m
+  [4;36;1mPez Load (0.2ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'dispensed' and priority > 0) [0m
+Rendering template within layouts/main
+Rendering admins/index
+Completed in 68ms (View: 14, DB: 1) | 200 OK [http://localhost/admins]

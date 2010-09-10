@@ -22,8 +22,45 @@ label {
   background-color: yellow;
 }
 
+.chunky-section {
+  border-style: dotted; 
+  border-width: 3px; 
+  border-color: #99FF99;
+  background-color: #99CCFF;
+}
+
 .liked { border-style: dotted; border-width: 3px; border-color: green; }
 .disliked { border-style: dotted; border-width: 3px; border-color: red; }
 
 #new-candy { font-size: 4em; }
 #no-candy { font-size: 4em; }
+
+/* generic stuff: */
+
+.message-flash {
+  border-style: dotted; 
+  border-width: 3px; 
+  border-color: green;
+  background-color: aqua;
+}
+
+.notice-flash {
+  border-style: dotted; 
+  border-width: 3px; 
+  border-color: green;
+  background-color: aqua;
+}
+
+.warning-flash {
+  border-style: dotted; 
+  border-width: 3px; 
+  border-color: orange;
+  background-color: yellow;
+}
+
+.error-flash {
+  border-style: dotted; 
+  border-width: 3px; 
+  border-color: red;
+  background-color: yellow;
+}

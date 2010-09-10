@@ -1,0 +1,12 @@
+
+
+<div class='chunky-section'>
+  <div>
+    <h2>Make a man a god:</h2>
+    <% form_tag :controller => 'admins', :action => 'adminify' do %>
+      <%= label_tag :who, "who?"%>
+      <%= text_field_tag :who %>
+      <%= submit_tag 'Adminify!' %>
+    <% end %>
+  </div>
+</div>

@@ -4,6 +4,7 @@ class ReleaseOne < ActiveRecord::Migration
       t.string  :identity, :null => false
       t.string  :colour, :null => false
       t.string  :status, :null => false  # waiting, seated, dispensed
+      t.image   :application
       t.integer :priority
       t.string  :secret_code
       t.timestamps
