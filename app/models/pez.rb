@@ -4,6 +4,7 @@ class Pez < ActiveRecord::Base
   
   has_many :votes
   has_many :users, :through => :votes
+  has_one :image
   
   validates_uniqueness_of :identity
   

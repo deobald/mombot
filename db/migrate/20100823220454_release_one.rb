@@ -4,10 +4,23 @@ class ReleaseOne < ActiveRecord::Migration
       t.string  :identity, :null => false
       t.string  :colour, :null => false
       t.string  :status, :null => false  # waiting, seated, dispensed
-      t.image   :application
       t.integer :priority
       t.string  :secret_code
       t.timestamps
+    end
+    
+    create_table :images do |t|
+      t.integer :pez_id
+      t.integer :size
+      t.string  :content_type
+      t.string  :filename
+      t.integer :height
+      t.integer :width
+
+        # that reference images that will be thumbnailed:
+        #   parent_id,    :integer  # id of parent image (on the same table, a self-referencing foreign-key).
+        #   thumbnail,    :string
+
     end
     
     create_table :users do |t|

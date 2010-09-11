@@ -11,6 +11,15 @@
 
 ActiveRecord::Schema.define(:version => 20100823220454) do
 
+  create_table "images", :force => true do |t|
+    t.integer "pez_id"
+    t.integer "size"
+    t.string  "content_type"
+    t.string  "filename"
+    t.integer "height"
+    t.integer "width"
+  end
+
   create_table "pezez", :force => true do |t|
     t.string   "identity",    :null => false
     t.string   "colour",      :null => false

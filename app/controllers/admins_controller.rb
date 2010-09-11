@@ -10,8 +10,15 @@ class AdminsController < ApplicationController
   end
   
   def seat
+    flash[:warning] = "Seat who?" and return unless params[:pez_id]
     @pez = Pez.find params[:pez_id]
+    return unless request.post?
+    
+    @image = Image.new(params[:image_form])
+    @image.save!
+    @pez.image = @image
     @pez.seat
+    flash[:message] = 'saved!'
   end
   
   def adminify

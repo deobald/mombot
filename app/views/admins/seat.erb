@@ -1,2 +1,21 @@
 
-<div>you seated <%= @pez.identity %>.</div>
+<% content_for :head do %>
+  <%= javascript_include_tag 'jquery' %>
+  <%= javascript_include_tag 'jquery_form' %>
+  <%= javascript_include_tag 'image_upload' %>
+<% end %>
+
+<% if @pez && @pez.waiting? %>
+  <div>
+    <% remote_form_for(:image_form, :url => { :controller => 'admins', :action => 'seat' }, 
+                                    :html => { :method => :post, :id => 'uploadForm', :multipart => true }) do |f| %>
+      <%= hidden_field_tag :pez_id, @pez.id %>
+      Upload an image: <%= f.file_field :uploaded_data %>
+      <%= submit_tag "Seat #{@pez.identity}." %>
+    <% end %>
+  </div>
+<% end %>
+
+<% if @pez && @pez.seated? %>
+  <img src='<%= @pez.image.public_filename %>'>
+<% end %>
