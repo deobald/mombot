@@ -21,4 +21,7 @@ class UsersController < ApplicationController
     render :partial => 'candy', :collection => new_candy
   end
   
+  def you
+  end
+  
 end

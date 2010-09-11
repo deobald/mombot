@@ -16,11 +16,6 @@ class ReleaseOne < ActiveRecord::Migration
       t.string  :filename
       t.integer :height
       t.integer :width
-
-        # that reference images that will be thumbnailed:
-        #   parent_id,    :integer  # id of parent image (on the same table, a self-referencing foreign-key).
-        #   thumbnail,    :string
-
     end
     
     create_table :users do |t|

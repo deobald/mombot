@@ -36,7 +36,7 @@ module Authentication
 
   def forgot_password
     if request.post?
-      u= User.find_by_email(params[:user][:email])
+      u = User.find_by_email(params[:user][:email])
       if u and u.send_new_password
         flash[:message]  = "A new password has been sent by email."
         redirect_to :action=>'login'
@@ -47,14 +47,13 @@ module Authentication
   end
 
   def change_password
-    @user=session[:user]
+    @user = session[:user]
     if request.post?
-      @user.update_attributes(:password=>params[:user][:password], :password_confirmation => params[:user][:password_confirmation])
+      @user.update_attributes(:password => params[:user][:password], :password_confirmation => params[:user][:password_confirmation])
       if @user.save
-        flash[:message]="Password Changed"
+        flash[:message] = "Password Changed"
       end
     end
   end
-  
   
 end

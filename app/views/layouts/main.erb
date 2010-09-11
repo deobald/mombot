@@ -1,5 +1,3 @@
-
-
 <html>
   <head>
     <%= stylesheet_link_tag 'main' %>
@@ -16,6 +14,7 @@
         
         <% if session[:user] %>
           | <%= link_to 'candy', :controller => 'users', :action => 'welcome' %>
+          | <%= link_to 'you', :controller => 'users', :action => 'you' %>
           | <%= link_to 'logout', :controller => 'users', :action => 'logout' %>
           <% if session[:user].admin? %>
             | <%= link_to 'admin', :controller => 'admins', :action => 'index' %>
