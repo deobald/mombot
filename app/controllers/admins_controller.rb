@@ -17,26 +17,29 @@ class AdminsController < ApplicationController
   def adminify
     return unless request.post?
     @why_not = ""
-    if no_admin_exists_yet || you_are_admin
-      @who = params[:who]
-      flash[:message] = "You adminified #{@who}"
+    who = params[:who]
+
+    if no_admin_exists_yet
+      Pez.first(:conditions => ['identity = ?', who]).adminify!
+      flash[:message] = "You adminified the first admin: #{who}."
+    elsif you_are_admin
+      User.first(:conditions => ['identity = ?', who]).adminify!
+      flash[:message] = "You adminified a new admin: #{who}."
     else
       flash[:warning] = "Bad dog! No milkdud. [ #{@why_not} ]"
     end
   end
   
   def no_admin_exists_yet
-    admins = User.all(:conditions => ['admin = ?', true])
-    if admins
-      names = admins.map {|a| a.identity}.join(', ')
-      @why_not << " Admin(s) exist already: #{names}. "
+    if User.admins
+      @why_not << " Admin(s) exist already: #{User.admins}. "
       return false
     end
     return true
   end
   
   def you_are_admin
-    unless session[:user] && session[:user].admin?
+    unless current_user_is_admin?
       @why_not << " You are no admin! "
       return false
     end

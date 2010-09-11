@@ -22,6 +22,19 @@ class Pez < ActiveRecord::Base
     wait_without_save
   end
   
+  def adminify!
+    raise Exception.new("Sorry son.  Gotta be the first user to self-adminify.") if User.admins
+    raise Exception.new("Sorry son.  Gotta be the first pez to self-adminify.") if Pez.all.size > 1
+    dispense
+    u = User.new
+    u.identity = self.identity
+    u.email = 'admin@admin.com'
+    u.password = u.password_confirmation = 'admin'
+    u.secret_code = self.secret_code
+    u.save!
+    u.adminify!
+  end
+  
   def max_priority
     Pez.maximum('priority') || 1
   end

@@ -15,7 +15,7 @@ module Authenticatable
   def adminify!
     @password = self.password_confirmation = 'whatever'
     self.admin = true
-    self.save
+    self.save!
   end
 
   def password=(pass)

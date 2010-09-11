@@ -17,6 +17,36 @@ class PezTest < ActiveSupport::TestCase
     assert second.colour != first.colour
   end
   
+  test "creates an admin user from a pez if it is the first" do
+    first = Pez.create! :identity => 'adam', :colour => 'black'
+    first.adminify!
+    adam = User.first :conditions => ['identity = ?', 'adam']
+    assert adam
+    assert adam.admin?
+  end
+  
+  test "creates an admin user from a pez with password of 'admin'" do
+    first = Pez.create! :identity => 'adam', :colour => 'black'
+    first.adminify!
+    adam = User.first :conditions => ['identity = ?', 'adam']
+    assert_equal adam, User.authenticate('adam', 'admin')
+  end
+  
+  test "does not allow creation of an admin user from a non-primary pez" do
+    first = Pez.create! :identity => 'adam', :colour => 'black'
+    second = Pez.create! :identity => 'conrad', :colour => 'blue'    
+    assert_raise(Exception) { first.adminify! }
+  end
+  
+  test "does not allow creation of an admin user if any users exist" do
+    first = Pez.create! :identity => 'adam', :colour => 'black'
+    first.dispense
+    admin = User.create! :identity => 'adam', :email => 'other@other.com', 
+                         :password => 'pass', :password_confirmation => 'pass', :secret_code => first.secret_code
+    admin.adminify!
+    assert_raise(Exception) { first.adminify! }    
+  end
+  
   test "only votable if it's top priority" do
     votable = Pez.create!(:identity => 'steven', :colour => 'red').seat
     not_votable = Pez.create!(:identity => 'conrad', :colour => 'blue').seat

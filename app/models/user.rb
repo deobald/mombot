@@ -4,7 +4,7 @@ require "#{RAILS_ROOT}/lib/exceptions"
 class User < ActiveRecord::Base
   include Authenticatable
   attr_accessor  :secret_code
-  attr_protected :id, :salt, :admin
+  attr_protected :id, :salt, :admin, :adminify!
   
   has_many :votes
   has_many :pezez, :through => :votes
@@ -15,6 +15,11 @@ class User < ActiveRecord::Base
   validates_presence_of :identity, :email, :password, :password_confirmation, :salt
   validates_uniqueness_of :identity, :email
   validates_format_of :email, :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i, :message => "Invalid email"  
+  
+  def self.admins
+    admins = User.all(:conditions => ['admin = ?', true])
+    return admins.size > 0 ? admins.map {|a| a.identity}.join(', ') : nil
+  end
   
   def before_create
     raise SecretCodeError unless secret_code_checks_out
