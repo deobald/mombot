@@ -22291,3 +22291,77 @@ Processing UsersController#login (for 127.0.0.1 at 2010-09-11 17:44:50) [GET]
 Rendering template within layouts/main
 Rendering users/login
 Completed in 18ms (View: 11, DB: 0) | 200 OK [http://localhost/users/login]
+
+
+Processing PezezController#index (for 127.0.0.1 at 2010-09-12 13:57:23) [GET]
+  [4;36;1mPez Load (1.9ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'seated') ORDER BY priority ASC[0m
+  [4;35;1mPez Load (0.6ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'waiting') ORDER BY priority ASC[0m
+Rendering template within layouts/main
+Rendering pezez/index
+Completed in 47ms (View: 35, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing PezezController#show (for 127.0.0.1 at 2010-09-12 13:57:27) [GET]
+  Parameters: {"id"=>"1000021"}
+  [4;36;1mPez Load (0.7ms)[0m   [0;1mSELECT * FROM "pezez" WHERE ("pezez"."id" = 1000021) [0m
+Rendering template within layouts/main
+Rendering pezez/show
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".pez_id = 1000021) [0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 83ms (View: 59, DB: 2) | 200 OK [http://localhost/pezez/1000021]
+
+
+Processing PezezController#show (for 127.0.0.1 at 2010-09-12 13:57:34) [GET]
+  Parameters: {"id"=>"1000021"}
+  [4;35;1mPez Load (0.6ms)[0m   [0mSELECT * FROM "pezez" WHERE ("pezez"."id" = 1000021) [0m
+Rendering template within layouts/main
+Rendering pezez/show
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".pez_id = 1000021) [0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 75ms (View: 50, DB: 2) | 200 OK [http://localhost/pezez/1000021]
+
+
+Processing PezezController#show (for 127.0.0.1 at 2010-09-12 13:58:14) [GET]
+  Parameters: {"id"=>"1000022"}
+  [4;36;1mPez Load (0.6ms)[0m   [0;1mSELECT * FROM "pezez" WHERE ("pezez"."id" = 1000022) [0m
+Rendering template within layouts/main
+Rendering pezez/show
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".pez_id = 1000022) [0m
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 144ms (View: 119, DB: 2) | 200 OK [http://localhost/pezez/1000022]
+
+
+Processing PezezController#show (for 127.0.0.1 at 2010-09-12 13:58:26) [GET]
+  Parameters: {"id"=>"1000023"}
+  [4;35;1mPez Load (0.6ms)[0m   [0mSELECT * FROM "pezez" WHERE ("pezez"."id" = 1000023) [0m
+Rendering template within layouts/main
+Rendering pezez/show
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".pez_id = 1000023) [0m
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 73ms (View: 49, DB: 2) | 200 OK [http://localhost/pezez/1000023]
+
+
+Processing PezezController#index (for 127.0.0.1 at 2010-09-12 13:58:50) [GET]
+  [4;36;1mPez Load (1.5ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'seated') ORDER BY priority ASC[0m
+  [4;35;1mPez Load (0.6ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'waiting') ORDER BY priority ASC[0m
+Rendering template within layouts/main
+Rendering pezez/index
+Completed in 59ms (View: 23, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing PezezController#show (for 127.0.0.1 at 2010-09-12 13:58:52) [GET]
+  Parameters: {"id"=>"1000024"}
+  [4;36;1mPez Load (0.6ms)[0m   [0;1mSELECT * FROM "pezez" WHERE ("pezez"."id" = 1000024) [0m
+Rendering template within layouts/main
+Rendering pezez/show
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".pez_id = 1000024) [0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 73ms (View: 49, DB: 2) | 200 OK [http://localhost/pezez/1000024]
+
+
+Processing PezezController#index (for 127.0.0.1 at 2010-09-12 13:59:14) [GET]
+  [4;35;1mPez Load (1.5ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'seated') ORDER BY priority ASC[0m
+  [4;36;1mPez Load (0.6ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'waiting') ORDER BY priority ASC[0m
+Rendering template within layouts/main
+Rendering pezez/index
+Completed in 43ms (View: 22, DB: 2) | 200 OK [http://localhost/]

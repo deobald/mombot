@@ -3,7 +3,7 @@
   <div>seated:</div>
   <ul>
     <% @seated.each do |pez| %>
-    <li><%= pez.identity %></li>
+    <li><%= link_to pez.identity, pez_path(pez) %></li>
     <% end %>
   </ul>
 </div>
