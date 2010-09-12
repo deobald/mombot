@@ -22,4 +22,10 @@ class ThingTest < ActiveSupport::TestCase
     thing.reply_to nil
     assert_nil thing.previous
   end
+  
+  test "saves the new thing without a previous if it receives an empty string" do
+    thing = Factory :thing
+    thing.reply_to ""
+    assert_nil thing.previous
+  end
 end

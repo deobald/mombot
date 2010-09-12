@@ -35,6 +35,7 @@ Factory.define :vote do |v|
 end
 
 Factory.define :thing do |t|
+  t.association :user
   t.title "peninsula, cheap!"
   t.body  "75% border water... how could you go wrong?"
 end

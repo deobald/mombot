@@ -31,10 +31,12 @@ ActiveRecord::Schema.define(:version => 20100823220454) do
   end
 
   create_table "things", :force => true do |t|
-    t.integer "previous_id"
-    t.string  "title",       :null => false
-    t.string  "url"
-    t.string  "body"
+    t.integer  "user_id",     :null => false
+    t.integer  "previous_id"
+    t.string   "title",       :null => false
+    t.string   "url"
+    t.string   "body"
+    t.datetime "created_at"
   end
 
   create_table "users", :force => true do |t|

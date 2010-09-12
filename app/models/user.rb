@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   
   has_many :votes
   has_many :pezez, :through => :votes
+  has_many :things
   
   validates_length_of :identity, :within => 3..40
   validates_length_of :password, :within => 4..40

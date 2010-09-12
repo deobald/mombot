@@ -35,10 +35,12 @@ class ReleaseOne < ActiveRecord::Migration
     end
     
     create_table :things do |t|
-      t.integer :previous_id
-      t.string  :title, :null => false
-      t.string  :url
-      t.string  :body
+      t.integer  :user_id, :null => false
+      t.integer  :previous_id
+      t.string   :title, :null => false
+      t.string   :url
+      t.string   :body
+      t.datetime :created_at
     end
   end
 

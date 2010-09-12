@@ -4,7 +4,7 @@ class ThingsController < ApplicationController
   before_filter :login_required
   
   def index
-    @things = Thing.all :conditions => ['previous_id is ?', nil]
+    @things = Thing.all :conditions => ['previous_id is ?', nil], :order => "created_at DESC"
   end
   
   def new
@@ -14,6 +14,7 @@ class ThingsController < ApplicationController
   
   def create
     @thing = Thing.new params[:thing]
+    @thing.user = current_user
     @thing.reply_to params[:previous_id]
     redirect_to thing_path(@thing)
   end
