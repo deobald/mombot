@@ -19,7 +19,8 @@
     </div>
     
     <div>
-      <%= f.hidden_field :previous_id, :previous_id => @previous_id %>
+      <% puts "previd in the view!!!!!!! #{@previous_id} "%>
+      <%= hidden_field_tag :previous_id, @previous_id %>
       <%= submit_tag 'post!' %>
     </div>
   <% end %>

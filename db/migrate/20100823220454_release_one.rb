@@ -36,7 +36,6 @@ class ReleaseOne < ActiveRecord::Migration
     
     create_table :things do |t|
       t.integer :previous_id
-      t.integer :next_id
       t.string  :title, :null => false
       t.string  :url
       t.string  :body

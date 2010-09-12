@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(:version => 20100823220454) do
 
   create_table "things", :force => true do |t|
     t.integer "previous_id"
-    t.integer "next_id"
     t.string  "title",       :null => false
     t.string  "url"
     t.string  "body"
