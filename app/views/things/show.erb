@@ -2,4 +2,6 @@
 <div>
   <div><%= @thing.title %></div>
   <div><%= @thing.url %></div>
+  
+  <div><%= link_to 'reply', :controller => 'things', :action => 'new', :previous_id => @thing.id %>
 </div>

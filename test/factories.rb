@@ -34,6 +34,11 @@ Factory.define :vote do |v|
   v.approve     false
 end
 
+Factory.define :thing do |t|
+  t.title "peninsula, cheap!"
+  t.body  "75% border water... how could you go wrong?"
+end
+
 # specialized factories:
 
 Factory.define :bob, :class => User do |b|

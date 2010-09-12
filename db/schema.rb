@@ -30,15 +30,10 @@ ActiveRecord::Schema.define(:version => 20100823220454) do
     t.datetime "updated_at"
   end
 
-  create_table "thing_list", :force => true do |t|
-    t.integer "thing_id", :null => false
-    t.string  "body"
-  end
-
   create_table "things", :force => true do |t|
-    t.integer "previous"
-    t.integer "next"
-    t.string  "title",    :null => false
+    t.integer "previous_id"
+    t.integer "next_id"
+    t.string  "title",       :null => false
     t.string  "url"
     t.string  "body"
   end
