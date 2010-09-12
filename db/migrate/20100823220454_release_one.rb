@@ -33,11 +33,21 @@ class ReleaseOne < ActiveRecord::Migration
       t.integer  :user_id, :null => false
       t.boolean  :approve, :null => false
     end
+    
+    create_table :things do |t|
+      t.integer :previous
+      t.integer :next
+      t.string  :title, :null => false
+      t.string  :url
+      t.string  :body
+    end
   end
 
   def self.down
     drop_table :pezez
+    drop_table :images
     drop_table :users
     drop_table :votes
+    drop_table :things
   end
 end

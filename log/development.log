@@ -22365,3 +22365,745 @@ Processing PezezController#index (for 127.0.0.1 at 2010-09-12 13:59:14) [GET]
 Rendering template within layouts/main
 Rendering pezez/index
 Completed in 43ms (View: 22, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to ReleaseOne (20100823220454)
+  [4;35;1mSQL (94.5ms)[0m   [0mCREATE TABLE "pezez" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "colour" varchar(255) NOT NULL, "status" varchar(255) NOT NULL, "priority" integer, "secret_code" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pez_id" integer, "size" integer, "content_type" varchar(255), "filename" varchar(255), "height" integer, "width" integer) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "admin" boolean DEFAULT 0, "name" varchar(255), "hashed_password" varchar(255), "email" varchar(255), "salt" varchar(255), "created_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pez_id" integer NOT NULL, "user_id" integer NOT NULL, "approve" boolean NOT NULL) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "things" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "thing_id" integer NOT NULL, "body" varchar(255)) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100823220454')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("comments")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("images")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("pezez")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("things")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("votes")[0m
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("comments")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("images")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("pezez")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("things")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("votes")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "thing_id" integer NOT NULL, "body" varchar(255)) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mCREATE TABLE "images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pez_id" integer, "size" integer, "content_type" varchar(255), "filename" varchar(255), "height" integer, "width" integer) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCREATE TABLE "pezez" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "colour" varchar(255) NOT NULL, "status" varchar(255) NOT NULL, "priority" integer, "secret_code" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mCREATE TABLE "things" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255)) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "admin" boolean DEFAULT 'f', "name" varchar(255), "hashed_password" varchar(255), "email" varchar(255), "salt" varchar(255), "created_at" datetime) [0m
+  [4;35;1mSQL (0.9ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pez_id" integer NOT NULL, "user_id" integer NOT NULL, "approve" boolean NOT NULL) [0m
+  [4;35;1mSQL (1.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (1.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100823220454')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to ReleaseOne (20100823220454)
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "pezez" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "colour" varchar(255) NOT NULL, "status" varchar(255) NOT NULL, "priority" integer, "secret_code" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pez_id" integer, "size" integer, "content_type" varchar(255), "filename" varchar(255), "height" integer, "width" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "admin" boolean DEFAULT 0, "name" varchar(255), "hashed_password" varchar(255), "email" varchar(255), "salt" varchar(255), "created_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pez_id" integer NOT NULL, "user_id" integer NOT NULL, "approve" boolean NOT NULL) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "things" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255) NOT NULL, "url" varchar(255)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "thing_id" integer NOT NULL, "body" varchar(255)) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100823220454')[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("comments")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("images")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("pezez")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("things")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("votes")[0m
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("comments")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("images")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("pezez")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("things")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("votes")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "thing_id" integer NOT NULL, "body" varchar(255)) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mCREATE TABLE "images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pez_id" integer, "size" integer, "content_type" varchar(255), "filename" varchar(255), "height" integer, "width" integer) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mCREATE TABLE "pezez" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "colour" varchar(255) NOT NULL, "status" varchar(255) NOT NULL, "priority" integer, "secret_code" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCREATE TABLE "things" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255) NOT NULL, "url" varchar(255)) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "admin" boolean DEFAULT 'f', "name" varchar(255), "hashed_password" varchar(255), "email" varchar(255), "salt" varchar(255), "created_at" datetime) [0m
+  [4;35;1mSQL (0.9ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pez_id" integer NOT NULL, "user_id" integer NOT NULL, "approve" boolean NOT NULL) [0m
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.9ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100823220454')[0m
+
+
+Processing PezezController#index (for 127.0.0.1 at 2010-09-12 14:32:29) [GET]
+  [4;36;1mPez Load (1.6ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'seated') ORDER BY priority ASC[0m
+  [4;35;1mPez Load (1.0ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'waiting') ORDER BY priority ASC[0m
+Rendering template within layouts/main
+Rendering pezez/index
+Completed in 47ms (View: 35, DB: 3) | 200 OK [http://localhost/]
+
+
+Processing ThingsController#new (for 127.0.0.1 at 2010-09-12 14:33:20) [GET]
+Redirected to http://localhost:3000/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/things/new]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-09-12 14:33:20) [GET]
+Rendering template within layouts/main
+Rendering users/login
+Completed in 28ms (View: 21, DB: 0) | 200 OK [http://localhost/users/login]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-09-12 14:33:26) [POST]
+  Parameters: {"commit"=>"Submit", "method"=>"post", "authenticity_token"=>"oqPkOIJMctm65QAYaV0bE5tBCnKlRf2IKCXRuaQ5xNA=", "user"=>{"identity"=>"steven", "password"=>"test"}}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (identity = 'steven') LIMIT 1[0m
+Redirected to http://localhost:3000/things/new
+Completed in 51ms (DB: 1) | 302 Found [http://localhost/users/login?method=post]
+
+
+Processing ThingsController#new (for 127.0.0.1 at 2010-09-12 14:33:26) [GET]
+Rendering template within layouts/main
+Rendering things/new
+
+ActionView::TemplateError (undefined method `things_path' for #<ActionView::Base:0x2304df8>) on line #5 of app/views/things/new.erb:
+2: <div>
+3:   <h1>post something</h1>
+4:   
+5:   <% form_for @thing do |f| %>
+6:     <%= f.label :title, 'title:' %>
+7:     <%= f.text_field :title %>
+8:     
+
+    app/views/things/new.erb:5
+
+Rendered rescues/_trace (67.9ms)
+Rendered rescues/_request_and_response (2.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ThingsController#new (for 127.0.0.1 at 2010-09-12 14:34:19) [GET]
+Rendering template within layouts/main
+Rendering things/new
+
+ActionView::TemplateError (undefined method `things_path' for #<ActionView::Base:0x24090b4>) on line #5 of app/views/things/new.erb:
+2: <div>
+3:   <h1>post something</h1>
+4:   
+5:   <% form_for @thing do |f| %>
+6:     <%= f.label :title, 'title:' %>
+7:     <%= f.text_field :title %>
+8:     
+
+    app/views/things/new.erb:5
+
+Rendered rescues/_trace (68.7ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PezezController#index (for 127.0.0.1 at 2010-09-12 14:36:57) [GET]
+  [4;36;1mPez Load (1.6ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'seated') ORDER BY priority ASC[0m
+  [4;35;1mPez Load (0.9ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'waiting') ORDER BY priority ASC[0m
+Rendering template within layouts/main
+Rendering pezez/index
+Completed in 59ms (View: 46, DB: 3) | 200 OK [http://localhost/]
+
+
+Processing PezezController#index (for 127.0.0.1 at 2010-09-12 14:37:00) [GET]
+  [4;36;1mPez Load (1.3ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'seated') ORDER BY priority ASC[0m
+  [4;35;1mPez Load (0.9ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'waiting') ORDER BY priority ASC[0m
+Rendering template within layouts/main
+Rendering pezez/index
+Completed in 74ms (View: 50, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing PezezController#index (for 127.0.0.1 at 2010-09-12 14:38:19) [GET]
+  [4;36;1mPez Load (1.3ms)[0m   [0;1mSELECT * FROM "pezez" WHERE (status = 'seated') ORDER BY priority ASC[0m
+  [4;35;1mPez Load (0.9ms)[0m   [0mSELECT * FROM "pezez" WHERE (status = 'waiting') ORDER BY priority ASC[0m
+Rendering template within layouts/main
+Rendering pezez/index
+Completed in 144ms (View: 120, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing ThingsController#index (for 127.0.0.1 at 2010-09-12 14:38:22) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: admin_login_required, create, current_user, current_user_is_admin?, login_required, new, return_to_stored, show, and with_login_requirement):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ThingsController#index (for 127.0.0.1 at 2010-09-12 14:42:11) [GET]
+  [4;36;1mThing Load (0.5ms)[0m   [0;1mSELECT * FROM "things" [0m
+Rendering template within layouts/main
+Rendering things/index
+Completed in 66ms (View: 22, DB: 0) | 200 OK [http://localhost/things]
+
+
+Processing ThingsController#new (for 127.0.0.1 at 2010-09-12 14:42:22) [GET]
+Rendering template within layouts/main
+Rendering things/new
+Completed in 70ms (View: 26, DB: 0) | 200 OK [http://localhost/things/new]
+
+
+Processing ThingsController#new (for 127.0.0.1 at 2010-09-12 14:43:04) [GET]
+Rendering template within layouts/main
+Rendering things/new
+Completed in 72ms (View: 27, DB: 0) | 200 OK [http://localhost/things/new]
+
+
+Processing ThingsController#new (for 127.0.0.1 at 2010-09-12 14:43:13) [GET]
+Rendering template within layouts/main
+Rendering things/new
+Completed in 71ms (View: 26, DB: 0) | 200 OK [http://localhost/things/new]
+
+
+Processing ThingsController#create (for 127.0.0.1 at 2010-09-12 14:43:26) [POST]
+  Parameters: {"commit"=>"post!", "authenticity_token"=>"oqPkOIJMctm65QAYaV0bE5tBCnKlRf2IKCXRuaQ5xNA=", "thing"=>{"title"=>"woo woooah", "url"=>"http://deobald.ca"}}
+  [4;35;1mThing Create (0.5ms)[0m   [0mINSERT INTO "things" ("title", "url") VALUES('woo woooah', 'http://deobald.ca')[0m
+
+ActionView::MissingTemplate (Missing template things/create.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ThingsController#create (for 127.0.0.1 at 2010-09-12 14:44:53) [POST]
+  Parameters: {"commit"=>"post!", "authenticity_token"=>"oqPkOIJMctm65QAYaV0bE5tBCnKlRf2IKCXRuaQ5xNA=", "thing"=>{"title"=>"woo woooah", "url"=>"http://deobald.ca"}}
+  [4;36;1mThing Create (0.4ms)[0m   [0;1mINSERT INTO "things" ("title", "url") VALUES('woo woooah', 'http://deobald.ca')[0m
+
+NoMethodError (undefined method `show_url' for #<ThingsController:0x23d3464>):
+  app/controllers/things_controller.rb:17:in `create'
+
+Rendered rescues/_trace (56.5ms)
+Rendered rescues/_request_and_response (2.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ThingsController#create (for 127.0.0.1 at 2010-09-12 14:45:33) [POST]
+  Parameters: {"commit"=>"post!", "authenticity_token"=>"oqPkOIJMctm65QAYaV0bE5tBCnKlRf2IKCXRuaQ5xNA=", "thing"=>{"title"=>"woo woooah", "url"=>"http://deobald.ca"}}
+  [4;35;1mThing Create (0.3ms)[0m   [0mINSERT INTO "things" ("title", "url") VALUES('woo woooah', 'http://deobald.ca')[0m
+Redirected to http://localhost:3000/things/show?thing=3
+Completed in 54ms (DB: 0) | 302 Found [http://localhost/things]
+
+
+Processing ThingsController#show (for 127.0.0.1 at 2010-09-12 14:45:33) [GET]
+  Parameters: {"id"=>"show", "thing"=>"3"}
+
+ActionView::MissingTemplate (Missing template things/show.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ThingsController#index (for 127.0.0.1 at 2010-09-12 14:46:15) [GET]
+  [4;36;1mThing Load (1.0ms)[0m   [0;1mSELECT * FROM "things" [0m
+Rendering template within layouts/main
+Rendering things/index
+Completed in 61ms (View: 17, DB: 1) | 200 OK [http://localhost/things]
+
+
+Processing ThingsController#index (for 127.0.0.1 at 2010-09-12 14:46:31) [GET]
+  [4;35;1mThing Load (1.0ms)[0m   [0mSELECT * FROM "things" [0m
+Rendering template within layouts/main
+Rendering things/index
+Completed in 68ms (View: 24, DB: 1) | 200 OK [http://localhost/things]
+
+
+Processing ThingsController#index (for 127.0.0.1 at 2010-09-12 14:47:50) [GET]
+  [4;36;1mThing Load (1.0ms)[0m   [0;1mSELECT * FROM "things" [0m
+Rendering template within layouts/main
+Rendering things/index
+Completed in 70ms (View: 25, DB: 1) | 200 OK [http://localhost/things]
+
+
+Processing ThingsController#show (for 127.0.0.1 at 2010-09-12 14:47:53) [GET]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/main
+Rendering things/show
+Completed in 56ms (View: 21, DB: 0) | 200 OK [http://localhost/things/1]
+
+
+Processing ThingsController#show (for 127.0.0.1 at 2010-09-12 14:48:05) [GET]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/main
+Rendering things/show
+Completed in 111ms (View: 14, DB: 0) | 200 OK [http://localhost/things/1]
+
+
+Processing ThingsController#show (for 127.0.0.1 at 2010-09-12 14:48:59) [GET]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/main
+Rendering things/show
+Completed in 67ms (View: 22, DB: 0) | 200 OK [http://localhost/things/1]
+
+
+Processing ThingsController#show (for 127.0.0.1 at 2010-09-12 14:49:02) [GET]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/main
+Rendering things/show
+Completed in 59ms (View: 14, DB: 0) | 200 OK [http://localhost/things/1]
+
+
+Processing ThingsController#show (for 127.0.0.1 at 2010-09-12 14:49:02) [GET]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/main
+Rendering things/show
+Completed in 63ms (View: 15, DB: 0) | 200 OK [http://localhost/things/1]
+
+
+Processing ThingsController#index (for 127.0.0.1 at 2010-09-12 14:51:00) [GET]
+  [4;35;1mThing Load (1.0ms)[0m   [0mSELECT * FROM "things" [0m
+Rendering template within layouts/main
+Rendering things/index
+Completed in 62ms (View: 18, DB: 1) | 200 OK [http://localhost/things]
+
+
+Processing ThingsController#show (for 127.0.0.1 at 2010-09-12 14:51:02) [GET]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/main
+Rendering things/show
+Completed in 59ms (View: 14, DB: 0) | 200 OK [http://localhost/things/1]
+  [4;36;1mThing Load (1.2ms)[0m   [0;1mSELECT * FROM "things" [0m
+
+
+Processing ThingsController#index (for 127.0.0.1 at 2010-09-12 14:51:23) [GET]
+  [4;36;1mThing Load (1.0ms)[0m   [0;1mSELECT * FROM "things" [0m
+Rendering template within layouts/main
+Rendering things/index
+Completed in 64ms (View: 19, DB: 1) | 200 OK [http://localhost/things]
+
+
+Processing ThingsController#show (for 127.0.0.1 at 2010-09-12 14:51:26) [GET]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/main
+Rendering things/show
+Completed in 59ms (View: 14, DB: 0) | 200 OK [http://localhost/things/1]
+
+
+Processing ThingsController#show (for 127.0.0.1 at 2010-09-12 14:51:41) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mThing Load (0.4ms)[0m   [0mSELECT * FROM "things" WHERE ("things"."id" = 1) [0m
+Rendering template within layouts/main
+Rendering things/show
+Completed in 61ms (View: 14, DB: 0) | 200 OK [http://localhost/things/1]
+
+
+Processing ThingsController#show (for 127.0.0.1 at 2010-09-12 14:51:59) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mThing Load (0.4ms)[0m   [0;1mSELECT * FROM "things" WHERE ("things"."id" = 1) [0m
+Rendering template within layouts/main
+Rendering things/show
+Completed in 67ms (View: 21, DB: 0) | 200 OK [http://localhost/things/1]
+
+
+Processing ThingsController#show (for 127.0.0.1 at 2010-09-12 16:27:18) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mThing Load (0.4ms)[0m   [0mSELECT * FROM "things" WHERE ("things"."id" = 1) [0m
+Rendering template within layouts/main
+Rendering things/show
+Completed in 60ms (View: 14, DB: 0) | 200 OK [http://localhost/things/1]
+
+
+Processing ThingsController#index (for 127.0.0.1 at 2010-09-12 16:44:45) [GET]
+  [4;36;1mThing Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such column: previous: SELECT * FROM "things" WHERE (previous is NULL) [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: previous: SELECT * FROM "things" WHERE (previous is NULL) ):
+  app/controllers/things_controller.rb:7:in `index'
+
+Rendered rescues/_trace (62.1ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (3.3ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to ReleaseOne (20100823220454)
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "pezez" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "colour" varchar(255) NOT NULL, "status" varchar(255) NOT NULL, "priority" integer, "secret_code" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pez_id" integer, "size" integer, "content_type" varchar(255), "filename" varchar(255), "height" integer, "width" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "admin" boolean DEFAULT 0, "name" varchar(255), "hashed_password" varchar(255), "email" varchar(255), "salt" varchar(255), "created_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pez_id" integer NOT NULL, "user_id" integer NOT NULL, "approve" boolean NOT NULL) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "things" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "previous" integer, "next" integer, "title" varchar(255) NOT NULL, "url" varchar(255), "body" varchar(255)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "thing_list" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "thing_id" integer NOT NULL, "body" varchar(255)) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100823220454')[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("images")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("pezez")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("thing_list")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("things")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("votes")[0m
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("images")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("pezez")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("thing_list")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("things")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("votes")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mCREATE TABLE "images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pez_id" integer, "size" integer, "content_type" varchar(255), "filename" varchar(255), "height" integer, "width" integer) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mCREATE TABLE "pezez" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "colour" varchar(255) NOT NULL, "status" varchar(255) NOT NULL, "priority" integer, "secret_code" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mCREATE TABLE "thing_list" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "thing_id" integer NOT NULL, "body" varchar(255)) [0m
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mCREATE TABLE "things" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "previous" integer, "next" integer, "title" varchar(255) NOT NULL, "url" varchar(255), "body" varchar(255)) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identity" varchar(255) NOT NULL, "admin" boolean DEFAULT 'f', "name" varchar(255), "hashed_password" varchar(255), "email" varchar(255), "salt" varchar(255), "created_at" datetime) [0m
+  [4;35;1mSQL (1.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pez_id" integer NOT NULL, "user_id" integer NOT NULL, "approve" boolean NOT NULL) [0m
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100823220454')[0m
+
+
+Processing ThingsController#index (for 127.0.0.1 at 2010-09-12 16:45:11) [GET]
+  [4;35;1mThing Load (0.5ms)[0m   [0mSELECT * FROM "things" WHERE (previous is NULL) [0m
+Rendering template within layouts/main
+Rendering things/index
+Completed in 59ms (View: 14, DB: 0) | 200 OK [http://localhost/things]
+
+
+Processing ThingsController#new (for 127.0.0.1 at 2010-09-12 16:45:18) [GET]
+Rendering template within layouts/main
+Rendering things/new
+Completed in 65ms (View: 19, DB: 0) | 200 OK [http://localhost/things/new]
+
+
+Processing ThingsController#create (for 127.0.0.1 at 2010-09-12 16:45:29) [POST]
+  Parameters: {"commit"=>"post!", "authenticity_token"=>"oqPkOIJMctm65QAYaV0bE5tBCnKlRf2IKCXRuaQ5xNA=", "thing"=>{"title"=>"zigazig", "url"=>"http://4440.ca"}}
+
+ActiveRecord::RecordInvalid (Validation failed: Body can't be blank):
+  app/controllers/things_controller.rb:16:in `create'
+
+Rendered rescues/_trace (124.2ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (unprocessable_entity)
+
+
+Processing ThingsController#new (for 127.0.0.1 at 2010-09-12 16:46:25) [GET]
+Rendering template within layouts/main
+Rendering things/new
+Completed in 73ms (View: 27, DB: 0) | 200 OK [http://localhost/things/new]
+
+
+Processing ThingsController#create (for 127.0.0.1 at 2010-09-12 16:46:38) [POST]
+  Parameters: {"commit"=>"post!", "authenticity_token"=>"oqPkOIJMctm65QAYaV0bE5tBCnKlRf2IKCXRuaQ5xNA=", "thing"=>{"body"=>"what", "title"=>"zagazag", "url"=>"http://4440.ca"}}
+  [4;36;1mThing Create (0.4ms)[0m   [0;1mINSERT INTO "things" ("previous", "title", "body", "url", "next") VALUES(NULL, 'zagazag', 'what', 'http://4440.ca', NULL)[0m
+Redirected to http://localhost:3000/things/show?thing=1
+Completed in 54ms (DB: 0) | 302 Found [http://localhost/things]
+
+
+Processing ThingsController#show (for 127.0.0.1 at 2010-09-12 16:46:38) [GET]
+  Parameters: {"id"=>"show", "thing"=>"1"}
+  [4;35;1mThing Load (0.2ms)[0m   [0mSELECT * FROM "things" WHERE ("things"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Thing with ID=show):
+  app/controllers/things_controller.rb:21:in `show'
+
+Rendered rescues/_trace (53.1ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (not_found)
+
+
+Processing ThingsController#show (for 127.0.0.1 at 2010-09-12 16:47:25) [GET]
+  Parameters: {"id"=>"show", "thing"=>"1"}
+  [4;36;1mThing Load (0.2ms)[0m   [0;1mSELECT * FROM "things" WHERE ("things"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Thing with ID=show):
+  app/controllers/things_controller.rb:21:in `show'
+
+Rendered rescues/_trace (53.5ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (not_found)
+
+
+Processing ThingsController#show (for 127.0.0.1 at 2010-09-12 16:47:28) [GET]
+  Parameters: {"id"=>"show", "thing"=>"1"}
+  [4;35;1mThing Load (0.2ms)[0m   [0mSELECT * FROM "things" WHERE ("things"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Thing with ID=show):
+  app/controllers/things_controller.rb:21:in `show'
+
+Rendered rescues/_trace (53.2ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (not_found)
+
+
+Processing ThingsController#index (for 127.0.0.1 at 2010-09-12 16:47:33) [GET]
+  [4;36;1mThing Load (0.8ms)[0m   [0;1mSELECT * FROM "things" WHERE (previous is NULL) [0m
+Rendering template within layouts/main
+Rendering things/index
+Completed in 64ms (View: 19, DB: 1) | 200 OK [http://localhost/things/]
+
+
+Processing ThingsController#new (for 127.0.0.1 at 2010-09-12 16:47:36) [GET]
+Rendering template within layouts/main
+Rendering things/new
+Completed in 66ms (View: 20, DB: 0) | 200 OK [http://localhost/things/new]
+
+
+Processing ThingsController#create (for 127.0.0.1 at 2010-09-12 16:47:59) [POST]
+  Parameters: {"commit"=>"post!", "authenticity_token"=>"oqPkOIJMctm65QAYaV0bE5tBCnKlRf2IKCXRuaQ5xNA=", "thing"=>{"body"=>"hi", "title"=>"wag", "url"=>"http://deobald.ca"}}
+  [4;35;1mThing Create (0.4ms)[0m   [0mINSERT INTO "things" ("previous", "title", "body", "url", "next") VALUES(NULL, 'wag', 'hi', 'http://deobald.ca', NULL)[0m
+Redirected to http://localhost:3000/things/2
+Completed in 55ms (DB: 0) | 302 Found [http://localhost/things]
+
+
+Processing ThingsController#show (for 127.0.0.1 at 2010-09-12 16:47:59) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mThing Load (0.5ms)[0m   [0;1mSELECT * FROM "things" WHERE ("things"."id" = 2) [0m
+Rendering template within layouts/main
+Rendering things/show
+Completed in 69ms (View: 22, DB: 1) | 200 OK [http://localhost/things/2]
+
+
+Processing ThingsController#index (for 127.0.0.1 at 2010-09-12 16:48:04) [GET]
+  [4;35;1mThing Load (1.1ms)[0m   [0mSELECT * FROM "things" WHERE (previous is NULL) [0m
+Rendering template within layouts/main
+Rendering things/index
+Completed in 67ms (View: 19, DB: 1) | 200 OK [http://localhost/things]
+
+
+Processing ThingsController#new (for 127.0.0.1 at 2010-09-12 16:52:16) [GET]
+Rendering template within layouts/main
+Rendering things/new
+Completed in 66ms (View: 20, DB: 0) | 200 OK [http://localhost/things/new]
+
+
+Processing ThingsController#create (for 127.0.0.1 at 2010-09-12 16:52:20) [POST]
+  Parameters: {"commit"=>"post!", "authenticity_token"=>"oqPkOIJMctm65QAYaV0bE5tBCnKlRf2IKCXRuaQ5xNA=", "thing"=>{"body"=>"", "title"=>"testo", "url"=>""}}
+
+ActiveRecord::RecordInvalid (Validation failed: Url can't be blank, Body can't be blank):
+  app/controllers/things_controller.rb:16:in `create'
+
+Rendered rescues/_trace (122.3ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (unprocessable_entity)
+
+
+Processing ThingsController#create (for 127.0.0.1 at 2010-09-12 16:52:30) [POST]
+  Parameters: {"commit"=>"post!", "authenticity_token"=>"oqPkOIJMctm65QAYaV0bE5tBCnKlRf2IKCXRuaQ5xNA=", "thing"=>{"body"=>"", "title"=>"testo", "url"=>"http://4440.ca"}}
+  [4;36;1mThing Create (0.4ms)[0m   [0;1mINSERT INTO "things" ("previous", "title", "body", "url", "next") VALUES(NULL, 'testo', '', 'http://4440.ca', NULL)[0m
+Redirected to http://localhost:3000/things/3
+Completed in 55ms (DB: 0) | 302 Found [http://localhost/things]
+
+
+Processing ThingsController#show (for 127.0.0.1 at 2010-09-12 16:52:30) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mThing Load (0.5ms)[0m   [0mSELECT * FROM "things" WHERE ("things"."id" = 3) [0m
+Rendering template within layouts/main
+Rendering things/show
+Completed in 63ms (View: 15, DB: 1) | 200 OK [http://localhost/things/3]
+
+
+Processing ThingsController#index (for 127.0.0.1 at 2010-09-12 16:52:34) [GET]
+  [4;36;1mThing Load (1.3ms)[0m   [0;1mSELECT * FROM "things" WHERE (previous is NULL) [0m
+Rendering template within layouts/main
+Rendering things/index
+Completed in 66ms (View: 20, DB: 1) | 200 OK [http://localhost/things]
+
+
+Processing ThingsController#new (for 127.0.0.1 at 2010-09-12 16:52:35) [GET]
+Rendering template within layouts/main
+Rendering things/new
+Completed in 66ms (View: 20, DB: 0) | 200 OK [http://localhost/things/new]
+
+
+Processing ThingsController#create (for 127.0.0.1 at 2010-09-12 16:52:40) [POST]
+  Parameters: {"commit"=>"post!", "authenticity_token"=>"oqPkOIJMctm65QAYaV0bE5tBCnKlRf2IKCXRuaQ5xNA=", "thing"=>{"body"=>"hi", "title"=>"testy", "url"=>""}}
+  [4;35;1mThing Create (0.5ms)[0m   [0mINSERT INTO "things" ("previous", "title", "body", "url", "next") VALUES(NULL, 'testy', 'hi', '', NULL)[0m
+Redirected to http://localhost:3000/things/4
+Completed in 118ms (DB: 0) | 302 Found [http://localhost/things]
+
+
+Processing ThingsController#show (for 127.0.0.1 at 2010-09-12 16:52:40) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mThing Load (0.5ms)[0m   [0;1mSELECT * FROM "things" WHERE ("things"."id" = 4) [0m
+Rendering template within layouts/main
+Rendering things/show
+Completed in 64ms (View: 15, DB: 1) | 200 OK [http://localhost/things/4]
+
+
+Processing ThingsController#index (for 127.0.0.1 at 2010-09-12 16:52:42) [GET]
+  [4;35;1mThing Load (1.6ms)[0m   [0mSELECT * FROM "things" WHERE (previous is NULL) [0m
+Rendering template within layouts/main
+Rendering things/index
+Completed in 67ms (View: 20, DB: 2) | 200 OK [http://localhost/things]

@@ -36,6 +36,9 @@ ActionController::Routing::Routes.draw do |map|
   # See how all your routes lay out with "rake routes"
 
   map.resources :pezez
+  map.resources :images
+  map.resources :votes
+  map.resources :things
 
   map.root :controller => 'pezez'
   # Install the default routes as the lowest priority.

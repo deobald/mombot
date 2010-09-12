@@ -1,0 +1,25 @@
+
+<div>
+  <h1>post something</h1>
+  
+  <% form_for @thing do |f| %>
+    <div>
+      <%= f.label :title, 'title:' %>
+      <%= f.text_field :title %>
+    </div>
+    
+    <div>
+      <%= f.label :url, 'url:' %>
+      <%= f.text_field :url %>
+    </div>
+    
+    <div>
+      <%= f.label :body, 'text:' %>
+      <%= f.text_area :body %>
+    </div>
+    
+    <div>
+      <%= submit_tag 'post!' %>
+    </div>
+  <% end %>
+</div>

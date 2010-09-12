@@ -1,0 +1,12 @@
+
+<div>
+  <%= link_to 'post a new thing', :controller => 'things', :action => 'new' %>
+  
+  <h1>all the other things:</h1>
+  
+  <% @things.each do |thing| %>
+    <div>
+      <%= link_to thing.title, thing_path(thing) %>
+    </div>
+  <% end %>
+</div>
