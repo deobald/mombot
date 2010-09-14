@@ -16,6 +16,7 @@
           | <%= link_to 'candy', :controller => 'users', :action => 'welcome' %>
           | <%= link_to 'talk', :controller => 'things', :action => 'index' %>
           | <%= link_to 'you', :controller => 'users', :action => 'you' %>
+          | <%= link_to 'others', :controller => 'users', :action => 'index' %>
           | <%= link_to 'logout', :controller => 'users', :action => 'logout' %>
           <% if session[:user].admin? %>
             | <%= link_to 'admin', :controller => 'admins', :action => 'index' %>

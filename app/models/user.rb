@@ -43,6 +43,14 @@ class User < ActiveRecord::Base
     Pez.all :conditions => { :status => 'seated' }
   end
   
+  def pez
+    Pez.first :conditions => ['identity = ?', self.identity]
+  end
+  
+  def image_filename
+    self.pez.image.public_filename # boom.
+  end
+  
   def liked pez
     with_preference_for(pez) { |vote| vote.approve ? 'liked' : '' }
   end

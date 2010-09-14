@@ -8,6 +8,14 @@ class UsersController < ApplicationController
   def welcome
   end
   
+  def index
+    @users = User.all
+  end
+  
+  def show
+    @user = User.find params[:id]
+  end
+  
   def vote
     @pez = Pez.find params[:pez_id]
     @approve = params[:approve] || false

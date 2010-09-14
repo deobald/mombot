@@ -1,6 +1,6 @@
 
 <div>
-  <div><%= @thing.user.identity %></div>
+  <div><%= link_to @thing.user.identity, user_path(@thing.user) %></div>
   <div><%= @thing.title %></div>
   <div><%= @thing.url %></div>
   <div><%= @thing.body %></div>
