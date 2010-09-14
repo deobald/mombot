@@ -25,6 +25,13 @@ class PezTest < ActiveSupport::TestCase
     assert adam.admin?
   end
   
+  test "a user without an image should get the default image filename" do
+    first = Pez.create! :identity => 'adam', :colour => 'black'
+    first.adminify!
+    adam = User.first :conditions => ['identity = ?', 'adam']
+    assert_equal 'public/images/what.png', adam.image_filename
+  end
+  
   test "creates an admin user from a pez with password of 'admin'" do
     first = Pez.create! :identity => 'adam', :colour => 'black'
     first.adminify!

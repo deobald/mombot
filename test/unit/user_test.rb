@@ -77,5 +77,5 @@ class UserTest < ActiveSupport::TestCase
     pez.reload
     assert_equal 0, pez.priority
   end
-
+  
 end
