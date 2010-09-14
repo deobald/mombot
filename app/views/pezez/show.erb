@@ -2,3 +2,7 @@
 <div class='status'>
   <%= @pez.identity %>'s votes: <%= @pez.votes_so_far %> / <%= @pez.votes_required %>
 </div>
+
+<div>
+  <img src='<%= @pez.image.public_filename %>' />
+</div>

@@ -3,6 +3,7 @@
   <div><%= @thing.user.identity %></div>
   <div><%= @thing.title %></div>
   <div><%= @thing.url %></div>
+  <div><%= @thing.body %></div>
   
   <div><%= link_to 'reply', :controller => 'things', :action => 'new', :previous_id => @thing.id %>
 </div>

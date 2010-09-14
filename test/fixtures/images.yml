@@ -1,0 +1,11 @@
+
+sachin_image:
+  id: 1
+  pez_id: 1000021
+  content_type: 'image/jpg'
+  attachment_file: test/fixtures/sachin.jpg
+shishir_image:
+  id: 2
+  pez_id: 1000022
+  content_type: 'image/jpg'
+  attachment_file: test/fixtures/shishir.jpg

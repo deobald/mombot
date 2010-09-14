@@ -26,7 +26,6 @@ conrad:
   colour: green
   status: waiting
   priority: 3
-  secret_code: 
 
 vanessa:
   id: 1000024

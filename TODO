@@ -2,8 +2,11 @@
 == TODO
 
 === A
+* show user (with attached pez + pic)
+* posts should probably include the body and url
 * user list internally
 * voting algorithm
+* eviction policy
 * deploy to second location for mr. sinfield to test admin features
 
 
