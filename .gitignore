@@ -1,1 +1,7 @@
-public/attachments/0000
+public/attachments
+db/development.sqlite3
+db/test.sqlite3
+log/development.log
+log/test.log
+log/production.log
+log/server.log
