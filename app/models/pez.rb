@@ -11,6 +11,7 @@ class Pez < ActiveRecord::Base
   SEATED = 'seated'
   WAITING = 'waiting'
   DISPENSED = 'dispensed'
+  REJECTED = 'rejected'
   
   def self.new_with_colour options={}
     pez = Pez.new options
@@ -52,7 +53,16 @@ class Pez < ActiveRecord::Base
     else
       Vote.create! :user => user, :pez => self, :approve => approves
     end
-    dispense if votes_remaining == 0
+    pop_pop_pop
+  end
+  
+  def pop_pop_pop
+    return unless votes_remaining == 0
+    loved_by_all? ? dispense : reject
+  end
+  
+  def loved_by_all?
+    self.votes.inject(true) {|loved, vote| loved && vote.approve }
   end
   
   def votes_so_far
@@ -68,7 +78,7 @@ class Pez < ActiveRecord::Base
   end
   
   def wait_without_save
-    change_state_without_save 'waiting'
+    change_state_without_save WAITING
   end
   
   def wait
@@ -82,6 +92,10 @@ class Pez < ActiveRecord::Base
   def dispense
     generate_secret_code
     change_state_to DISPENSED
+  end
+  
+  def reject
+    change_state_to REJECTED
   end
   
   def expire
@@ -113,5 +127,9 @@ class Pez < ActiveRecord::Base
   
   def dispensed?
     self.status == DISPENSED
+  end
+  
+  def rejected?
+    self.status == REJECTED
   end
 end

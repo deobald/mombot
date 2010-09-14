@@ -2,7 +2,6 @@
 == TODO
 
 === A
-* voting algorithm
 * eviction policy
 * deploy to second location for mr. sinfield to test admin features
 
