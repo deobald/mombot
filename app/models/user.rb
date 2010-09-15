@@ -63,7 +63,7 @@ class User < ActiveRecord::Base
   end
   
   def image_filename
-    return '/public/images/what.png' unless self.pez.image
+    return '/images/what.png' unless self.pez.image
     self.pez.image.public_filename # boom.
   end
   

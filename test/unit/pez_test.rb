@@ -29,7 +29,7 @@ class PezTest < ActiveSupport::TestCase
     first = Pez.create! :identity => 'adam', :colour => 'black'
     first.adminify!
     adam = User.first :conditions => ['identity = ?', 'adam']
-    assert_equal '/public/images/what.png', adam.image_filename
+    assert_equal '/images/what.png', adam.image_filename
   end
   
   test "creates an admin user from a pez with password of 'admin'" do
