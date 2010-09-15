@@ -43,11 +43,7 @@ class User < ActiveRecord::Base
   end
   
   def self.evict! user_id
-    dying = User.find user_id
-    dying.identity = "ghost of #{dying.identity}"
-    dying.password = dying.password_confirmation = Secrets.random_string(16)
-    dying.save!
-    dying
+    User.find(user_id).evict!
   end
   
   def before_create
@@ -92,6 +88,20 @@ class User < ActiveRecord::Base
     vote = Vote.for(pez, self)
     return '' unless vote
     yield vote
+  end
+  
+  def evict!
+    old_pez = self.pez
+    old_pez.identity = ghost_identity
+    old_pez.save!
+    self.identity = ghost_identity
+    self.password = self.password_confirmation = Secrets.random_string(16)
+    self.save!
+    self
+  end
+  
+  def ghost_identity
+    "ghost of #{self.identity}"
   end
   
 end

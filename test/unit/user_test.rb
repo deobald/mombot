@@ -133,6 +133,13 @@ class UserTest < ActiveSupport::TestCase
     assert_equal lazy.id, returned.id
   end
   
+  test "makes a user's pez a ghost when evicted" do
+    evicted = Factory :user, :identity => 'sonny'
+    User.evict! evicted.id
+    evicted.reload
+    assert_equal 'ghost of sonny', evicted.pez.identity
+  end
+  
   test "does not find ghosts when looking for evicted users" do
     evicted = Factory :user
     User.evict! evicted.id
