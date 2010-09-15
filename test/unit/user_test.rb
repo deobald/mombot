@@ -122,9 +122,10 @@ class UserTest < ActiveSupport::TestCase
     lazy.password = lazy.password_confirmation = 'test'
     lazy.save!
     assert_equal lazy, User.authenticate("lazyass", "test")
-    User.evict! lazy.id
+    returned = User.evict! lazy.id
     assert_equal 'ghost of lazyass', User.find(lazy.id).identity
     assert_nil User.authenticate("lazyass", "test")
+    assert_equal lazy.id, returned.id
   end
   
 end

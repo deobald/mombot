@@ -42,6 +42,7 @@ class User < ActiveRecord::Base
     dying.identity = "ghost of #{dying.identity}"
     dying.password = dying.password_confirmation = Secrets.random_string(16)
     dying.save!
+    dying
   end
   
   def before_create

@@ -23,7 +23,7 @@ class AdminsController < ApplicationController
   end
   
   def evict
-    User.evict! params[:user_id]
+    @evicted = User.evict! params[:user_id]
   end
   
   # one-time installation stuff:
