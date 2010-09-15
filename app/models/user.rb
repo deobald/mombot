@@ -17,6 +17,10 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :identity, :email
   validates_format_of :email, :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i, :message => "Invalid email"  
   
+  def self.all_living
+    User.all.reject {|user| user.identity.starts_with? 'ghost' }
+  end
+  
   def self.admins
     admins = User.all(:conditions => ['admin = ?', true])
     return admins.size > 0 ? admins.map {|a| a.identity}.join(', ') : nil
@@ -24,7 +28,7 @@ class User < ActiveRecord::Base
   
   def self.find_unvoted
     votable = Pez.votable
-    User.all.inject([]) do |unvoted, user|
+    User.all_living.inject([]) do |unvoted, user|
       unvoted << user unless votable.has_vote_from? user
       unvoted
     end
@@ -32,7 +36,7 @@ class User < ActiveRecord::Base
   
   def self.find_lazies
     hours_passed = (Time.now - Pez.votable.created_at) / 1.hours
-    hours_allowed = User.all.size * 8
+    hours_allowed = User.all_living.size * 8
     return [] unless hours_passed > hours_allowed
     find_unvoted
   end

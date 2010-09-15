@@ -128,4 +128,13 @@ class UserTest < ActiveSupport::TestCase
     assert_equal lazy.id, returned.id
   end
   
+  test "does not find ghosts when looking for evicted users" do
+    evicted = Factory :user
+    User.evict! evicted.id
+    seated = Factory(:pez).seat
+    seated.created_at = Time.utc 1999, 7, 7, 0, 0, 0
+    seated.save!
+    Time.stubs(:now).returns(Time.utc(1999, 7, 8, 9, 0, 0))
+    assert_equal [], User.find_lazies
+  end  
 end

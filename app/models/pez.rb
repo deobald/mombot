@@ -82,7 +82,7 @@ class Pez < ActiveRecord::Base
   end
   
   def votes_required
-    User.all.size
+    User.all_living.size
   end
   
   def has_vote_from? user
