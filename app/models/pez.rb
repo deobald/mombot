@@ -85,6 +85,10 @@ class Pez < ActiveRecord::Base
     User.all.size
   end
   
+  def has_vote_from? user
+    self.votes.inject(false) { |has_voted, vote| has_voted || vote.user == user }
+  end
+  
   def wait_without_save
     change_state_without_save WAITING
   end

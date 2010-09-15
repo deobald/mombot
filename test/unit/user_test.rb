@@ -89,18 +89,32 @@ class UserTest < ActiveSupport::TestCase
     assert_equal [three, four], User.find_unvoted
   end
   
-  # 
-  # test "finds lazy users by determining if they have not voted on a seated pez for 8 hrs x users" do
-  #   one = Factory :user
-  #   two = Factory :user
-  #   three = Factory :user
-  #   four = Factory :user
-  #   seated = Factory(:pez).seat
-  #   seated.created_at = Time.utc 1999, 7, 7, 0, 0, 0
-  #   seated.save!
-  #   seated.receive_vote_from one, true
-  #   seated.receive_vote_from two, true
-  #   Time.stubs(:now).returns(Time.utc(1999, 7, 8, 9, 0, 0))
-  #   assert_equal [three, four], User.find_lazies
-  # end
+  test "finds lazy users by determining if they have not voted on a seated pez for 8 hrs x users" do
+    one = Factory :user
+    two = Factory :user
+    three = Factory :user
+    four = Factory :user
+    seated = Factory(:pez).seat
+    seated.created_at = Time.utc 1999, 7, 7, 0, 0, 0
+    seated.save!
+    seated.receive_vote_from one, true
+    seated.receive_vote_from two, true
+    Time.stubs(:now).returns(Time.utc(1999, 7, 8, 9, 0, 0))
+    assert_equal [three, four], User.find_lazies
+  end
+  
+  test "finds no lazy users if (8 hrs x users) has not passed yet" do
+    one = Factory :user
+    two = Factory :user
+    three = Factory :user
+    four = Factory :user
+    seated = Factory(:pez).seat
+    seated.created_at = Time.utc 1999, 7, 7, 0, 0, 0
+    seated.save!
+    seated.receive_vote_from one, true
+    seated.receive_vote_from two, true
+    Time.stubs(:now).returns(Time.utc(1999, 7, 8, 7, 59, 0))
+    assert_equal [], User.find_lazies
+  end
+  
 end

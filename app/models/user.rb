@@ -23,17 +23,18 @@ class User < ActiveRecord::Base
   end
   
   def self.find_unvoted
-    pez = Pez.votable
+    votable = Pez.votable
     User.all.inject([]) do |unvoted, user|
-      has_voted = pez.votes.inject(false) { |has_voted, vote| has_voted || vote.user == user }
-      unvoted << user unless has_voted
+      unvoted << user unless votable.has_vote_from? user
       unvoted
     end
   end
   
   def self.find_lazies
-    return unless (Time.now - Pez.votable.created_at).hours > Users.all.size * 8
-    []
+    hours_passed = (Time.now - Pez.votable.created_at) / 1.hours
+    hours_allowed = User.all.size * 8
+    return [] unless hours_passed > hours_allowed
+    find_unvoted
   end
   
   def before_create
