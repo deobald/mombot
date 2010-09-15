@@ -117,4 +117,14 @@ class UserTest < ActiveSupport::TestCase
     assert_equal [], User.find_lazies
   end
   
+  test "makes user a ghost who can't log in when evicted" do
+    lazy = Factory :user, :identity => 'lazyass'
+    lazy.password = lazy.password_confirmation = 'test'
+    lazy.save!
+    assert_equal lazy, User.authenticate("lazyass", "test")
+    User.evict! lazy.id
+    assert_equal 'ghost of lazyass', User.find(lazy.id).identity
+    assert_nil User.authenticate("lazyass", "test")
+  end
+  
 end

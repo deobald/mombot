@@ -37,6 +37,13 @@ class User < ActiveRecord::Base
     find_unvoted
   end
   
+  def self.evict! user_id
+    dying = User.find user_id
+    dying.identity = "ghost of #{dying.identity}"
+    dying.password = dying.password_confirmation = Secrets.random_string(16)
+    dying.save!
+  end
+  
   def before_create
     raise SecretCodeError unless secret_code_checks_out
     true

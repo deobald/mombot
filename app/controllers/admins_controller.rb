@@ -2,7 +2,7 @@
 class AdminsController < ApplicationController
   include Authentication
   
-  before_filter :admin_login_required, :only => ['index', 'seat']
+  before_filter :admin_login_required, :only => ['index', 'seat', 'evict']
   
   def index
     @waiting = Pez.all :conditions => ['status = ?', 'waiting']
@@ -22,6 +22,12 @@ class AdminsController < ApplicationController
     flash[:message] = 'saved!'
   end
   
+  def evict
+    User.evict! params[:user_id]
+  end
+  
+  # one-time installation stuff:
+    
   def adminify
     return unless request.post?
     @why_not = ""
@@ -53,4 +59,5 @@ class AdminsController < ApplicationController
     end
     return true
   end
+
 end
