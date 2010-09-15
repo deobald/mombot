@@ -35,6 +35,7 @@ class User < ActiveRecord::Base
   end
   
   def self.find_lazies
+    return [] unless Pez.votable
     hours_passed = (Time.now - Pez.votable.created_at) / 1.hours
     hours_allowed = User.all_living.size * 8
     return [] unless hours_passed > hours_allowed

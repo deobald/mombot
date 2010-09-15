@@ -117,6 +117,11 @@ class UserTest < ActiveSupport::TestCase
     assert_equal [], User.find_lazies
   end
   
+  test "finds no lazy users if there are no votable pez" do
+    Factory :user
+    assert_equal [], User.find_lazies
+  end
+  
   test "makes user a ghost who can't log in when evicted" do
     lazy = Factory :user, :identity => 'lazyass'
     lazy.password = lazy.password_confirmation = 'test'
