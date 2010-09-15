@@ -1,6 +1,6 @@
 
 <div>
-  <div><%= link_to @thing.user.identity, user_path(@thing.user) %></div>
+  <div><%= link_to @thing.user.identity, :controller => 'users', :action => 'show', :id => @thing.user.id %></div>
   <div><%= @thing.title %></div>
   <div><%= @thing.url %></div>
   <div><%= @thing.body %></div>

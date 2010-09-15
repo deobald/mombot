@@ -1,6 +1,6 @@
 
 <% @users.each do |user| %>
   <div>
-    <%= link_to user.identity, user_path(user) %>
+    <%= link_to user.identity, :controller => 'users', :action => 'show', :id => user.id %>
   </div>
 <% end %>

@@ -35,8 +35,8 @@ ActionController::Routing::Routes.draw do |map|
 
   # See how all your routes lay out with "rake routes"
 
+  # there is no 'map.resources :users' because the UsersController has all sorts of weird shit in it.
   map.resources :pezez
-  map.resources :users
   map.resources :images
   map.resources :votes
   map.resources :things
