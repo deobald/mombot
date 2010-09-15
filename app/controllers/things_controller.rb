@@ -20,7 +20,7 @@ class ThingsController < ApplicationController
   end
   
   def show
-    @thing = Thing.find params[:id]
+    @things = Thing.thread_for params[:id]
   end
   
 end

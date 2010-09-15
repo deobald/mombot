@@ -1,9 +1,14 @@
 
 <div>
-  <div><%= link_to @thing.user.identity, :controller => 'users', :action => 'show', :id => @thing.user.id %></div>
-  <div><%= @thing.title %></div>
-  <div><%= @thing.url %></div>
-  <div><%= @thing.body %></div>
-  
-  <div><%= link_to 'reply', :controller => 'things', :action => 'new', :previous_id => @thing.id %>
+  <% @things.each do |thing| %>
+    <div class='chunky-section'>
+      <div>
+        <%= thing.title %> - 
+        <%= link_to thing.user.identity, :controller => 'users', :action => 'show', :id => thing.user.id %>
+      </div>
+      <div><%= thing.url %></div>
+      <div><%= thing.body %></div>
+    </div>
+    <div><%= link_to 'reply', new_thing_path(:previous_id => thing.id) unless thing.next %></div>
+  <% end %>
 </div>
