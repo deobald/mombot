@@ -7,6 +7,7 @@ class AdminsController < ApplicationController
   def index
     @waiting = Pez.all :conditions => ['status = ?', 'waiting']
     @dispensed = Pez.all :conditions => ['status = ? and priority > 0', 'dispensed']
+    @lazy_users = User.find_lazies
   end
   
   def seat

@@ -78,4 +78,29 @@ class UserTest < ActiveSupport::TestCase
     assert_equal 0, pez.priority
   end
   
+  test "finds any users who haven't voted on the current pez yet" do
+    one = Factory :user
+    two = Factory :user
+    three = Factory :user
+    four = Factory :user
+    seated = Factory(:pez).seat
+    seated.receive_vote_from one, true
+    seated.receive_vote_from two, true
+    assert_equal [three, four], User.find_unvoted
+  end
+  
+  # 
+  # test "finds lazy users by determining if they have not voted on a seated pez for 8 hrs x users" do
+  #   one = Factory :user
+  #   two = Factory :user
+  #   three = Factory :user
+  #   four = Factory :user
+  #   seated = Factory(:pez).seat
+  #   seated.created_at = Time.utc 1999, 7, 7, 0, 0, 0
+  #   seated.save!
+  #   seated.receive_vote_from one, true
+  #   seated.receive_vote_from two, true
+  #   Time.stubs(:now).returns(Time.utc(1999, 7, 8, 9, 0, 0))
+  #   assert_equal [three, four], User.find_lazies
+  # end
 end

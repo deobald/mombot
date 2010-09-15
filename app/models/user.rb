@@ -22,6 +22,20 @@ class User < ActiveRecord::Base
     return admins.size > 0 ? admins.map {|a| a.identity}.join(', ') : nil
   end
   
+  def self.find_unvoted
+    pez = Pez.votable
+    User.all.inject([]) do |unvoted, user|
+      has_voted = pez.votes.inject(false) { |has_voted, vote| has_voted || vote.user == user }
+      unvoted << user unless has_voted
+      unvoted
+    end
+  end
+  
+  def self.find_lazies
+    return unless (Time.now - Pez.votable.created_at).hours > Users.all.size * 8
+    []
+  end
+  
   def before_create
     raise SecretCodeError unless secret_code_checks_out
     true
@@ -65,5 +79,5 @@ class User < ActiveRecord::Base
     return '' unless vote
     yield vote
   end
-
+  
 end

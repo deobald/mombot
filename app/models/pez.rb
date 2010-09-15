@@ -19,6 +19,14 @@ class Pez < ActiveRecord::Base
     pez
   end
   
+  def self.votable_priority
+    Pez.minimum('priority', :conditions => ["status = ?", SEATED])
+  end
+  
+  def self.votable
+    Pez.first :conditions => ['priority = ?', votable_priority]
+  end
+  
   def before_create
     self.priority = max_priority + 1
     wait_without_save
@@ -42,7 +50,7 @@ class Pez < ActiveRecord::Base
   end
   
   def votable?
-    Pez.minimum('priority', :conditions => ["status = ?", SEATED]) == self.priority
+    Pez.votable == self
   end
   
   def receive_vote_from user, approves

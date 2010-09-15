@@ -3,7 +3,7 @@ class ReleaseOne < ActiveRecord::Migration
     create_table :pezez do |t|
       t.string  :identity, :null => false
       t.string  :colour, :null => false
-      t.string  :status, :null => false  # waiting, seated, dispensed
+      t.string  :status, :null => false  # waiting, seated, dispensed, rejected
       t.integer :priority
       t.string  :secret_code
       t.timestamps
@@ -16,6 +16,7 @@ class ReleaseOne < ActiveRecord::Migration
       t.string  :filename
       t.integer :height
       t.integer :width
+      t.timestamps
     end
     
     create_table :users do |t|
@@ -25,13 +26,14 @@ class ReleaseOne < ActiveRecord::Migration
       t.string   :hashed_password
       t.string   :email
       t.string   :salt
-      t.datetime :created_at
+      t.timestamps
     end
     
     create_table :votes do |t|
       t.integer  :pez_id, :null => false
       t.integer  :user_id, :null => false
       t.boolean  :approve, :null => false
+      t.timestamps
     end
     
     create_table :things do |t|
@@ -40,7 +42,7 @@ class ReleaseOne < ActiveRecord::Migration
       t.string   :title, :null => false
       t.string   :url
       t.string   :body
-      t.datetime :created_at
+      t.timestamps
     end
   end
 

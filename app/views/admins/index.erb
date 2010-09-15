@@ -24,3 +24,15 @@
     <% end %>
   </ul>
 </div>
+
+<div>
+  lazy users:
+  <ul>
+    <% @lazy_users.each do |user| %>
+      <li>
+        <%= user.identity %>
+        <%= link_to 'evict', :controller => 'admins', :action => 'evict', :user_id => user.id %>
+      </li>
+    <% end %>
+  </ul>
+</div>
