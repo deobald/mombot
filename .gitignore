@@ -1,3 +1,4 @@
+.DS_Store
 public/attachments
 db/development.sqlite3
 db/test.sqlite3
