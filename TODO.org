@@ -1,0 +1,11 @@
+
+* 'whatwhat?' link
+* mail-in form
+* CSS from geoff or gabe or wherever
+
+* deploy to second location for mr. sinfield to test admin features
+* graphic pez dispenser
+* rails 3?
+* fix 'allow_forgery_protection' in production (proxy issue?)
+* rename to 'treehouse'?
+* hamlize. sassize.
