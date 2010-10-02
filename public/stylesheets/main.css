@@ -1,5 +1,46 @@
+body { font-family: Verdana, sans-serif; font-size: 16px; line-height: 1.5em; margin: 0; padding: 0 }
 
-div { margin: 1em; }
+h1 { margin: 0; font-size: 1.5em; line-height: 1em; margin-bottom: 1em; }
+h2 { margin: 0; font-size: 1.375em; line-height: 1.0909090909090908em; margin-bottom: 1.0909090909090908em; }
+h3 { margin: 0; font-size: 1.25em; line-height: 1.2em; margin-bottom: 1.2em; }
+h4 { margin: 0; font-size: 1.125em; line-height: 1.3333333333333333em; margin-bottom: 1.3333333333333333em; }
+
+p,
+ul,
+blockquote,
+pre,
+td,
+th,
+label { margin: 0; font-size: 1em; line-height: 1.5em; margin-bottom: 1.5em; }
+
+table { border-collapse: collapse; margin-bottom: 1.5em; }
+
+.layout { margin: 0 auto; text-align: left; width: 720px; }
+.layout:after { clear: both; content: "."; display: block; height: 0; visibility: hidden; width: 0; }
+
+#hd,
+#bd,
+#ft { text-align: center; }
+
+#hd { background: #87CEEB; border-bottom: solid 4px #9ACD32; color: #FFF; }
+#hd .layout { height: 60px; position: relative; }
+
+#hd a { color: #FFF; }
+
+#hd h2 { bottom: -17px; float: left; font-size: 72px; line-height: 1em; margin-bottom: 0; position: absolute; }
+#hd h2 a { text-decoration: none; }
+
+#hd .navigation { float: right; margin-top: 1.5em; }
+#hd .navigation h4,
+#hd .navigation ul,
+#hd .navigation li { display: inline; }
+#hd .navigation h4 { font-size: 1em; font-weight: normal; line-height: 1.5em; margin: 0; }
+#hd .navigation ul { margin: 0; padding: 0; }
+
+#ft { margin: 0; font-size: 0.875em; line-height: 1.7142857142857142em; margin-bottom: 1.7142857142857142em; }
+
+#bd { border-top: solid 8px #A0522D; padding-top: 1.5em; }
+
 
 label {
 	display: block;
@@ -9,12 +50,8 @@ label {
 	margin: 0px 5px 0px 0px;
 }
 
-.header { border-style: dotted; border-width: 1px; }
-.dispenser { border-style: dotted; border-width: 1px; }
-
-.headerheader { font-size: 2em; margin-right: 1em; }
-
 .status { font-size: 4em; }
+
 .mail-in-form { 
   border-style: dotted; 
   border-width: 3px; 
@@ -34,8 +71,6 @@ label {
 
 #new-candy { font-size: 4em; }
 #no-candy { font-size: 4em; }
-
-/* generic stuff: */
 
 .message-flash {
   border-style: dotted; 
