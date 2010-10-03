@@ -16,6 +16,8 @@ label { margin: 0; font-size: 1em; line-height: 1.5em; margin-bottom: 1.5em; }
 
 table { border-collapse: collapse; margin-bottom: 1.5em; }
 
+li { list-style-type: none; }
+
 .layout { margin: 0 auto; text-align: left; width: 720px; }
 .layout:after { clear: both; content: "."; display: block; height: 0; visibility: hidden; width: 0; }
 

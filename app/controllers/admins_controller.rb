@@ -8,6 +8,7 @@ class AdminsController < ApplicationController
     @waiting = Pez.all :conditions => ['status = ?', 'waiting']
     @dispensed = Pez.all :conditions => ['status = ? and priority > 0', 'dispensed']
     @lazy_users = User.find_lazies
+    @rejected = Pez.all :conditions => {:status => 'rejected'}
   end
   
   def seat

@@ -1,6 +1,8 @@
 
 <div>oh, hey. you're an admin.</div>
 
+<hr/>
+
 <div>
   dispensed:
   <ul>
@@ -32,6 +34,17 @@
       <li>
         <%= user.identity %>
         <%= link_to 'evict', :controller => 'admins', :action => 'evict', :user_id => user.id %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<div>
+  rejected applicants:
+  <ul>
+    <% @rejected.each do |reject| %>
+      <li>
+        <%= reject.identity %>
       </li>
     <% end %>
   </ul>
