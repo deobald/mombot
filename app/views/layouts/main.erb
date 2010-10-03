@@ -14,8 +14,7 @@
         <h2><%= link_to '4440', :root %></h2>
         <div class="navigation">
           <h4>
-            <% fff = (rand(2) == 1) ? 'fortyfourforty.com' : '4440.ca' %>
-            <%= session[:user] ? session[:user].identity + ':' : fff %>
+            <%= session[:user] ? session[:user].identity + ':' : '' %>
           </h4>
           <ul>
             <% if session[:user] %>
@@ -58,7 +57,7 @@
     </div>
     <div id="ft">
       <div class="layout">
-        <p>© 2010 Geoffrey Sinfield, Steven Deobald, Gabriel Boyer</p>
+        <p><%= (rand(2) == 1) ? 'fortyfourforty.com' : '4440.ca' %> © 2010 Geoffrey Sinfield, Steven Deobald, Gabriel Boyer</p>
       </div>
     </div>
   </body>
