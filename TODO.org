@@ -1,5 +1,4 @@
 
-* CSS from geoff or gabe or wherever
 
 * deploy to second location for mr. sinfield to test admin features
 * graphic pez dispenser

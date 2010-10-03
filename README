@@ -6,4 +6,11 @@ Check the TODO for stuff we haven't finished.
 
 == How to install
 
-* change your SMTP stuff in config/environments/production.rb
+=== looks
+* change your SMTP stuff in config/environments/production.rb -- actually, this doesn't matter. we don't send any emails.
+* change public/4440-application-form.tex
+* change app/views/layouts/main.erb change the link bar
+
+=== does
+* change config/database.yml to talk to your databases
+* run 'RAILS_ENV=production rake db:migrate' from the root on your prod server
