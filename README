@@ -14,3 +14,7 @@ Check the TODO for stuff we haven't finished.
 === does
 * change config/database.yml to talk to your databases
 * run 'RAILS_ENV=production rake db:migrate' from the root on your prod server
+* apply for the first pez
+* go to http://YOURSERVER/admins/adminify and turn the first pez into an admin. don't worry, this can only happen once.
+
+you're all set!
