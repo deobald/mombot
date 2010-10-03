@@ -11,7 +11,7 @@
 
   <div>
     <%= f.label :colour, "colour:" %>
-    <%= f.hidden_field :colour, :value => '12345' %>
+    <%= f.hidden_field :colour, :value => @pez.colour %>
     <span style='background-color: <%= @pez.colour %>;'>&nbsp;.&nbsp;.&nbsp;.&nbsp;</span>
   </div>
 
