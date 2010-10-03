@@ -17,6 +17,9 @@ class ThingsController < ApplicationController
     @thing.user = current_user
     @thing.reply_to params[:previous_id]
     redirect_to thing_path(@thing)
+  rescue Exception => e
+    flash[:error] = e.message
+    redirect_to new_thing_path
   end
   
   def show
