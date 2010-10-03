@@ -43,14 +43,11 @@ table { border-collapse: collapse; margin-bottom: 1.5em; }
 #bd { border-top: solid 8px #A0522D; padding: 1.5em 0; }
 #bd .dispenser { float: left; margin-right: 20px; width: 45%; }
 
-
-label {
-	display: block;
-	float: left;
-	width: 100px;
-	text-align: right;
-	margin: 0px 5px 0px 0px;
-}
+form label { display: block; margin: 0; }
+form input { font-size: 1em; line-height: 1.5em; }
+form input,
+form .colour { display: block; margin-bottom: 0.75em; }
+form .colour { height: 4em; width: 6em; }
 
 .status { font-size: 4em; }
 

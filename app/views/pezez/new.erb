@@ -5,18 +5,18 @@
   <% form_for @pez do |f| %>
 
   <div>
-    <%= f.label :identity, "identity:" %>
+    <%= f.label :identity, "identity" %>
     <%= f.text_field :identity %>
   </div>
 
   <div>
-    <%= f.label :colour, "colour:" %>
+    <%= f.label :colour, "colour" %>
     <%= f.hidden_field :colour, :value => '12345' %>
-    <span style='background-color: <%= @pez.colour %>;'>&nbsp;.&nbsp;.&nbsp;.&nbsp;</span>
+    <span class="colour" style='background-color: <%= @pez.colour %>;'></span>
   </div>
 
   <div>
-    <%= submit_tag 'add me to the dispenser, please!' %>
+    <%= submit_tag 'Add me to the dispenser, please!' %>
   </div>
 
   <% end %>
