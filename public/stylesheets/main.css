@@ -1,6 +1,7 @@
 body { font-family: Verdana, sans-serif; font-size: 16px; line-height: 1.5em; margin: 0; padding: 0 }
 
-h1 { margin: 0; font-size: 1.5em; line-height: 1em; margin-bottom: 1em; }
+h1,
+#bd .dispenser h2 { margin: 0; font-size: 1.5em; line-height: 1em; margin-bottom: 1em; }
 h2 { margin: 0; font-size: 1.375em; line-height: 1.0909090909090908em; margin-bottom: 1.0909090909090908em; }
 h3 { margin: 0; font-size: 1.25em; line-height: 1.2em; margin-bottom: 1.2em; }
 h4 { margin: 0; font-size: 1.125em; line-height: 1.3333333333333333em; margin-bottom: 1.3333333333333333em; }
@@ -39,7 +40,8 @@ table { border-collapse: collapse; margin-bottom: 1.5em; }
 
 #ft { margin: 0; font-size: 0.875em; line-height: 1.7142857142857142em; margin-bottom: 1.7142857142857142em; }
 
-#bd { border-top: solid 8px #A0522D; padding-top: 1.5em; }
+#bd { border-top: solid 8px #A0522D; padding: 1.5em 0; }
+#bd .dispenser { float: left; margin-right: 20px; width: 45%; }
 
 
 label {
