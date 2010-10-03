@@ -1,19 +1,19 @@
 
 <div>
   <% form_tag :action => "login", :method => 'post' do %>
-    <h3>Login</h3>  
+    <h1>Login</h1>  
 
     <% if flash[:warning] %>
       <div><%= flash[:warning] %></div>
     <% end %>
 
     <div>
-      <label for="user_identity">Identity:</label>
+      <label for="user_identity">Identity</label>
       <%= text_field "user", "identity", :size => 20 %>
     </div>
 
     <div>
-      <label for="user_password">Password:</label>
+      <label for="user_password">Password</label>
       <%= password_field "user", "password", :size => 20 %>
     </div>
 

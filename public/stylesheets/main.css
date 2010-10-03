@@ -1,25 +1,57 @@
+body { font-family: Helvetica, sans-serif; font-size: 16px; line-height: 1.5em; margin: 0; padding: 0 }
 
-body {
-  font-family: "Helvetica", sans-serif;
-  font-size: 162%;
-}
+h1,
+#bd .dispenser h2 { margin: 0; font-size: 1.5em; line-height: 1em; margin-bottom: 1em; }
+h2 { margin: 0; font-size: 1.375em; line-height: 1.0909090909090908em; margin-bottom: 1.0909090909090908em; }
+h3 { margin: 0; font-size: 1.25em; line-height: 1.2em; margin-bottom: 1.2em; }
+h4 { margin: 0; font-size: 1.125em; line-height: 1.3333333333333333em; margin-bottom: 1.3333333333333333em; }
 
-div { margin: 1em; }
+p,
+ul,
+blockquote,
+pre,
+td,
+th,
+label { margin: 0; font-size: 1em; line-height: 1.5em; margin-bottom: 1.5em; }
 
-label {
-	display: block;
-	float: left;
-	width: 100px;
-	text-align: right;
-	margin: 0px 5px 0px 0px;
-}
+table { border-collapse: collapse; margin-bottom: 1.5em; }
 
-.header { border-style: dotted; border-width: 1px; }
-.dispenser { border-style: dotted; border-width: 1px; }
+.layout { margin: 0 auto; text-align: left; width: 720px; }
+.layout:after { clear: both; content: "."; display: block; height: 0; visibility: hidden; width: 0; }
 
-.headerheader { font-size: 2em; margin-right: 1em; }
+#hd,
+#bd,
+#ft { text-align: center; }
+
+#hd { background: #87CEEB; border-bottom: solid 4px #9ACD32; color: #FFF; }
+#hd .layout { height: 60px; position: relative; }
+
+#hd a { color: #FFF; }
+
+#hd h2 { bottom: -17px; float: left; font-size: 72px; line-height: 1em; margin-bottom: 0; position: absolute; }
+#hd h2 a { text-decoration: none; }
+
+#hd .navigation { float: right; margin-top: 1.5em; }
+#hd .navigation h4,
+#hd .navigation ul,
+#hd .navigation li { display: inline; }
+#hd .navigation h4 { font-size: 1em; font-weight: normal; line-height: 1.5em; margin: 0; }
+#hd .navigation ul { margin: 0; padding: 0; }
+
+#ft { margin: 0; font-size: 0.875em; line-height: 1.7142857142857142em; margin-bottom: 1.7142857142857142em; }
+
+#bd { border-top: solid 8px #A0522D; padding: 1.5em 0; }
+#bd .dispenser { float: left; margin-right: 20px; width: 45%; }
+#bd .dispenser h2 { margin-bottom: 0.5em; }
+
+form label { display: block; margin: 0; }
+form input { font-size: 1em; line-height: 1.5em; }
+form input,
+form .colour { display: block; margin-bottom: 0.75em; }
+form .colour { height: 4em; width: 6em; }
 
 .status { font-size: 4em; }
+
 .mail-in-form { 
   border-style: dotted; 
   border-width: 3px; 
@@ -39,8 +71,6 @@ label {
 
 #new-candy { font-size: 4em; }
 #no-candy { font-size: 4em; }
-
-/* generic stuff: */
 
 .message-flash {
   border-style: dotted; 

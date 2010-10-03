@@ -1,60 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
   <head>
+    <title>4440 [beta]</title>
     <%= stylesheet_link_tag 'main' %>
     <%= javascript_include_tag :defaults %>
+    <script type="text/javascript" src="http://use.typekit.com/cps6ufs.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
     <%= yield :head %>
   </head>
   <body>
-    <div class='header'>
-      <div>
-        <span class='headerheader'>
-          <% fff = (rand(2) == 1) ? 'fortyfourforty.com' : '4440.ca' %>
-          <%= session[:user] ? session[:user].identity + ':' : fff %>
-        </span>
-        <%= link_to 'home', '/' %>
-        
-        <% if session[:user] %>
-          | <%= link_to 'candy', :controller => 'users', :action => 'welcome' %>
-          | <%= link_to 'talk', :controller => 'things', :action => 'index' %>
-          | <%= link_to 'you', :controller => 'users', :action => 'you' %>
-          | <%= link_to 'others', :controller => 'users', :action => 'index' %>
-          | <%= link_to 'logout', :controller => 'users', :action => 'logout' %>
-          <% if session[:user].admin? %>
-            | <%= link_to 'admin', :controller => 'admins', :action => 'index' %>
-          <% end %>
-      
-        <% else %>
-          | <%= link_to 'login', :controller => 'users', :action => 'login' %>
-          | <%= link_to 'apply', :controller => 'pezez', :action => 'new' %>
-          | <%= link_to 'join!', :controller => 'users', :action => 'signup' %>
-          | <a href='/images/what.png'>what?</a>
-          | <a href='/what.html'>whatwhat?</a>
-        <% end %>
+    <div id="hd">
+      <div class="layout">
+        <h2><%= link_to '4440', :root %></h2>
+        <div class="navigation">
+          <h4>
+            <% fff = (rand(2) == 1) ? 'fortyfourforty.com' : '4440.ca' %>
+            <%= session[:user] ? session[:user].identity + ':' : fff %>
+          </h4>
+          <ul>
+            <% if session[:user] %>
+              <li><%= link_to 'candy', :controller => 'users', :action => 'welcome' %></li>
+              <li><%= link_to 'talk', :controller => 'things', :action => 'index' %></li>
+              <li><%= link_to 'you', :controller => 'users', :action => 'you' %></li>
+              <li><%= link_to 'others', :controller => 'users', :action => 'index' %></li>
+              <li><%= link_to 'logout', :controller => 'users', :action => 'logout' %></li>
+              <% if session[:user].admin? %>
+                <li><%= link_to 'admin', :controller => 'admins', :action => 'index' %></li>
+              <% end %>
+            <% else %>
+              <li><%= link_to 'login', :controller => 'users', :action => 'login' %></li>
+              <li><%= link_to 'apply', :controller => 'pezez', :action => 'new' %></li>
+              <li><%= link_to 'join!', :controller => 'users', :action => 'signup' %></li>
+              <li><a href='/images/what.png'>what?</a></li>
+              <li><a href='/what.html'>whatwhat?</a></li>
+            <% end %>
+          </ul>
+        </div>
       </div>
     </div>
-    
-    <% if flash[:message] %>
-      <div class='message-flash'><%= flash[:message] %></div>
-    <% end %>
-    <% if flash[:notice] %>
-      <div class='notice-flash'><%= flash[:notice] %></div>
-    <% end %>
-    <% if flash[:warning] %>
-      <div class='warning-flash'><%= flash[:warning] %></div>
-    <% end %>
-    <% if flash[:error] %>
-      <div class='error-flash'><%= flash[:error] %></div>
-    <% end %>
+    <div id="bd">
+      <div class="layout">
+        <% if flash[:message] %>
+          <div class='message-flash'><%= flash[:message] %></div>
+        <% end %>
+        <% if flash[:notice] %>
+          <div class='notice-flash'><%= flash[:notice] %></div>
+        <% end %>
+        <% if flash[:warning] %>
+          <div class='warning-flash'><%= flash[:warning] %></div>
+        <% end %>
+        <% if flash[:error] %>
+          <div class='error-flash'><%= flash[:error] %></div>
+        <% end %>
 
-    <%= yield %>
-    
-    <div>&nbsp;</div>
-    <div>&nbsp;</div>    
-    <div>.</div>
-    <div>.</div>
-    <div>.</div>
-    <div>
-      This is a throw-away beta, friends.  Please feel free to talk to me directly or send me explicit feedback at: public@deobald.ca.
+        <%= yield %>
+      </div>
+    </div>
+    <div id="ft">
+      <div class="layout">
+        <p>© 2010 Geoffrey Sinfield, Steven Deobald, Gabriel Boyer</p>
+      </div>
     </div>
   </body>
 </html>

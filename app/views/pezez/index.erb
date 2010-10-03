@@ -1,6 +1,6 @@
 
-<div class='dispenser'>
-  <div>seated:</div>
+<div class="dispenser">
+  <h2>seated:</h2>
   <ul>
     <% @seated.each do |pez| %>
     <li style="background-color: <%= pez.colour %>"><%= link_to pez.identity, pez_path(pez) %></li>
@@ -8,8 +8,8 @@
   </ul>
 </div>
 
-<div class='dispenser'>
-  <div>waiting:</div>
+<div class="dispenser">
+  <h2>waiting:</h2>
   <ul>
     <% @waiting.each do |pez| %>
     <li style="background-color: <%= pez.colour %>"><%= pez.identity %></li>
