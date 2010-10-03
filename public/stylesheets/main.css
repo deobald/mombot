@@ -1,4 +1,9 @@
 
+body {
+  font-family: "Helvetica", sans-serif;
+  font-size: 162%;
+}
+
 div { margin: 1em; }
 
 label {

@@ -8,7 +8,8 @@
     <div class='header'>
       <div>
         <span class='headerheader'>
-          [beta] <%= session[:user] ? session[:user].identity + ':' : 'handy links:' %>
+          <% fff = (rand(2) == 1) ? 'fortyfourforty.com' : '4440.ca' %>
+          <%= session[:user] ? session[:user].identity + ':' : fff %>
         </span>
         <%= link_to 'home', '/' %>
         

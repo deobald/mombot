@@ -3,7 +3,7 @@
   <div>seated:</div>
   <ul>
     <% @seated.each do |pez| %>
-    <li><%= link_to pez.identity, pez_path(pez) %></li>
+    <li style="background-color: <%= pez.colour %>"><%= link_to pez.identity, pez_path(pez) %></li>
     <% end %>
   </ul>
 </div>
@@ -12,7 +12,7 @@
   <div>waiting:</div>
   <ul>
     <% @waiting.each do |pez| %>
-    <li><%= pez.identity %></li>
+    <li style="background-color: <%= pez.colour %>"><%= pez.identity %></li>
     <% end %>
   </ul>
 </div>
