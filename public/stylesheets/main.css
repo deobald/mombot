@@ -42,6 +42,7 @@ table { border-collapse: collapse; margin-bottom: 1.5em; }
 
 #bd { border-top: solid 8px #A0522D; padding: 1.5em 0; }
 #bd .dispenser { float: left; margin-right: 20px; width: 45%; }
+#bd .dispenser h2 { margin-bottom: 0.5em; }
 
 form label { display: block; margin: 0; }
 form input { font-size: 1em; line-height: 1.5em; }
