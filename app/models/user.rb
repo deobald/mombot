@@ -64,7 +64,7 @@ class User < ActiveRecord::Base
   end
   
   def dispenser
-    Pez.all :conditions => { :status => 'seated' }, :order => "created_at ASC"
+    Pez.all :conditions => { :status => 'seated' }, :order => "updated_at ASC"
   end
   
   def pez
